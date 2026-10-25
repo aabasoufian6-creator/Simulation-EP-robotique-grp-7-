@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+
+<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>ERICC Studio V21 | Laboratoire virtuel premium</title>
+<style>
+:root{font-family:Inter,'Segoe UI',system-ui,-apple-system,sans-serif;color:#1c3444;background:#f2f5f8;--ink:#16324a;--teal:#138a89;--cyan:#33bac0;--blue:#2f74c8;--line:#e2eaf1;--shadow:0 10px 32px rgba(17,47,70,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f3f6f9;color:var(--ink);font-size:14px}button,input,select{font:inherit}button{cursor:pointer;touch-action:manipulation}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #61bfc8;outline-offset:3px}h1,h2,h3,p{margin-top:0}h2{color:#1d3a50}a{color:#146f9d}
+header{position:relative;overflow:hidden;background:linear-gradient(111deg,#122b3e 5%,#0f3850 60%,#15516a 100%);color:white;min-height:215px}header:before{content:"";position:absolute;width:650px;height:650px;right:-160px;top:-360px;border-radius:50%;border:1px solid rgba(154,222,222,.13);box-shadow:0 0 0 90px rgba(142,211,229,.026),0 0 0 190px rgba(255,255,255,.018)}header:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,#54d8d5,#67bce3,#e9ae78)}header .inner{max-width:1500px;margin:auto}.hero{position:relative;min-height:214px;display:flex;align-items:center;justify-content:space-between;gap:26px;padding:25px 28px 28px}.hero-copy{position:relative;z-index:1;max-width:960px}.brandline{display:flex;align-items:center;gap:11px;margin-bottom:20px}.brandmark{display:inline-grid;place-items:center;position:relative;width:32px;height:32px;background:linear-gradient(145deg,#6edddb,#3fa9d2);color:#113449;font-size:22px;font-weight:900;border-radius:11px;box-shadow:0 4px 14px #29b8c038}.branddot{width:6px;height:6px;position:absolute;top:5px;right:4px;background:#f4c181;border:1px solid #123549;border-radius:50%}.brandtext{font-size:11px;font-weight:850;letter-spacing:2px;color:#daeff7}.branddivider{margin:0 9px;color:#82cad3;font-weight:500}.brandversion{padding:5px 10px;border-radius:999px;border:1px solid #ffffff2b;color:#cfeaf1;font-size:10px;letter-spacing:1px;font-weight:750}.hero-eyebrow{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:800;letter-spacing:2px;color:#aad7e1;margin:0 0 11px}.eyebrowline{display:inline-block;width:22px;height:2px;background:#75dbd8;border-radius:3px}.hero h1{font-size:clamp(28px,3vw,39px);letter-spacing:-1.5px;line-height:1.15;margin:0 0 11px;font-weight:830}.hero h1 span{color:#8ce1df}.hero p{max-width:670px;color:#d0e2eb;line-height:1.55;margin:0 0 15px;font-size:13px}.hero-tags{display:flex;gap:8px;flex-wrap:wrap}.hero-tags span{display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border:1px solid #ffffff25;background:#ffffff0d;color:#deedf3;border-radius:9px;font-size:11px;font-weight:600}.hero-team{margin-top:14px;padding:12px 14px;border:1px solid #ffffff24;background:#ffffff0e;border-radius:12px;max-width:860px}.hero-team strong{display:block;font-size:11px;letter-spacing:1px;color:#9fe2e2;margin-bottom:6px;text-transform:uppercase}.hero-team p{margin:0;color:#e4f3f7;font-size:12px;line-height:1.6}.live-dot{display:inline-block;height:7px;width:7px;background:#42dbb2;border-radius:100%;box-shadow:0 0 0 4px #47deb21c;flex-shrink:0}.hero-art{position:relative;min-width:300px;width:30%;max-width:355px;align-self:stretch;display:flex;align-items:center;justify-content:center;opacity:.95}.hero-art svg{width:100%;max-width:330px;position:relative;z-index:1;filter:drop-shadow(0 14px 25px #040f162d)}.hero-orbit{position:absolute;left:50%;top:50%;border:1px solid #ffffff1e;border-radius:50%;transform:translate(-50%,-50%)}.hero-orbit-1{width:270px;height:270px}.hero-orbit-2{width:185px;height:185px;border-style:dashed;opacity:.5}
+.app-main{max-width:1500px;margin:auto;padding:25px 22px 40px}.section-intro{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:20px}.sup-label{font-size:10px;letter-spacing:1.45px;font-weight:850;color:#36878f}.section-intro h2{font-size:24px;line-height:1.2;letter-spacing:-.6px;margin:4px 0}.section-intro h2 span{color:#1d8a9b}.section-intro p{color:#728496;font-size:12px;margin:6px 0 0}.meta-indicator{background:#fff;border:1px solid #e0e9f0;border-radius:12px;padding:12px 16px;color:#577186;display:flex;align-items:center;gap:11px;white-space:nowrap;box-shadow:0 4px 10px #23445b06;font-size:11px;font-weight:650}.meta-pulse{width:8px;height:8px;border-radius:50%;background:#24b69e;box-shadow:0 0 0 4px #26c4a125}.meta-divider{height:18px;width:1px;background:#d8e4eb}.topgrid{display:grid;grid-template-columns:minmax(320px,365px) minmax(0,1fr);gap:18px;align-items:start}.card{background:#fff;border:1px solid #dfe8ef;border-radius:20px;padding:22px;box-shadow:var(--shadow)}.controls{padding:20px 20px 22px}.panel-heading{display:flex;align-items:center;gap:12px;margin-bottom:15px}.panel-icon{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-size:25px;font-weight:800;flex-shrink:0}.panel-icon-teal{background:#e6f6f5;color:#138f8e}.panel-icon-blue{background:#e9f1fc;color:#357ac2}.panel-icon-purple{background:#efedff;color:#7365c3;font-size:18px;font-family:ui-monospace,monospace}.panel-heading-text{flex:1;min-width:0}.panel-heading h2{font-size:17px;letter-spacing:-.3px;margin:2px 0 0;font-weight:780}.panel-counter{font-family:ui-monospace,Consolas,monospace;color:#378a8b;background:#ebf7f7;border:1px solid #d4efee;border-radius:9px;padding:6px 9px;font-weight:750}.panel-subline{color:#7c8fa2;font-size:12px;margin:0 0 18px}.joint-stack{margin-top:5px}.joint{position:relative;border-top:1px solid #edf1f5;padding:14px 0 13px}.joint:first-child{border-top:0;padding-top:4px}.jtop{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:9px}.jtop label{color:#2c465c;font-size:12.5px;font-weight:730;letter-spacing:-.06px}.joint .jtop label:before{content:"";display:inline-block;width:8px;height:8px;border-radius:3px;margin-right:10px;background:#39a7bb;box-shadow:0 0 0 3px #39a7bb16}.joint:nth-child(2) .jtop label:before{background:#4980cd;box-shadow:0 0 0 3px #4980cd16}.joint:nth-child(3) .jtop label:before{background:#18a89c;box-shadow:0 0 0 3px #18a89c18}.joint:nth-child(4) .jtop label:before{background:#9879d5;box-shadow:0 0 0 3px #9879d51e}.joint:nth-child(5) .jtop label:before{background:#d49d52;box-shadow:0 0 0 3px #d49d521b}.joint:nth-child(6) .jtop label:before{background:#61798e;box-shadow:0 0 0 3px #61798e18}.jtop output{color:#127e94;font:750 14px ui-monospace,Consolas,monospace;background:#eef9fb;border:1px solid #dff2f4;border-radius:7px;padding:5px 8px;min-width:51px;text-align:right}.jinputs{display:grid;grid-template-columns:minmax(0,1fr) 58px;gap:10px;align-items:center}.jinputs input[type=range]{appearance:none;-webkit-appearance:none;width:100%;height:7px;border-radius:999px;background:linear-gradient(90deg,#14999d 0%,#14999d var(--pct,50%),#dce8ed var(--pct,50%),#dce8ed 100%);cursor:pointer;border:0;outline:none}.jinputs input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:17px;height:17px;background:#fff;border:4px solid #168e9b;border-radius:50%;box-shadow:0 2px 7px #15496637;cursor:grab}.jinputs input[type=range]::-moz-range-thumb{width:10px;height:10px;background:#fff;border:4px solid #168e9b;border-radius:50%;box-shadow:0 2px 7px #15496637;cursor:grab}.jinputs input[type=range]:active::-webkit-slider-thumb{cursor:grabbing;border-color:#0c6b7b}.jinputs input[type=range]:focus-visible{outline:3px solid #89dadd;outline-offset:5px}.jinputs input[type=number]{width:58px;border:1px solid #d9e4eb;border-radius:8px;padding:7px 5px;background:#f8fafc;text-align:center;font-size:12px;color:#35546d}.jlimits{display:flex;justify-content:space-between;padding:4px 68px 0 1px;color:#9badb9;font-size:10px}.group-divider{height:1px;background:linear-gradient(90deg,#e5edf3,transparent);margin:17px 0}.action-heading{font-size:10px;color:#899aaa;font-weight:850;letter-spacing:1.25px;margin-bottom:10px}.buttons{display:flex;gap:8px;flex-wrap:wrap;margin:0}.btn{background:#f6f9fc;border:1px solid #d7e4ed;border-radius:10px;color:#27546e;font-size:12px;font-weight:720;line-height:1.2;padding:11px 12px;transition:background .14s ease,border-color .14s ease,transform .14s ease;white-space:normal}.btn:hover{transform:translateY(-1px);background:#eaf5f8;border-color:#9cd5da}.btn:active{transform:translateY(0)}.btn.main{background:linear-gradient(135deg,#138f98,#167c9b);color:#fff;border-color:#138f98;box-shadow:0 5px 14px #15899a27}.btn.main:hover{background:linear-gradient(135deg,#0b7685,#126f8d);border-color:#0c7991}.btn-icon{font-weight:900;margin-right:4px;font-size:15px}.presets{display:grid;grid-template-columns:1fr 1fr}.presets .btn{min-height:43px}.status{margin-top:12px;background:#eff8f7;border:1px solid #dcf0ed;padding:10px 11px;color:#317675;font-size:11.5px;line-height:1.6;border-radius:11px}.status.warn{background:#fff7e6;border-color:#f4e5bf;color:#966c29}.status.good{background:#eff8f4;color:#24735e}.setting-details{margin-top:13px;border:1px solid #e3eaf1;background:#fafcfe;border-radius:12px;overflow:hidden}.setting-details summary,.command-details summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;color:#4a6a81;font-size:12px;font-weight:700;user-select:none}.setting-details summary::-webkit-details-marker,.command-details summary::-webkit-details-marker{display:none}.setting-details[open] .chev,.command-details[open] summary span{transform:rotate(180deg)}.chev,.command-details summary span{transition:transform .15s;display:inline-block;color:#7b94a5}.setting-details-body{padding:0 13px 13px}.setting-details-body .small{font-size:11px;color:#6d8494;line-height:1.6}.select{width:100%;background:#fff;border:1px solid #dbe5ed;border-radius:9px;padding:10px 10px;color:#32546d;font-size:11.5px}.setting-details .buttons{margin-top:9px}.exportgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.exportgrid .btn{padding:10px 8px;background:#fff;border:1px solid #e0e9ef;font-size:11.5px}.settings-bottom{margin-top:16px}.checkline{display:flex;align-items:center;gap:9px;color:#526b80;font-size:11.5px;padding:7px 0;cursor:pointer}.checkline input{accent-color:#168d95}
+.viewer{padding:20px 21px 18px;min-width:0}.viewer-heading{margin-bottom:15px}.viewer-stamp{font-weight:800;font-size:10px;color:#1b9178;background:#e9f9f3;border-radius:999px;padding:7px 11px;letter-spacing:.9px;display:flex;align-items:center;gap:9px}.viewer-toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:43px;background:#f6f9fc;border:1px solid #e7edf3;border-radius:11px;padding:9px 13px;margin-bottom:13px}.toolbar-info{color:#6a8091;font-size:11px;font-weight:620}.toolbar-mark{display:inline-block;height:7px;width:7px;background:#3e9fa4;border-radius:2px;transform:rotate(45deg);margin-right:9px}.toolbar-values{color:#296a87;background:#e8f4f8;border-radius:8px;padding:6px 10px;font:700 11px ui-monospace,Consolas,monospace;white-space:nowrap}.vgrid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(270px,.82fr);gap:13px}.sbox{border:1px solid #e1eaf0;border-radius:15px;overflow:hidden;background:#fcfeff;position:relative}.sbox:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:3px;background:linear-gradient(90deg,#4aaeb7,#92d5d4);z-index:1;opacity:.5}.vgrid .sbox:nth-child(2):before{background:linear-gradient(90deg,#6292d9,#b59ae2)}.sbox .lab{padding:14px 14px 4px;min-height:60px;display:grid;grid-template-columns:1fr auto;grid-template-rows:auto auto;gap:3px;align-content:start}.view-category{font-size:9px;letter-spacing:1px;color:#9aadb9;font-weight:850;grid-column:1;grid-row:1}.labtext{font-size:12px;color:#254963;font-weight:800;letter-spacing:-.07px;grid-column:1;grid-row:2}.view-badge{grid-column:2;grid-row:1/span 2;align-self:center;background:#e8f4f7;color:#278291;border-radius:7px;padding:5px 8px;font:800 10px ui-monospace,Consolas,monospace;letter-spacing:.5px}.view-badge-3d{background:#f0edfc;color:#7567b5}.view-badge-data{background:#e6f5ed;color:#2d9575}.sbox svg{display:block;width:100%;height:auto;max-height:510px}.sbox .foot{padding:3px 14px 13px;color:#9aa9b6;font-size:10px;line-height:1.55}.vizwide{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:13px}.vizwide .sbox svg{max-height:245px}.data{margin:12px!important;background:#f3f8fb;border-radius:10px;color:#355d76;padding:15px;white-space:pre-wrap;font:12px/1.8 ui-monospace,Consolas,monospace;overflow:auto}.vizwide .status{margin:12px!important}.bottom{margin-top:17px}.two{display:grid;grid-template-columns:1fr}.console-card{padding:23px}.console-intro{font-size:12px;color:#758b9b;line-height:1.6;margin:0 0 17px}.console-label{display:flex;align-items:center;gap:8px;color:#5d7390;font:800 10px ui-monospace,Consolas,monospace;letter-spacing:1px;background:#f2f7fb;padding:8px 12px;border-radius:8px}.console-led{width:7px;height:7px;border-radius:50%;background:#41c1a4;box-shadow:0 0 0 3px #33b99521}.console-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(270px,.6fr);gap:18px;align-items:stretch}.terminal-zone{border:1px solid #183145;background:#102433;border-radius:15px;overflow:hidden;box-shadow:0 8px 28px #091b2922}.terminal-top{height:39px;background:#1c3344;display:flex;align-items:center;justify-content:space-between;padding:0 13px;color:#8eacbd;font:11px ui-monospace,Consolas,monospace}.terminal-dots{display:flex;gap:5px}.terminal-dots i{width:7px;height:7px;border-radius:50%;background:#f07778}.terminal-dots i:nth-child(2){background:#eac176}.terminal-dots i:nth-child(3){background:#51cfa9}.term-tag{color:#69dab3;font-size:10px}.console{height:248px;overflow:auto;padding:15px 17px;background:#102433;color:#d1e6ec;white-space:pre-wrap;word-break:break-word;font:12px/1.68 ui-monospace,Consolas,monospace}.cmdrow{padding:0 13px 13px;display:flex;gap:8px}.cmdrow input{flex:1;min-width:0;border:1px solid #3a5669;background:#172e3d;color:white;border-radius:9px;padding:11px 13px;font-family:ui-monospace,Consolas,monospace;font-size:12px}.cmdrow input::placeholder{color:#83a0b0}.cmdrow .btn{white-space:nowrap}.quick-zone{background:#f8fafc;border:1px solid #e8eef3;padding:17px;border-radius:13px}.quick-zone .action-heading{margin:0 0 6px}.quick-zone .small{color:#8597a5;font-size:11px;margin:0 0 14px;line-height:1.6}.quick-zone .buttons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px}.quick-zone [data-command]{min-width:0;padding:11px 5px;text-align:center;font:750 12px ui-monospace,Consolas,monospace;background:#fff}.quick-zone .status{margin-top:16px}.command-details{margin-top:16px;border:1px solid #e1eaf1;border-radius:12px;overflow:hidden;background:#fafcfd}.command-details summary{padding:12px 15px}.command-details .tbl{width:100%;border-collapse:collapse;color:#547084;font-size:11px}.command-details .tbl th,.command-details .tbl td{padding:10px 12px;border-top:1px solid #e5ecf2;text-align:left;vertical-align:top}.command-details .tbl th{background:#eef4f8;color:#31526c}.command-details code{color:#126f81;background:#e8f5f7;padding:2px 5px;border-radius:5px}.footer-inner{display:flex;justify-content:space-between;gap:20px;max-width:1500px;padding:0 22px 28px;margin:0 auto;color:#94a4b2;font-size:11px}.footer-inner strong{color:#61788a;letter-spacing:.8px}
+@media(max-width:1250px){.topgrid{grid-template-columns:minmax(290px,330px) minmax(0,1fr)}.vgrid{grid-template-columns:1fr 1fr}.hero-art{opacity:.65;width:27%;min-width:240px}}
+@media(max-width:1080px){.topgrid{grid-template-columns:1fr}.controls{display:block}.joint-stack{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}.joint:nth-child(2){border-top:0;padding-top:4px}.vgrid{grid-template-columns:1.18fr .82fr}.hero-art{min-width:215px}}
+@media(max-width:760px){.hero{padding:22px 19px 23px}.hero h1{font-size:28px}.hero-art{display:none}.brandtext{letter-spacing:1px;font-size:10px}.hero-eyebrow{font-size:9px;letter-spacing:1.2px}.hero-tags span{padding:6px 9px}.app-main{padding:18px 11px 28px}.section-intro{align-items:flex-start}.meta-indicator{display:none}.section-intro h2{font-size:21px}.card,.viewer,.controls,.console-card{padding:15px;border-radius:15px}.vgrid,.vizwide,.console-layout{grid-template-columns:1fr}.vgrid .sbox svg{max-height:480px}.joint-stack{grid-template-columns:1fr}.joint:nth-child(2){border-top:1px solid #edf1f5;padding-top:14px}.viewer-toolbar{flex-wrap:wrap}.toolbar-values{white-space:normal}.console-label{font-size:9px}.footer-inner{flex-direction:column;gap:6px;padding:0 14px 20px}}
+@media(max-width:400px){.presets,.exportgrid{grid-template-columns:1fr}.hero-tags span:nth-child(n+3){display:none}.quick-zone .buttons{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.controls{align-self:start}.joint-stack{padding-bottom:0}.controls .joint:last-child{border-bottom:none}.viewer{align-self:start}
+
+/* EP Q3 — module capteurs */
+.sens-grid{display:grid;grid-template-columns:minmax(270px,1.35fr) minmax(235px,1fr);gap:15px}
+@media(max-width:780px){.sens-grid{grid-template-columns:1fr}}
+.sens-panel{border:1px solid #dce7ef;border-radius:12px;padding:13px;background:#fbfdff}
+.sens-pills{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
+.sensbtn{border:1px solid #b8d3dd;background:#fff;border-radius:8px;padding:8px 12px;color:#254c61;font-weight:700;cursor:pointer}
+.sensbtn.active{background:#e0f5f0;border-color:#138a89;color:#006b68}
+.sens-data{font-size:12px;color:#355269;line-height:1.75}
+.sens-data strong{color:#075f75}.sens-note{font-size:11px;color:#667f91;line-height:1.65}
+.sens-actions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.sens-actions button{border-radius:8px;border:1px solid #bdd4df;background:#f1f7fa;color:#21506a;padding:8px 11px;cursor:pointer;font-weight:700}
+.sens-table{width:100%;border-collapse:collapse;font-size:12px}.sens-table td,.sens-table th{padding:7px;border-bottom:1px solid #e3edf3;text-align:left}
+</style><meta content="#102a3e" name="theme-color"/><style>.geomgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.geomblock{background:#f7fafc;border:1px solid #dfe9f1;border-radius:14px;padding:16px;min-width:0}.geomblock h3{font-size:16px;margin:0 0 9px;color:#163249}.geomdata{background:#eaf4f7;color:#123747;border-radius:10px;padding:12px;margin:10px 0;white-space:pre-line;font:13px/1.7 ui-monospace,Consolas,monospace}.geommath{font-size:13px;line-height:1.85;color:#2e5366}.geomfields{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.geomfields label{font-size:12px;color:#426074}.geomfields input{width:100%;min-width:0;box-sizing:border-box;margin-top:5px;border:1px solid #c4d5df;border-radius:8px;padding:9px;background:white;color:#123}.geombuttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.matwrap{overflow-x:auto}.matwrap table{border-collapse:collapse;font:13px ui-monospace,Consolas,monospace;width:100%;text-align:right}.matwrap td{border:1px solid #d6e4ed;padding:12px 5px;background:white}.matwrap td:last-child{background:#e6f4f5;font-weight:700}.geomblock .small{line-height:1.55}@media(max-width:850px){.geomgrid{grid-template-columns:1fr}}</style><style>
+.v7grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin-top:16px}.v7panel{background:#f8fbfd;border:1px solid #dbe7ef;border-radius:15px;padding:17px;min-width:0}.v7panel h3{margin:0 0 7px;color:#153b52}.v7small{font-size:12px;color:#647c8e;line-height:1.6}.v7numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.v7numbers label{font-size:12px;color:#455f73}.v7numbers input{display:block;width:100%;padding:9px;border:1px solid #d1dce7;border-radius:8px;margin-top:4px}.v7matrix{overflow-x:auto}.v7matrix table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;font-size:11px;background:white}.v7matrix td{padding:9px 6px;text-align:right;border:1px solid #dfe8f0}.v7buttons{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0}.v7buttons button{padding:8px 12px;border:1px solid #b5cedd;border-radius:8px;background:white;color:#153b52}.v7buttons button.active{background:#176d81;color:white}.v7mono{white-space:pre-wrap;font:12px/1.65 ui-monospace,Consolas,monospace;background:#fff;border:1px solid #e1e8ee;border-radius:9px;padding:10px;max-height:240px;overflow:auto}.v7wide{grid-column:1/-1}.v7tag{font-size:11px;color:#08675b;font-weight:700}.v7warning{padding:10px;border:1px solid #f0d09b;background:#fffaf0;border-radius:9px;color:#74551b;font-size:12px;line-height:1.55}.v7good{padding:10px;border:1px solid #bce5da;background:#f0fbf7;border-radius:9px;color:#146454;font-size:12px}.v7ep details{border-bottom:1px solid #e0eaf1;padding:10px 0}.v7ep summary{cursor:pointer;font-weight:700}.v7ep p{color:#465f73;line-height:1.7;margin:8px 0}.v7table{width:100%;border-collapse:collapse;font-size:12px}.v7table th,.v7table td{padding:9px;text-align:left;border-bottom:1px solid #dfe7ee}.v7table th{background:#eaf2f7}.v7plot{width:100%;height:245px;background:white;border:1px solid #e0eaf2;border-radius:10px}.v7sep{border:0;border-top:1px solid #e0eaf2;margin:15px 0}@media(max-width:800px){.v7grid{grid-template-columns:1fr}.v7wide{grid-column:auto}}
+</style><style>
+.archgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:17px}.archpane{border:1px solid #dce8f0;border-radius:14px;background:#fff;padding:14px;min-width:0}.archdiagram{display:block;width:100%;background:#f9fcff;border:1px solid #e2edf4;border-radius:12px;aspect-ratio:720/455}.archchoice{width:100%;display:flex;align-items:center;text-align:left;gap:10px;padding:10px 11px;border:1px solid #dfeaf0;background:white;border-radius:9px;color:#274a61;font:600 12px Segoe UI,Arial,sans-serif;cursor:pointer;margin-bottom:7px}.archchoice.active{background:#e8f7f6;border-color:#26a4a3;color:#0b686e}.archnum{background:#e3eff3;color:#266077;display:grid;place-items:center;width:23px;height:23px;border-radius:7px;font:800 11px ui-monospace,monospace}.archchoice.active .archnum{background:#188e8e;color:white}.archdesc{min-height:88px;background:#f4f9fc;border-left:3px solid #2ba9a8;border-radius:8px;padding:11px 13px;font-size:12px;line-height:1.6;color:#3a596c}.archsmall{font-size:11px;color:#718899;line-height:1.6}.archactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.archactions button{border:1px solid #d0e2ea;border-radius:9px;padding:9px 12px;background:#f6fafc;color:#28556c;font-weight:700;cursor:pointer}.archactions button:hover{background:#e3f5f3}.archcaption{font-size:11px;color:#647c8e;line-height:1.6;margin-top:10px}@media(max-width:850px){.archgrid{grid-template-columns:1fr}}@media print{.archactions{display:none}}
+</style><style>
+.wrist-math{margin-top:12px;padding:14px;border:1px solid #d2e4ed;border-radius:12px;background:#f8fbfd;color:#27475b;font-size:12px}.wrist-math-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:10px}.wrist-math-grid>div{border:1px solid #dbeaf0;background:white;border-radius:9px;padding:11px;display:flex;justify-content:space-between;align-items:center;gap:8px}.wrist-math-grid strong{font-size:20px;color:#0c8275}.wrist-math p{margin:10px 0 5px}.wrist-math small{color:#687f8e;line-height:1.5;display:block}.motorgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.motorpane{background:#fff;border:1px solid #dce8f0;border-radius:14px;padding:16px}.motortable{width:100%;border-collapse:collapse;font-size:13px}.motortable th,.motortable td{text-align:left;padding:9px 8px;border-bottom:1px solid #e5edf3}.motortable th{color:#527084;font-size:11px}.motortable tr{cursor:pointer}.motortable tr.selected{background:#e6f8f4}.motortable tr:hover{background:#f2f8fb}.motorchip{display:inline-block;border-radius:99px;padding:4px 9px;font-weight:800;font-size:10px;background:#e3efff;color:#205eaa}.motorchip.step{background:#fff0d6;color:#875200}.motorinfo{margin:14px 0;padding:13px;background:#eef8fa;border:1px solid #d5e8ee;border-radius:12px;min-height:98px}.motorinfo h3{margin:0 0 6px;font-size:15px}.motorinfo p{margin:0;font-size:12px;line-height:1.6}.wristinputs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.wristinputs label{font-size:12px;font-weight:700;color:#4c6578}.wristinputs select{width:100%;margin-top:5px;border:1px solid #cedde7;border-radius:8px;padding:8px;background:#fff}.wristvisual{margin-top:14px;background:#f4f8fb;border:1px solid #e0eaf0;border-radius:12px;padding:12px;text-align:center}.wristvisual svg{width:100%;max-height:185px}.wristreadout{background:#e8f7f3;padding:12px;border-radius:9px;font-weight:800;margin-top:10px;color:#13766c}.motornote{font-size:11px;color:#617b8c;line-height:1.6;margin-top:12px}.motorheading{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px}.motorheading button{border:1px solid #b9d5dc;border-radius:9px;background:white;color:#195b72;font-size:11px;padding:7px 10px}@media(max-width:760px){.motorgrid{grid-template-columns:1fr}.wristinputs{grid-template-columns:1fr 1fr}}
+</style><style>
+.kin-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,1fr);gap:16px;margin-top:13px}.kin-panel{background:#f8fbfd;border:1px solid #dbe7ee;border-radius:13px;padding:15px;color:#234355}.kin-chain{width:100%;height:auto;background:white;border-radius:9px;border:1px solid #dce7ee}.kin-btns{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.kin-btns button{border:1px solid #bed2dd;background:white;color:#31566c;padding:8px 11px;border-radius:8px;cursor:pointer;font-weight:650}.kin-btns button.active{background:#0b807e;color:white;border-color:#0b807e}.kin-calc{background:white;border-radius:9px;border:1px solid #d6e6ed;padding:12px;font-size:14px;line-height:1.9;margin-top:10px}.kin-note{font-size:12px;color:#6c8391;line-height:1.6}.kin-title{font-size:16px;font-weight:750;color:#1e4355}@media(max-width:850px){.kin-grid{grid-template-columns:1fr}}
+</style><style>
+/* ERICC STUDIO V21 — PREMIUM UI. Purely presentation; all simulation hooks unchanged. */
+:root{--ink:#20374b;--teal:#0b9099;--cyan:#27c3cc;--line:#e4ebf2;--shadow:0 12px 40px rgba(12,39,69,.085)}
+html{scroll-padding-top:95px}body{background:#edf3f8;color:#233c50;background-image:radial-gradient(circle at 90% 5%,rgba(39,195,204,.13),transparent 29%),radial-gradient(circle at 10% 50%,rgba(62,120,185,.055),transparent 34%)}
+header{background:linear-gradient(115deg,#081726 0%,#0d2639 53%,#10485a 100%);border-bottom:0;min-height:0}
+.hero{padding:37px 32px 39px;gap:24px}.hero h1{font-size:clamp(34px,3.8vw,51px);letter-spacing:-2px;line-height:1.06}.hero h1 span{color:#61e1da}.brandmark{width:42px;height:42px;font-size:27px;border-radius:13px}.brandtext{letter-spacing:1.8px}.brandversion{background:#ffffff11}.hero .hero-eyebrow{margin-bottom:16px}.hero-copy>p{font-size:14px;line-height:1.7;color:#c7dbe8}.hero-art svg{filter:drop-shadow(0 20px 22px #001525a2)}
+.hero-team{margin:13px 0 15px;background:rgba(255,255,255,.04);border:1px solid rgba(122,225,225,.2);box-shadow:inset 0 1px rgba(255,255,255,.055);max-width:800px}.hero-team p{font-size:12.5px!important;color:#e7f5f9!important;line-height:1.6!important}.hero-team strong{color:#69e2d7}.hero-tags span{border:1px solid #ffffff27;background:#ffffff0d}
+.premium-nav{position:sticky;top:0;z-index:95;display:flex;align-items:center;gap:6px;overflow-x:auto;white-space:nowrap;padding:11px max(18px,calc((100vw - 1450px)/2));background:rgba(252,254,255,.96);backdrop-filter:blur(20px);box-shadow:0 6px 25px rgba(15,49,73,.09);border-bottom:1px solid #dfe9ee;scrollbar-width:thin}
+.premium-nav .nav-brand{flex:0 0 auto;color:#134760;font-size:11px;letter-spacing:1px;font-weight:900;margin-right:12px;padding-right:15px;border-right:1px solid #d6e5ed}
+.premium-nav a{display:inline-flex;gap:6px;align-items:center;text-decoration:none;font-size:11.5px;font-weight:750;color:#567086;padding:9px 12px;border-radius:10px;border:1px solid transparent;transition:all .2s ease}.premium-nav a:hover,.premium-nav a.is-active{color:#087b84;background:#e5f7f6;border-color:#c7eceb}.premium-nav a b{opacity:.6;font-size:10px}
+.app-main{max-width:1500px;padding:30px 22px 48px}.section-intro{margin-bottom:22px}.section-intro h2{font-size:29px;letter-spacing:-1.1px}.section-intro h2 span{color:#0f949a}
+.card{border:1px solid #dfe8f0;border-radius:20px;box-shadow:0 15px 45px rgba(26,62,95,.06),0 2px 7px rgba(17,46,70,.025);background:#fff;transition:box-shadow .25s ease,border-color .25s ease}.card:hover{box-shadow:0 17px 48px rgba(22,58,94,.09)}
+.topgrid{gap:20px;grid-template-columns:minmax(320px,350px) minmax(0,1fr)}.controls{background:linear-gradient(180deg,#fff,#fcfeff);padding:22px}.viewer{background:#fff}.panel-heading{border-bottom:1px solid #edf2f6;padding-bottom:15px;margin-bottom:17px}.panel-heading h2{font-size:19px}.panel-icon{width:44px;height:44px;border-radius:13px}.panel-icon-teal{background:linear-gradient(135deg,#dff8f7,#c8eded);color:#098a90}.panel-icon-blue{background:linear-gradient(135deg,#e3f2ff,#d6e9fe)}.sup-label{color:#098b90;font-size:10px;letter-spacing:1.7px}
+.joint{padding:16px 0 15px;border-color:#edf2f6}.joint .jtop label{font-size:12.5px}.jtop output{background:#e7f9fa;border-color:#d2f0ef;color:#087f88;font-weight:900}.jinputs input[type=range]{height:8px}.jinputs input[type=range]::-webkit-slider-thumb{width:19px;height:19px}.jinputs input[type=number]{background:#f9fcff;border-color:#dbe7ee}
+.btn,.v7buttons button,.kin-btns button{border-radius:11px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;font-weight:730}.btn:not(:disabled):hover,.v7buttons button:hover,.kin-btns button:hover{transform:translateY(-1px);box-shadow:0 7px 16px rgba(19,79,109,.11)}.btn.main{background:linear-gradient(125deg,#057e8e,#0d9da4);border:1px solid #07929b;box-shadow:0 7px 20px rgba(10,129,143,.2)}.btn.main:hover{background:linear-gradient(125deg,#066b7c,#068a94)}
+#resetInitialPose{border-radius:13px!important;background:linear-gradient(110deg,#087c86,#0aa6a7)!important;font-size:12.5px}#resetInitialMessage{padding:8px 4px;line-height:1.6!important}
+.viewer-toolbar{background:#f1f8fb;border-color:#e0edf2;border-radius:12px}.sbox,.v7panel,.geomblock{border-radius:15px!important;border-color:#ddeaf0!important;background:#fff!important}.sbox svg{border-radius:12px}.view-badge{border-radius:9px}.readout,.data{font-variant-numeric:tabular-nums}
+.console-card{background:#fff}.terminal-zone{border-radius:15px;overflow:hidden}.terminal-top{background:#142b3d!important}.console{background:#0d1e2c!important;color:#d7f5f4!important;font-family:'Cascadia Code','Consolas',ui-monospace,monospace!important;line-height:1.7!important}
+#teleoperation,#handoff,#epEndV20,#learningV19,#geomSection,#advancedERICC,#archSection,#motorSection,#kinSection,#sensorSection{scroll-margin-top:102px}
+#epEndV20{border:1px solid #badfe2!important;background:linear-gradient(180deg,#faffff 0,#fff 20%)!important}
+.v7mono,.v7matrix,#ep20Results,#ep20Paul,#ep20Tool{font-family:'Cascadia Code','Consolas',ui-monospace,monospace!important;font-variant-numeric:tabular-nums;border-radius:10px}
+.premium-section-heading{display:flex;align-items:center;gap:12px;padding:22px 3px 8px;margin-top:22px;color:#0c394d}.premium-section-heading span{display:grid;place-items:center;background:linear-gradient(135deg,#096f84,#13a5a4);color:white;width:34px;height:34px;border-radius:11px;font-size:14px;font-weight:850}.premium-section-heading strong{font-size:19px;letter-spacing:-.5px}.premium-section-heading em{margin-left:auto;font-size:11px;font-style:normal;color:#6f8797}
+.premium-backtop{position:fixed;bottom:22px;right:22px;z-index:110;background:#0a7f8b;color:white;text-decoration:none;padding:12px 14px;border-radius:13px;box-shadow:0 12px 26px #056b8450;font-size:12px;font-weight:800}
+@media(max-width:1100px){.topgrid{grid-template-columns:1fr}.hero-art{max-width:260px;min-width:210px}.premium-nav .nav-brand{display:none}}
+@media(max-width:760px){.hero{padding:26px 19px 29px}.hero h1{font-size:34px}.hero-team p{font-size:11px!important}.premium-nav{padding:8px 12px}.premium-nav a{padding:8px 9px;font-size:10.5px}.premium-section-heading em{display:none}.premium-backtop{right:12px;bottom:12px}.app-main{padding:20px 11px 30px}.controls{padding:17px}}
+@media(prefers-reduced-motion:reduce){.btn,.card,.premium-nav a{transition:none!important}html{scroll-behavior:auto}}
+</style><style id="g7-visual-identity">
+:root{--rosso:#d51b20;--g7ink:#121316;--g7paper:#faf8f5}
+body{background:#f8f6f2!important;color:#15171b!important}
+header,.hero{background:linear-gradient(120deg,#111316,#29272a)!important;color:#fff!important}
+header h1,.hero h1{color:#fff!important}
+.app-main{max-width:1700px!important}
+.card,.panel,.viewer,.console-card,.sbox,.field,.block{border-radius:12px!important;box-shadow:0 8px 30px rgba(15,17,20,.05)!important}
+.sup-label,.section-intro h2 span,.jtop output,.panel-counter{color:#c71920!important}
+.jinputs input[type=range]{background:linear-gradient(90deg,#cb2026 0%,#cb2026 var(--pct,50%),#e4e1de var(--pct,50%),#e4e1de 100%)!important}
+.jinputs input[type=range]::-webkit-slider-thumb{border-color:#cb2026!important}
+.btn.main,button.primary{background:#c71920!important;border-color:#c71920!important;color:white!important}
+a{color:#bd181f}
+</style></head><body>
+<header><div class="inner hero">
+<div class="hero-copy">
+<div class="brandline"><span class="brandmark">E<span class="branddot"></span></span><span class="brandtext">ERICC<span class="branddivider">/</span> LABORATOIRE VIRTUEL</span><span class="brandversion">V20.5 · 2026</span></div>
+<div class="hero-eyebrow"><span class="eyebrowline"></span> POLYTECH MARSEILLE · GII 4A · ÉTUDE PRATIQUE DE ROBOTIQUE</div>
+<h1>La robotique, <span>à portée de main.</span></h1>
+<p>Explore les mouvements du robot ERICC, ajuste ses articulations et visualise chaque configuration en 2D et en 3D.</p>
+<div class="hero-team"><strong>Équipe projet</strong><p>Alik Zakaria · Aaba Soufian · Houari Yassir · Chouchaoui Naëla · Belghiti Alaoui Reda</p><p><strong style="display:inline;color:#9fe2e2;text-transform:none;letter-spacing:0">Enseignant :</strong> Jean-Michel Olive</p></div>
+<div class="hero-tags"><span><i class="live-dot"></i> Modèle interactif</span><span>5 articulations</span><span>Hors ligne</span><span>Mode documentaire</span></div>
+</div>
+<div aria-hidden="true" class="hero-art"><div class="hero-orbit hero-orbit-1"></div><div class="hero-orbit hero-orbit-2"></div><svg viewbox="0 0 320 200"><path d="M60 165 L60 122 L102 99 L165 73 L242 113" fill="none" stroke="rgba(173,222,241,.23)" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"></path><path d="M60 122 L102 99 L165 73 L242 113" fill="none" stroke="#8bd9e3" stroke-linecap="round" stroke-width="7"></path><circle cx="60" cy="122" fill="#164765" r="12" stroke="#7fd6db" stroke-width="4"></circle><circle cx="102" cy="99" fill="#164765" r="11" stroke="#7fd6db" stroke-width="4"></circle><circle cx="165" cy="73" fill="#164765" r="11" stroke="#7fd6db" stroke-width="4"></circle><circle cx="242" cy="113" fill="#efc181" r="10" stroke="#f6e8d1" stroke-width="3"></circle><path d="M250 111 L282 100 M250 117 L282 128" stroke="#f0c58c" stroke-linecap="round" stroke-width="7"></path></svg></div>
+</div></header><nav class="premium-nav" aria-label="Navigation des modules ERICC"><span class="nav-brand">ERICC / STUDIO 21</span><a href="#dashboard"><b>01</b> Tableau de bord</a><a href="#archSection"><b>02</b> Architecture</a><a href="#motorSection"><b>03</b> Motorisation</a><a href="#sensorSection"><b>04</b> Capteurs</a><a href="#geomSection"><b>05</b> MGD / MGI</a><a href="#teleoperation"><b>06</b> Prise-dépose</a><a href="#handoff"><b>07</b> Deux robots</a><a href="#learningV19"><b>08</b> Apprentissage</a><a href="#epEndV20"><b>09</b> Validation EP</a><a href="#terminalZone"><b>10</b> Console</a></nav>
+<main class="app-main" id="dashboard"><div class="section-intro"><div><span class="sup-label">ESPACE DE SIMULATION</span><h2>Tableau de bord <span>ERICC</span></h2><p>Choisis une configuration, puis observe les mouvements du robot en temps réel.</p></div><div class="meta-indicator"><span class="meta-pulse"></span> Prêt à simuler <span class="meta-divider"></span> Unités : degrés / mm</div></div>
+<div class="topgrid">
+<section class="card controls"><div class="panel-heading"><div class="panel-icon panel-icon-teal">◎</div><div class="panel-heading-text"><span class="sup-label">01 · COMMANDES</span><h2>Paramètres articulaires</h2></div><span class="panel-counter">6</span></div><div class="panel-subline">Ajuste les angles et observe le mouvement du robot.</div><div class="joint-stack" id="controls"></div><button type="button" class="btn main" id="resetInitialPose" style="width:100%;margin-top:15px;padding:13px">↺ Réinitialiser le robot — paramètres initiaux</button><p id="resetInitialMessage" role="status" style="margin:7px 0 0;font-size:11px;color:#55788d">θ₁ = 0° · θ₂ = 30° · θ₃ = 30° · θ₄ = 0° · θ₅ = 60° · Pince = 25 mm</p></section>
+<section class="card viewer"><div class="panel-heading viewer-heading"><div class="panel-icon panel-icon-blue">⌗</div><div class="panel-heading-text"><span class="sup-label">02 · VISUALISATION</span><h2>Espace de travail</h2></div><span class="viewer-stamp"><i class="live-dot"></i> DIRECT</span></div>
+<div class="viewer-toolbar"><div class="toolbar-info"><span class="toolbar-mark"></span> Géométrie articulée · 2D / 3D</div><div class="toolbar-values" id="angleSummary">θ₁ 0°   θ₂ 30°   θ₃ 30°</div></div><div class="vgrid"><div class="sbox"><div class="lab"><span class="view-category">VISUALISATION</span><span class="labtext">Vue de profil — géométrie et angles</span><span class="view-badge">XZ</span></div><svg aria-label="Bras ERICC vue de profil" id="profile" role="img" viewbox="0 0 710 510" xmlns="http://www.w3.org/2000/svg"></svg><div class="foot">Positions géométriques simplifiées, pas de modèle de collisions.</div></div>
+<div class="sbox"><div class="lab"><span class="view-category">VISUALISATION</span><span class="labtext">Vue 3D orientable — glisser pour tourner</span><span class="view-badge view-badge-3d">3D</span></div><svg aria-label="Bras ERICC vu en projection 3D" id="cam" role="img" viewbox="0 0 470 510" xmlns="http://www.w3.org/2000/svg"></svg><div class="foot">Projection de la chaîne cinématique, sans CAO. La rotation de pince θ₄ oriente les mors dans la vue 3D.</div></div></div><div class="vizwide" style="margin-top:12px"><div class="sbox"><div class="lab"><span class="view-category">VISUALISATION</span><span class="labtext">Vue du dessus — θ₁</span><span class="view-badge">XY</span></div><svg id="top" role="img" viewbox="0 0 550 310" xmlns="http://www.w3.org/2000/svg"></svg></div><div class="sbox"><div class="lab"><span class="view-category">VISUALISATION</span><span class="labtext">Coordonnées simulées</span><span class="view-badge view-badge-data">LIVE</span></div><div class="data" id="readout" style="margin:12px"></div><div class="status" id="colstatus" style="margin:12px"></div></div></div></section></div>
+<div class="two bottom">
+
+<section class="card" style="margin-top:20px;padding:23px" id="archSection">
+<div class="panel-heading"><div class="panel-icon panel-icon-teal">01</div><div class="panel-heading-text"><span class="sup-label">EP PARTIE 1 · QUESTION 1</span><h2>Architecture de la partie opérative</h2></div><span class="panel-counter">8 repères</span></div>
+<p style="color:#688398;font-size:12px;line-height:1.65">Identification des composants confirmés par le cours « Modélisation du Robot ERICC » : socle, chaise, bras, avant-bras, poignet et pince. Cliquez sur un composant pour l'identifier dans le schéma et lire sa fonction.</p>
+<div class="archgrid"><div class="archpane"><svg class="archdiagram" id="archDiagram" viewBox="0 0 720 455" role="img" aria-label="Architecture pédagogique annotée du robot ERICC"></svg><div class="archcaption">Schéma cinématique filaire pédagogique utilisant les positions de notre modèle simplifié. Ce n'est ni une photographie du robot ni un plan de fabrication ; les longueurs et l'orientation affichées ne valident pas les dimensions physiques.</div><div class="archactions"><button id="archAll" type="button">Afficher tous les éléments</button><button id="archExport" type="button">Exporter le schéma SVG</button></div></div><div class="archpane"><div id="archChoices"></div><div id="archDesc" class="archdesc" aria-live="polite"></div><p class="archsmall">Structure : chaîne cinématique ouverte simple, à cinq articulations rotoïdes. Les huit repères du schéma comprennent six éléments mécaniques et deux articulations (épaule et coude) ; ils ne correspondent pas à huit degrés de liberté. L'ouverture de la pince relève de la préhension.</p></div></div>
+</section>
+
+<section class="card" style="margin-top:20px;padding:23px" id="motorSection">
+ <div class="panel-heading"><div class="panel-icon panel-icon-blue">02</div><div class="panel-heading-text"><span class="sup-label">EP PARTIE 1 · QUESTION 2</span><h2>Motorisation des articulations</h2></div><span class="panel-counter">MCC / PAS À PAS</span></div>
+ <p style="font-size:12px;color:#60798c;line-height:1.65">Identification documentaire des actionneurs du robot ERICC. Sélectionnez une ligne pour afficher le mouvement et le rôle de la motorisation. La démonstration du poignet est <b>qualitative</b>, sans étalonnage des moteurs.</p>
+ <div class="motorgrid">
+ <div class="motorpane"><div class="motorheading"><strong>Identification des motorisations</strong><button id="motorReset" type="button">Tout afficher</button></div>
+ <table class="motortable" aria-label="Correspondance articulations et moteurs"><thead><tr><th>Articulation / fonction</th><th>Actionneur</th></tr></thead><tbody id="motorRows"></tbody></table>
+ <div class="motorinfo" id="motorInfo" aria-live="polite"></div>
+ <p class="motornote">L'ouverture de la pince est un mouvement de préhension supplémentaire, et non un sixième axe d'orientation du manipulateur. Les deux moteurs pas à pas du poignet agissent conjointement sur θ₄ et θ₅.</p></div>
+ <div class="motorpane"><strong>Q4 · Couplage des deux moteurs du poignet</strong><p class="motornote">Choisir le sens de chaque moteur. Les flèches représentent une consigne relative normalisée (+1, 0 ou −1), et non un déplacement mesuré du robot. Pour des rotations de même amplitude, les moteurs commandés <b>dans le même sens</b> produisent principalement l'inclinaison et <b>en sens opposés</b> la rotation de la pince (convention du modèle pédagogique).</p>
+ <div class="wristinputs"><label>Moteur pas à pas A<select id="wristMotorA"><option value="0">Arrêt</option><option value="1">Sens +</option><option value="-1">Sens −</option></select></label><label>Moteur pas à pas B<select id="wristMotorB"><option value="0">Arrêt</option><option value="1">Sens +</option><option value="-1">Sens −</option></select></label></div>
+ <div class="wristvisual"><svg id="wristDrawing" viewBox="0 0 480 180" role="img" aria-label="Principe de deux moteurs couplés au poignet"></svg></div>
+ <div class="wristreadout" id="wristResult" aria-live="polite">Deux moteurs à l’arrêt</div>
+ <div class="wrist-math"><strong>Calcul des contributions relatives (sans étalonnage)</strong><div class="wrist-math-grid"><div><span>Inclinaison ∝ A + B</span><strong id="wristSum">0</strong></div><div><span>Rotation ∝ A − B</span><strong id="wristDiff">0</strong></div></div><p id="wristCalcDetail">A = 0, B = 0 : les deux contributions sont nulles.</p><small>Les valeurs −1, 0, +1 indiquent uniquement des commandes relatives normalisées, pas des degrés, des pas ni des tours moteurs. Les gains de transmission réels restent à établir à partir du constructeur.</small></div>
+ <p class="motornote"><b>Hypothèse pédagogique :</b> inclinaison proportionnelle à A + B ; rotation proportionnelle à A − B, pour deux actionneurs symétriques. Les signes, gains et éventuels décalages restent à confirmer sur la transmission réelle. Le module ne commande pas la pince 3D et ne prédit aucun angle physique.</p>
+ </div></div>
+</section>
+
+<section class="card" style="margin-top:20px;padding:23px" id="kinSection">
+ <div class="panel-heading"><div class="panel-icon panel-icon-blue">05</div><div class="panel-heading-text"><span class="sup-label">EP PARTIE 1 · SCHÉMA CINÉMATIQUE</span><h2>Chaîne de liaisons et mobilité</h2></div><span class="panel-counter">RRRRR · 5 DDL</span></div>
+ <p class="kin-note">Étude d'une chaîne ouverte de cinq liaisons pivot. Sélectionnez une liaison : son repère est surligné dans le graphe et dans le schéma articulaire. Le calcul de mobilité est celui de la chaîne cinématique idéale du cours (pas une mesure).</p>
+ <div class="kin-grid"><div class="kin-panel"><div class="kin-title">Graphe des solides et des pivots</div><svg id="kinChain" class="kin-chain" viewBox="0 0 700 175" role="img" aria-label="Six solides dont un fixe reliés par cinq liaisons pivot"></svg>
+ <div class="kin-btns" id="kinJointButtons"></div><div class="kin-calc" id="kinJointInfo">Sélectionnez une liaison.</div></div>
+ <div class="kin-panel"><div class="kin-title">Calcul de mobilité</div><div class="kin-calc" id="kinMobility">5 solides mobiles · 5 pivots de classe 5</div><svg id="kinBody" class="kin-chain" viewBox="0 0 520 320" role="img" aria-label="Schéma mécanique simplifié avec la liaison sélectionnée"></svg><p class="kin-note">La commande des curseurs existants permet de faire varier les cinq coordonnées articulaires. Le dessin est un modèle simplifié, distinct du modèle exact de Denavit-Hartenberg.</p></div></div>
+</section>
+<section class="card" style="margin-top:20px;padding:23px" id="sensorSection">
+ <div class="panel-heading"><div class="panel-icon panel-icon-teal">03</div><div class="panel-heading-text"><span class="sup-label">EP PARTIE 1 · QUESTION 3</span><h2>Capteurs et retours d’information</h2></div><span class="panel-counter">DOCUMENTAIRE / SIMULÉ</span></div>
+ <p style="font-size:12px;color:#617b8d;line-height:1.65">Repérage pédagogique O1 (lacet), O2 (épaule), O3 (coude). Les angles ci-dessous proviennent des curseurs du <strong>modèle</strong> : aucun capteur du robot réel n’est connecté. Les désignations, la nature et l'implantation physique restent à confirmer dans le descriptif constructeur.</p>
+ <div class="sens-grid">
+  <div class="sens-panel"><strong style="font-size:13px">Repérage des trois axes</strong>
+   <svg id="sensorDiagram" viewBox="0 0 720 440" role="img" aria-label="Schéma pédagogique des trois capteurs de position" style="width:100%;background:#f9fcff;border-radius:10px;margin-top:9px"></svg>
+   <div class="sens-pills" id="sensorChoices"></div>
+   <div class="sens-data" id="sensorDesc" aria-live="polite"></div>
+  </div>
+  <div class="sens-panel"><strong style="font-size:13px">Position et vitesse estimée</strong>
+    <table class="sens-table"><thead><tr><th>Axe</th><th>Angle du modèle</th><th>Retour</th></tr></thead><tbody id="sensorAngles"></tbody></table>
+    <div class="sens-actions"><button id="sensorCaptureA" type="button">Capturer A</button><button id="sensorCaptureB" type="button">Capturer B</button><button id="sensorClear" type="button">Effacer</button></div>
+    <div class="sens-data" id="sensorVelocity">Capture A, modifiez les angles, puis capture B pour calculer Δθ/Δt.</div>
+    <p class="sens-note"><strong>Attention :</strong> les vitesses sont estimées à partir de deux états du logiciel et du temps écoulé entre les clics. Ce ne sont pas des relevés tachymétriques. Le module n’implémente ni boucle d’asservissement réelle ni modèle validé des capteurs. Les tachymètres M1–M3 restent une identification documentaire à confirmer.</p>
+  </div>
+ </div>
+</section>
+<section class="card" style="margin-top:20px;padding:22px" id="geomSection">
+ <div class="panel-heading"><div class="panel-icon panel-icon-blue">∑</div><div class="panel-heading-text"><span class="sup-label">04 · MODÉLISATION</span><h2>Géométrie directe et inverse</h2></div></div>
+ <p class="small">MGD : angles → position. MGI : position cible → angles. Modèle géométrique simplifié cohérent avec les vues 2D/3D ci-dessus ; les matrices DH du cours sont présentées séparément.</p>
+ <div class="geomgrid">
+ <div class="geomblock"><h3>Modèle géométrique direct (MGD)</h3><p class="small">Les curseurs articulaires pilotent la position du point G (pince).</p><div id="mgdData" class="geomdata"></div><div class="geommath">r<sub>E</sub> = L₂ cos θ₂ ; z<sub>E</sub> = L₁ + L₂ sin θ₂<br>r<sub>W</sub> = r<sub>E</sub> + L₃ sin(θ₂ + θ₃)<br>z<sub>W</sub> = z<sub>E</sub> − L₃ cos(θ₂ + θ₃)<br>r<sub>G</sub> = r<sub>W</sub> + L₄ sin(θ₂ + θ₅)<br>z<sub>G</sub> = z<sub>W</sub> − L₄ cos(θ₂ + θ₅)<br>x = r<sub>G</sub> cos θ₁ ; y = r<sub>G</sub> sin θ₁</div></div>
+ <div class="geomblock"><h3>Modèle géométrique inverse (MGI)</h3><p class="small">Indique une cible pour le point G. Le solveur cherche une configuration admissible, en conservant θ₅ fixé.</p><div class="geomfields"><label>X (mm)<input id="ikx" type="number" step="1"></label><label>Y (mm)<input id="iky" type="number" step="1"></label><label>Z (mm)<input id="ikz" type="number" step="1"></label></div><div class="geombuttons"><button class="btn main" id="solveIK">Calculer les angles</button><button class="btn" id="copyMGD">Reprendre position actuelle</button></div><div id="ikResult" class="geomdata">Prêt pour le calcul inverse.</div><p class="small">MGI partiel : position seule, θ₅ conservé, θ₄ libre ; plusieurs solutions ou aucune peuvent exister. Les limites articulaires sont vérifiées.</p></div>
+ </div>
+ <div class="geomgrid" style="margin-top:14px"><div class="geomblock"><h3>Repères et axes de la chaîne</h3><p class="small">Positions des articulations dans R₀, et trièdre local de la pince (rouge X, vert Y, bleu Z).</p><svg id="geomAxes" viewBox="0 0 630 320" style="width:100%;background:#fff;border-radius:10px;border:1px solid #dfe9f1"></svg><div id="geomPositions" class="geomdata"></div></div><div class="geomblock"><h3>Matrice homogène T₀G — modèle simplifié</h3><p class="small">T = [R | p] ; rotation orthonormée et translation en mm.</p><div id="geomMatrix" class="matwrap"></div><p class="small">Pour le modèle complet du cours : T₀₅ = T₀₁ · T₁₂ · T₂₃ · T₃₄ · T₄₅.</p></div></div>
+ <details class="command-details" style="margin-top:14px"><summary>Convention Denavit-Hartenberg du cours <span>⌄</span></summary><p class="small">Paramètres relevés dans « C7 Modélisation ERICC ». Les cotes d₃, d₄, r₅ sont symboliques dans ce tableau : ne pas assimiler sans vérification la matrice DH du cours à la matrice géométrique simplifiée ci-dessus.</p><table class="tbl"><tr><th>Liaison</th><th>αᵢ</th><th>dᵢ</th><th>θᵢ</th><th>rᵢ</th></tr><tr><td>1</td><td>0°</td><td>0</td><td>θ₁</td><td>0</td></tr><tr><td>2</td><td>90°</td><td>0</td><td>θ₂</td><td>0</td></tr><tr><td>3</td><td>0°</td><td>d₃</td><td>θ₃</td><td>0</td></tr><tr><td>4</td><td>0°</td><td>d₄</td><td>θ₄</td><td>0</td></tr><tr><td>5</td><td>90°</td><td>0</td><td>θ₅</td><td>r₅</td></tr></table></details>
+</section>
+
+<section class="card" id="advancedERICC" style="margin-top:20px;padding:22px">
+<div class="panel-heading"><div class="panel-icon panel-icon-teal">∑</div><div class="panel-heading-text"><span class="sup-label">05 · EXTENSION SCIENTIFIQUE</span><h2>Modèle du cours, matrices et validation</h2></div><span class="v7tag">MATHÉMATIQUES REPRODUCTIBLES</span></div>
+<p class="v7warning"><b>Deux modèles à distinguer :</b> les vues 2D/3D et le premier solveur utilisent une géométrie pédagogique simplifiée. Le module ci-dessous implémente <b>séparément</b> le tableau DH/Dombre-Khalil du cours. Les paramètres symboliques d₃, d₄ et r₅ sont modifiables ; leurs valeurs de démonstration ne sont <b>pas</b> des cotes constructeur validées. Le repère et les zéros doivent être contrôlés sur le robot.</p>
+<div class="v7grid">
+<div class="v7panel"><h3>1 · Paramétrage DH du cours</h3><p class="v7small">Convention exacte du sujet : Tᵢ₋₁,ᵢ = Rot(X,αᵢ) Trans(X,dᵢ) Rot(Z,qᵢ) Trans(Z,rᵢ). Les cinq angles q sont mathématiques et peuvent différer des conventions des curseurs de l'interface.</p>
+<table class="v7table"><thead><tr><th>i</th><th>αᵢ</th><th>dᵢ</th><th>qᵢ</th><th>rᵢ</th></tr></thead><tbody><tr><td>1</td><td>0°</td><td>0</td><td>q₁</td><td>0</td></tr><tr><td>2</td><td>90°</td><td>0</td><td>q₂</td><td>0</td></tr><tr><td>3</td><td>0°</td><td>d₃</td><td>q₃</td><td>0</td></tr><tr><td>4</td><td>0°</td><td>d₄</td><td>q₄</td><td>0</td></tr><tr><td>5</td><td>90°</td><td>0</td><td>q₅</td><td>r₅</td></tr></tbody></table>
+<div class="v7numbers" style="margin-top:12px"><label>d₃ (mm)<input type="number" step="0.1" value="280" id="dhD3"></label><label>d₄ (mm)<input type="number" step="0.1" value="317.5" id="dhD4"></label><label>r₅ (mm)<input type="number" step="0.1" value="150" id="dhR5"></label></div>
+<p class="v7small">Valeurs d'exemple pour tester les calculs, <b>non certifiées</b>. Aucun décalage vertical de socle n'est inclus dans le tableau officiel ci-dessus.</p></div>
+<div class="v7panel"><h3>2 · Angles DH indépendants</h3><p class="v7small">Modifie les qᵢ directement ou copie les cinq nombres des curseurs comme <b>essai numérique</b> (sans prétendre que les conventions sont identiques).</p>
+<div class="v7numbers"><label>q₁ (°)<input id="dhq1" type="number" value="0" step="1"></label><label>q₂ (°)<input id="dhq2" type="number" value="30" step="1"></label><label>q₃ (°)<input id="dhq3" type="number" value="30" step="1"></label><label>q₄ (°)<input id="dhq4" type="number" value="60" step="1"></label><label>q₅ (°)<input id="dhq5" type="number" value="0" step="1"></label></div>
+<div class="v7buttons"><button id="dhRefresh" class="active">Recalculer T₀₅</button><button id="dhCopy">Copier les angles des curseurs</button></div>
+<div id="dhPoint" class="v7mono" aria-live="polite"></div></div>
+<div class="v7panel"><h3>3 · Matrices de passage</h3><p class="v7small">Sélectionne T₀₁, T₁₂, T₂₃, T₃₄, T₄₅ ou leur produit T₀₅.</p><div class="v7buttons" id="dhMatrixButtons"></div><div class="v7matrix" id="dhMatrix"></div><p class="v7small" id="dhCheck"></p></div>
+<div class="v7panel"><h3>4 · Repères locaux et axes</h3><p class="v7small">Trièdres DH : axes X (rouge), Y (vert), Z (bleu), calculés par multiplication matricielle cumulative. Vue 3D projetée du modèle du cours (distinct du dessin simplifié).</p><svg id="dhDiagram" class="v7plot" viewBox="0 0 570 245" aria-label="Repères DH du robot ERICC"></svg><div class="v7small" id="dhAxesList"></div></div>
+<div class="v7panel"><h3>5 · MGI numérique (modèle DH)</h3><p class="v7small">Calcul de q₁…q₅ pour atteindre une cible de position dans le modèle DH : optimisation amortie sur les 5 axes, plusieurs amorces, limites <b>mathématiques indicatives</b> à valider. L'orientation complète n'est pas imposée.</p><div class="v7numbers"><label>X (mm)<input id="dhix" type="number" step="0.1" value="0"></label><label>Y (mm)<input id="dhiy" type="number" step="0.1" value="0"></label><label>Z (mm)<input id="dhiz" type="number" step="0.1" value="0"></label></div><div class="v7buttons"><button id="dhUseFK">Prendre cible MGD</button><button id="dhSolve" class="active">Résoudre MGI</button></div><div id="dhIKStatus" class="v7mono">Saisir une cible, puis résoudre.</div></div>
+<div class="v7panel"><h3>6 · Validation et singularités</h3><p class="v7small">Jacobienne numérique de position Jᵥ (3 × 5) : colonnes ∂p/∂qᵢ en mm/rad. Une baisse du rang indique une perte de mobilité de translation ; elle ne décrit pas toutes les singularités de pose.</p><div id="dhJacobian" class="v7mono"></div><div id="dhSingular" class="v7warning"></div><div class="v7buttons"><button id="dhTest">Exécuter autotests</button></div><div id="dhTestStatus" class="v7mono"></div>
+<div style="margin-top:15px;border-top:1px solid #cedee6;padding-top:14px">
+<h4 style="margin:0 0 8px">Essai EP · alignement vertical et singularité</h4>
+<p class="v7small">Comparer une configuration de référence à la <b>posture verticale calculée</b> avec la convention DH du cours. Vérification des axes Z₁ et Z₅, du rayon du point terminal, des rangs de Jᵥ (3 × 5) et de J (6 × 5). La preuve est mathématique pour ce modèle ; sa réalisation sur le robot reste à vérifier.</p>
+<div class="v7buttons"><button id="singReference" type="button">1 · Référence DH</button><button id="singCandidate" type="button">2 · Posture verticale DH</button><button id="singRun" type="button">3 · Analyser la posture</button></div>
+<div id="singReport" class="v7mono" style="margin-top:10px;white-space:pre-wrap" aria-live="polite">Cliquez sur « Analyser la posture » pour voir les résultats.</div>
+<p class="v7small">Démonstration pour la convention DH du cours : q₂=90°, q₃=0°, q₄=−90° donnent un rayon terminal nul et Z₅ colinéaire à Z₁. Les dimensions DH sont des valeurs d’essai non certifiées ; cette preuve ne garantit ni le respect des butées du robot réel ni l’équivalence des numérotations θ₄/θ₅ entre le cours et l’interface.</p>
+</div></div>
+<div class="v7panel"><h3>7 · Volume et trajectoire</h3><p class="v7small">Projection r–z du modèle simplifié sur un échantillon de configurations admissibles ; <b>pas</b> un calcul volumique exact et pas une mesure de l'espace atteignable du robot réel.</p><svg id="workPlot" class="v7plot" viewBox="0 0 570 245"></svg><div id="workStatus" class="v7small"></div><div class="v7buttons"><button id="workSample">Échantillonner le volume</button></div></div>
+<div class="v7panel"><h3>8 · Reproductibilité du rapport</h3><p class="v7small">Exporter les paramètres, angles, matrices, point atteint, tests et notes. Le fichier JSON permet à un correcteur de vérifier les calculs sans appareil.</p><div class="v7buttons"><button id="dhExport">Exporter données JSON</button><button id="dhPrint">Imprimer les calculs</button></div><div class="v7mono" id="reproNotes">Sources : sujet EP 4A GII 2026, C7 Modélisation ERICC, descriptif constructeur. Mesures sur matériel : non réalisées (accès laboratoire indisponible).</div></div>
+<div class="v7panel v7wide v7ep"><h3>9 · Guide de réponse — toutes les rubriques de l'EP</h3><p class="v7small">Ces indications servent à rédiger le rapport : aucune observation expérimentale n'est présentée comme réalisée.</p>
+<details><summary>Architecture, motorisations, capteurs et chaîne cinématique</summary><p>Robot série RRRRR, cinq articulations de rotation : lacet, épaule, coude, orientation du poignet/pince. M1–M3 : moteurs à courant continu ; deux moteurs pas à pas pour le poignet avec couplage différentiel. Décrire les capteurs uniquement après localisation certaine sur les planches et distinguer capteurs de position, de référence et de fin de course. Schéma cinématique : cinq pivots successifs ; mobilité utile M = 5 pour chaîne série ouverte rigide à 5 pivots (en retenant 5 corps mobiles).</p></details>
+<details><summary>Initialisation, bornes θ₁…θ₅ et zéros</summary><p>Documentaire : θ₁ ±135°, θ₂ [−45°, +90°], θ₃ [−45°, +90°], θ₄ ±180° ; l'inclinaison du poignet dépend de la géométrie / du couplage. Les zéro angulaires et valeurs après initialisation doivent respecter les figures du constructeur ; les valeurs fig. 11 du simulateur sont des <b>estimations</b>. Les minima/maxima <b>pratiques</b> du sujet exigent des essais sur le robot et ne doivent pas être remplacés par les seules bornes documentaires.</p></details>
+<details><summary>Couplage du poignet, 5 DDL et contraintes d'orientation</summary><p>Le poignet comporte deux actionneurs couplés : combinaison différentielle de leurs mouvements pour inclinaison et rotation. Le robot a cinq degrés de liberté : il ne peut pas imposer arbitrairement les six composantes d'une pose spatiale. Un MGI de position peut admettre plusieurs solutions et les limites articulaires réduisent leur ensemble. Le passage entre qᵢ DH et θᵢ constructeur doit être étalonné avant contrôle du matériel.</p></details>
+<details><summary>Volume de travail, table, repères et singularités</summary><p>Définir R₀ au socle, le plan de table Z=0 et les repères des supports/pièces ; tenir compte des offsets physiques, de l'encombrement du support et des collisions. Projeter les configurations admissibles dans r–z, puis appliquer le balayage de lacet autorisé. L'alignement bras–avant-bras peut rendre la jacobienne du sous-système plan singulière ; une position sur l'axe du lacet fait perdre l'influence du lacet sur la position. Pour le robot complet, analyser la jacobienne adéquate avant toute affirmation.</p></details>
+<details><summary>Télé-opération et prise-dépose de pièces</summary><p>Élaborer une séquence approche → orientation de pince → ouverture → prise → fermeture → dégagement → transport → dépôt → retrait. Les cylindres présentent une symétrie d'orientation ; les parallélépipèdes demandent un alignement des faces. Vérifier orientation atteignable, collision, préhension et limites de course. Aucun résultat de saisie réelle ne peut être revendiqué sans manipulation.</p></details>
+<details><summary>Apprentissage, points VAL/P/L, linéarité</summary><p>Le sujet spécifie I (initialisation), Val (mémoriser), P (début de programme), L (lecture). La trajectoire d'une interpolation articulaire entre deux postures ne suit généralement pas un segment droit dans l'espace cartésien. Ajouter des points de passage peut réduire l'écart ; pour garantir une droite, il faut une interpolation opérationnelle assortie d'un MGI valide, du contrôle des limites et des singularités.</p></details>
+<details><summary>MGD, matrices DH, MGI par Paul et validation</summary><p>Calculer T₀₁…T₄₅ par la formule fournie, multiplier pour T₀₅, contrôler RᵀR = I et det(R)=1. Le cours préconise la <b>méthode de Paul</b> pour le MGI symbolique ; le solveur numérique proposé ici est un outil supplémentaire de vérification, <b>non un remplacement</b> de la démonstration par Paul demandée. Reproduire un exemple numérique MGD puis MGI→MGD avec erreur résiduelle mesurée.</p></details>
+</div></div></section>
+<section class="card console-card" id="terminalZone"><div class="panel-heading"><div class="panel-icon panel-icon-purple">›_</div><div class="panel-heading-text"><span class="sup-label">03 · INTERFACE DE COMMANDE</span><h2>Terminal virtuel</h2></div><span class="console-label"><span class="console-led"></span> SESSION LOCALE</span></div>
+<p class="console-intro">Teste les instructions ERICC dans une interface pédagogique. Les commandes ne pilotent aucun matériel.</p>
+<div class="console-layout"><div class="terminal-zone"><div class="terminal-top"><span class="terminal-dots"><i></i><i></i><i></i></span><span>ericc / terminal</span><span class="term-tag">● en ligne</span></div><div aria-live="polite" class="console" id="term"></div><div class="cmdrow"><input aria-label="Commande simulée" id="cmd" placeholder="Ex. CO ; RA 2,45,10 ; RR 3,5,10 ; OP 25 ; VAL" spellcheck="false"/><button class="btn main" id="send">Exécuter</button></div></div><div class="quick-zone"><div class="action-heading">COMMANDES RAPIDES</div><p class="small">Lance une instruction en un clic, ou écris la tienne.</p><div class="buttons"><button class="btn" data-command="CO">CO</button><button class="btn" data-command="IM">IM</button><button class="btn" data-command="IP">IP</button><button class="btn" data-command="OP 25">OP 25</button><button class="btn" data-command="VAL">VAL</button><button class="btn" data-command="P">P</button><button class="btn" data-command="L">L</button><button class="btn" data-command="AIDE">AIDE</button></div><div class="status" id="teachstatus" style="margin-top:12px">Points enregistrés : 0</div></div></div><details class="command-details"><summary>Voir les commandes disponibles <span>⌄</span></summary><table class="tbl"><tr><th>Commande</th><th>Comportement de ce prototype</th></tr><tr><td><code>I / IM / IP</code></td><td>Ramène aux valeurs de référence sélectionnées : <em>simulation du résultat</em>, sans capteurs d'origine.</td></tr><tr><td><code>CO</code></td><td>Affiche les angles simulés, sans contact avec le robot.</td></tr><tr><td><code>RA m,d,v</code> / <code>RR m,i,v</code></td><td>Contrôle simplifié des moteurs M1–M3 seulement. <em>v</em> non calibrée. M4 et M5 commandent un différentiel : pas assimilés directement à θ₄ et θ₅.</td></tr><tr><td><code>OP a</code> / <code>FP f</code></td><td>Ouverture 0–55 mm ; fermeture idéale sans vraie force ni objet.</td></tr><tr><td><code>VAL / EFF / P / L</code></td><td>Points d'apprentissage simplifiés ; lecture d'une séquence enregistrée.</td></tr></table></details></section>
+</div><footer><div class="footer-inner"><span><strong>ERICC STUDIO</strong> · Polytech Marseille · 2026</span><span>Étude documentaire, sans liaison au robot réel.</span></div></footer>
+
+<section id="teleoperation" class="card" style="margin:22px 0;padding:24px">
+ <span class="sup-label">PARTIE EP · TÉLÉ-OPÉRATION VIRTUELLE</span>
+ <h2 style="margin:8px 0">V18 — Animation interactive : prise · déplacement · dépose</h2>
+ <p class="panel-subline" style="max-width:950px">Animation pédagogique 2,5D avec bras articulé illustratif (IK plane de deux segments, non reliée au modèle DH) : positions X/Y en plan, hauteur Z et orientation de pince. Les contraintes simplifiées de portée, ouverture, distance d'approche et orientation sont vérifiées. Ni physique de contact, ni collisions 3D du robot réel.</p>
+ <div class="buttons" style="margin-bottom:15px">
+  <label>Pièce <select id="tpShape" class="select"><option value="cyl">Cylindre (Ø 36 mm)</option><option value="box">Parallélépipède (largeur 44 mm, orientation 30°)</option></select></label>
+  <label>Destination <select id="tpGoal" class="select"><option value="deposit">Zone de dépose (360, 100) mm</option><option value="neighbor">Zone accessible au robot voisin (470, 100) mm</option></select></label>
+  <button type="button" class="btn main" id="tpAuto">▶ Exécuter le cycle simulé</button>
+  <button type="button" class="btn" id="tpPause">⏸ Pause</button>
+  <button type="button" class="btn" id="tpStep">Étape suivante</button>
+  <label style="display:flex;align-items:center;gap:8px">Vitesse <input id="tpSpeed" type="range" min="0.4" max="3" step="0.2" value="1" style="width:95px"/><output id="tpSpeedVal">1×</output></label>
+  <button type="button" class="btn" id="tpReset">↺ Réinitialiser</button>
+  <button type="button" class="btn" id="tpExport">↓ Exporter les résultats JSON</button>
+ </div>
+ <div style="display:grid;grid-template-columns:minmax(290px,1.45fr) minmax(250px,1fr);gap:18px" class="tpCols">
+  <div><svg id="tpCanvas" role="img" aria-label="Animation de la table virtuelle, du bras articulé, des pièces et de la pince" viewBox="0 0 720 420" style="display:block;width:100%;background:#f7fbfd;border:1px solid #dce9ef;border-radius:12px"></svg><div style="margin:10px 0 0"><div style="font-weight:750;color:#36566e;margin-bottom:6px">Vue latérale animée · levée et descente</div><svg id="tpSide" viewBox="0 0 720 160" style="display:block;width:100%;background:#fff;border:1px solid #dce9ef;border-radius:10px" role="img" aria-label="Vue de profil simplifiée du robot animé"></svg></div><div id="tpPose" class="status" aria-live="polite"></div></div>
+  <div><h3 style="font-size:14px;margin:0 0 8px">Résultats de l’essai</h3><pre id="tpReport" style="white-space:pre-wrap;line-height:1.55;font:12px/1.5 ui-monospace,Consolas,monospace;min-height:156px;border:1px solid #e1e9ef;background:#f9fcff;border-radius:11px;padding:12px;overflow:auto">Choisir une pièce puis lancer le cycle.</pre><h3 style="font-size:14px;margin:12px 0 8px">Journal des événements</h3><div id="tpLog" style="max-height:220px;overflow:auto;font:11.5px/1.5 ui-monospace,monospace;color:#49657a;background:#f6f8fb;padding:12px;border:1px solid #e5ebf1;border-radius:10px"></div></div>
+ </div>
+ <p style="font-size:11px;color:#718394;margin:12px 0 0">Hypothèses de calcul : portée radiale de travail [150, 680] mm ; ouverture maximale des mors 70 mm ; tolérance de centrage de 10 mm ; prise à Z = 20 mm ; déplacement sécurisé à Z = 120 mm ; pièce représentée comme attachée à la pince lorsque les conditions de prise sont satisfaites. Ces paramètres sont définis pour l’exercice, non mesurés sur ERICC.</p>
+</section>
+
+<section id="handoff" class="card" style="margin:22px 0;padding:24px">
+ <span class="sup-label">EP · DEUXIÈME MANIPULATION · TRANSFERT INTER-ROBOTS</span>
+ <h2 style="margin:8px 0">V18 — Deux robots virtuels : déposer, libérer, récupérer</h2>
+ <p class="panel-subline">Deux bras illustratifs animés en vue de dessus, pince et pièce synchronisées, zone commune, conditions initiales/finales contrôlées et journal des essais. Modèle <b>2,5D pédagogique</b> : il ne prouve pas l'accessibilité des modèles physiques ERICC.</p>
+ <div class="buttons" style="margin:12px 0">
+  <label>Objet <select id="hoShape" class="select"><option value="cyl">Cylindre Ø 36 mm</option><option value="box">Parallélépipède 44 mm, 30°</option></select></label>
+  <label>Orientation demandée <select id="hoOrient" class="select"><option value="auto">Alignement adapté (succès attendu)</option><option value="wrong">Orientation incompatible avec la prise (test d'échec)</option></select></label>
+  <label>Synchronisation <select id="hoSync" class="select"><option value="safe">Attendre le retrait du robot 1</option><option value="unsafe">Prise prématurée (test d'échec)</option></select></label>
+  <button id="hoStart" class="btn main" type="button">▶ Animer le transfert complet</button>
+  <button id="hoPause" class="btn" type="button">⏸ Pause</button>
+  <button id="hoStep" class="btn" type="button">Étape par étape</button>
+  <button id="hoReset" class="btn" type="button">↺ Réinitialiser</button>
+  <button id="hoExport" class="btn" type="button">↓ Exporter rapport JSON</button>
+ </div>
+ <div class="tpCols" style="display:grid;grid-template-columns:minmax(310px,1.4fr) minmax(260px,1fr);gap:16px">
+  <div><svg id="hoScene" viewBox="0 0 780 425" role="img" aria-label="Deux bras robotisés effectuent un transfert d'objet" style="display:block;width:100%;background:#f8fbfe;border:1px solid #dce9ef;border-radius:12px"></svg>
+   <div id="hoStatus" class="status" aria-live="polite" style="margin-top:10px">Prêt.</div>
+   <p style="font-size:12px;color:#657d8b">R1 : base (0, 0), portée simplifiée [150, 640] mm · R2 : base (660, 0), portée [100, 360] mm · Zone d'échange (470, 100) mm · marge de retrait 80 mm · prise à Z=20 mm, transport à Z=120 mm. Valeurs choisies pour le prototype.</p>
+  </div>
+  <div><h3 style="font-size:14px;margin:0 0 8px">Validation et mesures</h3><pre id="hoMetrics" style="white-space:pre-wrap;font:12px/1.55 ui-monospace,monospace;background:#f9fcff;padding:12px;border:1px solid #e1e9ef;border-radius:10px;min-height:170px"></pre><h3 style="font-size:14px;margin:12px 0 8px">Journal chronologique</h3><div id="hoEvents" style="max-height:270px;overflow:auto;padding:12px;background:#f6f8fb;border:1px solid #e1e9ef;border-radius:10px;font:11.5px/1.55 ui-monospace,monospace"></div></div>
+ </div>
+ <details style="margin-top:15px"><summary>Algorithme de transfert et réponses aux quatre questions</summary>
+ <div style="padding:12px 6px;line-height:1.7;font-size:13px">
+ <p><b>Difficultés :</b> géométrie de prise, portée des deux robots, orientation, hauteur, absence de collision et synchronisation.</p>
+ <p><b>Solutions :</b> cible appartenant aux deux espaces accessibles supposés, orientation adaptée aux mors, montée en Z avant transfert, dépôt par R1, retrait, validation de la zone libre, puis approche de R2.</p>
+ <p><b>Conditions initiales :</b> pièce au point (220, 90) mm, deux pinces ouvertes, bras hors de la zone d'échange, cible fixée à (470, 100) mm.</p>
+ <p><b>Conditions finales :</b> R1 retiré, R2 a saisi la pièce et l'a transportée vers sa zone propre (600, 170) mm, puis libérée.</p>
+ <p><b>Algorithme :</b> vérifier la double portée → approche R1 → alignement et prise → montée → déplacement au point commun → descente et ouverture → retrait R1 → confirmer libération de zone → approche R2 → saisir → lever → transférer → déposer → retrait R2 → enregistrer statut.</p>
+ </div></details>
+</section>
+
+<section class="card" id="epEndV20" style="margin-top:22px;padding:24px;border:2px solid #9bcdd8">
+ <div class="panel-heading"><div class="panel-icon panel-icon-purple">20</div><div class="panel-heading-text"><span class="sup-label">FIN DE L’EP · VALIDATIONS NUMÉRIQUES REPRODUCTIBLES</span><h2>Trajectoire rectiligne, matrices DH et méthode de Paul</h2></div><span class="panel-counter">V20</span></div>
+ <p style="color:#527187;font-size:12px;line-height:1.65">Ce module utilise <b>le modèle Denavit-Hartenberg pédagogique déjà présent</b>, distinct du dessin articulé simplifié. Il calcule les résultats dans le navigateur et permet d’exporter les essais. L’absence d’accès au robot réel empêche toute validation physique.</p>
+ <div class="buttons" style="margin:12px 0"><button class="btn main" id="ep20Run">▶ Exécuter tous les essais</button><button class="btn" id="ep20Play">▶ Animer la trajectoire cartésienne</button><button class="btn" id="ep20Stop">Ⅱ Pause / arrêt</button><button class="btn" id="ep20Export">↓ Exporter résultats JSON</button></div><div id="ep20RunNote" style="margin:-2px 0 10px;color:#4c6b7d;font-size:11px">Prêt.</div>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px">
+ <div class="sbox" style="padding:12px"><strong>Essai A — Interpolation articulaire / ligne cartésienne</strong><svg id="ep20Plot" viewBox="0 0 540 315" style="width:100%;background:#fbfdff;border-radius:12px;margin-top:10px" role="img" aria-label="Courbe de l'effecteur en interpolation articulaire comparée à la ligne cartésienne"><rect width="540" height="315" fill="white"/></svg><div id="ep20Legend" style="font-size:11px;color:#617688">Bleu : interpolation articulaire · orange : ligne cartésienne cible · points verts : MGI cartésien</div></div>
+ <div class="sbox" style="padding:12px"><strong>Essais B–D — Résultats numériques</strong><pre id="ep20Results" style="white-space:pre-wrap;line-height:1.7;font-size:11px;background:#f3f8fa;padding:11px;border-radius:10px;min-height:300px">Appuyez sur « Exécuter tous les essais ».</pre></div>
+ </div>
+ <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:14px;margin-top:14px">
+ <div class="sbox" style="padding:13px"><strong>Matrices T₀₁ ... T₀₅ et élimination de Paul</strong><p style="font-size:11px;color:#597789;margin:8px 0">Choisir une étape : U₀ = T₀₅ puis U₁ = T₁₀U₀, U₂ = T₂₁U₁, etc. À chaque étape, le résultat est comparé au produit des matrices restantes.</p><div class="buttons" id="ep20PaulButtons" style="margin-bottom:8px"></div><pre id="ep20Paul" style="white-space:pre;overflow:auto;font-size:10px;line-height:1.5;background:#f3f8fa;padding:9px;border-radius:8px"></pre></div>
+ <div class="sbox" style="padding:13px"><strong>Effecteur — repère de prise au-delà du poignet</strong><p style="font-size:11px;color:#597789;margin:8px 0">Hypothèse : repère de préhension T₅P = Translation(z₅, ℓ), ℓ variable. Le décalage doit être mesuré sur la pince physique pour validation.</p><label for="ep20ToolLen">Distance poignet → point de prise (mm) : <output id="ep20ToolOut">80</output></label><input id="ep20ToolLen" type="range" min="0" max="180" value="80" step="5" style="width:100%"/><pre id="ep20Tool" style="white-space:pre-wrap;font-size:11px;line-height:1.7;background:#f3f8fa;padding:10px;border-radius:8px"></pre></div>
+ </div>
+ <div class="status warn" style="margin-top:14px">Attention : notre MGI résout actuellement uniquement la <b>position (X,Y,Z)</b>, en maintenant une solution articulaire proche de l’amorce ; il ne garantit pas l’orientation complète de la pince, ni la réalisation d’une droite à vitesse constante. La méthode de Paul est illustrée algébriquement par des pré-multiplications, sans revendiquer une formule analytique exhaustive pour les cinq angles.</div>
+</section>
+</main>
+
+<section class="card" id="learningV19" style="margin:22px 0;padding:24px">
+ <div class="panel-heading"><div class="panel-icon panel-icon-teal">↝</div><div class="panel-heading-text"><span class="sup-label">09 · APPRENTISSAGE ET PROGRAMMATION</span><h2>Trajectoire par apprentissage — ERICC V19</h2></div><span class="v7tag">ESSAI REPRODUCTIBLE</span></div>
+ <p class="small">Sélectionne une posture à l'aide des cinq curseurs du robot, puis enregistre-la avec <b>Val</b>. <b>I</b> restaure la posture initiale virtuelle, <b>P</b> remet le pointeur au début et <b>L</b> anime les points enregistrés. Les courbes comparent <b>l'interpolation articulaire</b> à la droite entre les positions extrêmes du point G. Modèle cinématique simplifié, non validé sur machine.</p>
+ <div class="v7buttons" style="margin:10px 0;flex-wrap:wrap"><button id="lrI">I · Initialiser</button><button id="lrVal" class="active">Val · Enregistrer point</button><button id="lrP">P · Début</button><button id="lrL" class="active">L · Lire / animer</button><button id="lrStop">Pause / Stop</button><button id="lrClear">Effacer les points</button></div>
+ <div class="v7buttons" style="margin:10px 0;flex-wrap:wrap"><button id="lrExample2">Essai A · 2 points éloignés</button><button id="lrExample5">Essai B · 5 points intermédiaires</button><button id="lrExport">Exporter les résultats JSON</button></div>
+ <div class="geomgrid"><div class="geomblock"><h3>Vue de dessus · plan XY</h3><svg id="lrXY" viewBox="0 0 520 250" style="width:100%;background:#fff;border:1px solid #dce4ee;border-radius:10px"></svg></div><div class="geomblock"><h3>Vue latérale · plan XZ</h3><svg id="lrXZ" viewBox="0 0 520 250" style="width:100%;background:#fff;border:1px solid #dce4ee;border-radius:10px"></svg></div></div>
+ <p class="small" style="margin-top:8px"><span style="color:#087d83;font-weight:700">━━</span> Trajectoire réelle dans le modèle (interpolation articulaire) · <span style="color:#e07945;font-weight:700">┄┄</span> Segment cartésien idéal · <span style="color:#6a40aa;font-weight:700">●</span> Points appris</p>
+ <div class="geomgrid"><div class="geomblock"><h3>Mesures numériques</h3><div class="v7mono" id="lrMetrics" aria-live="polite">Enregistre au moins deux points.</div></div><div class="geomblock"><h3>Journal d'apprentissage</h3><div class="v7mono" id="lrLog" aria-live="polite" style="white-space:pre-wrap;max-height:230px;overflow:auto">Aucun point enregistré.</div></div></div>
+ <p class="v7warning" style="margin-top:12px"><b>Interprétation :</b> l'écart maximal est calculé en 3D par rapport au segment joignant chaque paire de points appris. Les courbes projetées XY / XZ ne suffisent pas à démontrer une trajectoire droite en 3D. Les mouvements de <b>L</b> interpolent les angles des articulations ; aucun calcul de MGI ni contrôle continu de collision n'est réalisé dans ce module.</p>
+</section>
+
+<script>
+'use strict';
+const joints=[['t1','θ₁ — Lacet',-135,135,0,'°'],['t2','θ₂ — Épaule',-45,90,30,'°'],['t3','θ₃ — Coude',-45,90,30,'°'],['t4','θ₄ — Rotation pince',-180,180,0,'°'],['t5','θ₅ — Inclinaison pince',-135,180,60,'°'],['op','Ouverture des mors',0,55,25,' mm']];
+const state={}; const inputs={}; const numinputs={}; let initCurrent=null;let waypoints=[];let pointer=0;let playing=false;let camYaw=38, camPitch=23;let lastClamp=false; let termCount=0;
+const C=document.getElementById('controls');const deg=x=>x*Math.PI/180;const round=x=>Math.round(x*10)/10;const fmt=x=>(Number.isFinite(x)?x.toFixed(1).replace('.',','):'—');
+for(const [key,label,min,max,def,unit] of joints){state[key]=def;let box=document.createElement('div');box.className='joint';box.innerHTML=`<div class="jtop"><label for="${key}">${label}</label><output id="${key}out">${def}${unit}</output></div><div class="jinputs"><input type="range" id="${key}" min="${min}" max="${max}" step="1" value="${def}" aria-label="${label}"><input type="number" id="${key}num" min="${min}" max="${max}" value="${def}" step="1" aria-label="Valeur de ${label}"></div><div class="jlimits"><span id="${key}lower">${min}${unit}</span><span id="${key}upper">${max}${unit}</span></div>`;C.appendChild(box);inputs[key]=box.querySelector('input[type=range]');numinputs[key]=box.querySelector('input[type=number]');inputs[key].addEventListener('input',()=>{state[key]=Number(inputs[key].value);update()});numinputs[key].addEventListener('change',()=>{let v=Number(numinputs[key].value);if(Number.isFinite(v))state[key]=v;update()})}
+function basePose(){return {t1:0,t2:30,t3:30,t4:0,t5:60,op:25}}
+function correct(){lastClamp=false;for(const [key,lab,min,max] of joints){let lo=key==='t5'?state.t3-90:min,hi=key==='t5'?state.t3+90:max;let vv=Number(state[key]);if(!Number.isFinite(vv))vv=0;if(vv<lo){vv=lo;lastClamp=true}if(vv>hi){vv=hi;lastClamp=true}state[key]=vv;inputs[key].min=lo;inputs[key].max=hi;numinputs[key].min=lo;numinputs[key].max=hi;inputs[key].value=vv;numinputs[key].value=vv;document.getElementById(key+'out').textContent=vv+(key==='op'?' mm':'°');document.getElementById(key+'lower').textContent=lo+(key==='op'?' mm':'°');document.getElementById(key+'upper').textContent=hi+(key==='op'?' mm':'°')}}
+const vec=(x,y,z)=>({x,y,z});const add=(a,b)=>vec(a.x+b.x,a.y+b.y,a.z+b.z);const mul=(v,s)=>vec(v.x*s,v.y*s,v.z*s);const dot=(a,b)=>a.x*b.x+a.y*b.y+a.z*b.z;const norm=v=>Math.hypot(v.x,v.y,v.z);
+function fk(s=state){let a=deg(s.t2),b=deg(s.t2+s.t3),w=deg(s.t2+s.t5),az=deg(s.t1);let er=vec(Math.cos(az),Math.sin(az),0),et=vec(-Math.sin(az),Math.cos(az),0);let S=vec(0,0,340),E=add(S,add(mul(er,280*Math.cos(a)),vec(0,0,280*Math.sin(a))));let W=add(E,add(mul(er,317.5*Math.sin(b)),vec(0,0,-317.5*Math.cos(b))));let G=add(W,add(mul(er,150*Math.sin(w)),vec(0,0,-150*Math.cos(w))));let tip=add(W,add(mul(er,170*Math.sin(w)),vec(0,0,-170*Math.cos(w))));let forward=add(mul(er,Math.sin(w)),vec(0,0,-Math.cos(w)));let side=add(mul(et,Math.cos(deg(s.t4))),mul(vec(-Math.sin(w)*0+Math.cos(w)*er.x,Math.cos(w)*er.y,Math.sin(w)),Math.sin(deg(s.t4))));let jaws=mul(side,Math.max(2,s.op/2));return {O:vec(0,0,0),S,E,W,G,tip,forward,side,jaws,pr:p=>Math.hypot(p.x,p.y),bearing:vec(Math.cos(az),Math.sin(az),0)}}
+const svg=(id,body)=>document.getElementById(id).innerHTML=body;
+const SVGline=(a,b,color,width,dash='')=>`<line x1="${a.x.toFixed(2)}" y1="${a.y.toFixed(2)}" x2="${b.x.toFixed(2)}" y2="${b.y.toFixed(2)}" stroke="${color}" stroke-width="${width}" stroke-linecap="round" ${dash?'stroke-dasharray="'+dash+'"':''}/>`;
+const SVGT=(x,y,content,color='#30485e',sz=13,weight=500)=>`<text x="${x}" y="${y}" font-size="${sz}" font-weight="${weight}" fill="${color}" font-family="Segoe UI,Arial,sans-serif">${content}</text>`;
+const circle=(p,r,c)=>`<circle cx="${p.x.toFixed(2)}" cy="${p.y.toFixed(2)}" r="${r}" fill="white" stroke="${c}" stroke-width="3"/>`;
+function profile(f){let sign=-1;const scale=.46,ox=sign===-1?468:166,oy=464;const P=q=>({x:ox+sign*Math.hypot(q.x,q.y)*scale,y:oy-q.z*scale});let {O,S,E,W,G,tip}=f;let o=P(O),s=P(S),e=P(E),w=P(W),g=P(G),t=P(tip);let content='<rect width="710" height="510" fill="#fff"/>';for(let x=35;x<710;x+=35)content+=`<path d="M${x},25V464" stroke="#eaf1f7"/>`;for(let y=35;y<465;y+=35)content+=`<path d="M0,${y}H710" stroke="#eaf1f7"/>`;
+content+=`<path d="M0,464H710" stroke="#95acbf" stroke-width="2"/>${SVGT(14,453,'z = 0 · table théorique','#7a8e9d',12)}`;content+=SVGline(P({x:0,y:0,z:0}),s,'#a8bacc',12);
+if(false){for(let t2=-45;t2<=90;t2+=9){for(let t3=-45;t3<=90;t3+=9){let p=fk({...state,t2,t3}).W;let pp=P(p);if(pp.x>=0&&pp.x<=710&&pp.y>=10&&pp.y<=466)content+=`<circle cx="${pp.x.toFixed(1)}" cy="${pp.y.toFixed(1)}" r="1.2" fill="#b0bfd1" opacity=".55"/>`}}}
+content+=SVGline(s,e,'#2778bc',12)+SVGline(e,w,'#16a085',10)+SVGline(w,g,'#995cb1',8)+SVGline(g,t,'#475a6d',5);for(let [p,color] of [[s,'#2778bc'],[e,'#16a085'],[w,'#995cb1']])content+=circle(p,7,color);
+let textAt=(p,txt,dx,dy,col)=>SVGT(p.x+dx,p.y+dy,txt,col,13,650);content+=textAt(s,'O₂ / épaule',sign*10,-14,'#2778bc')+textAt(e,'O₃ / coude',sign*10,-14,'#16a085')+textAt(w,'O₅ / poignet',sign*10,20,'#995cb1');
+content+=SVGT(18,25,`θ₂ = ${state.t2}°    θ₃ = ${state.t3}°    θ₅ = ${state.t5}°`,'#2d455d',15,700)+SVGT(18,45,`Direction bras ${state.t2}° · avant-bras ${state.t2+state.t3-90}° · pince ${state.t2+state.t5-90}°`,'#647d90',12);content+=SVGT(18,487,'Projection de profil : longueur du bras et angles selon le constructeur','#7a8e9d',12);svg('profile',content)}
+function drawTop(f){let cx=252,cy=163,r=110;let pol=(a,rad)=>({x:cx+rad*Math.sin(deg(a)),y:cy-rad*Math.cos(deg(a))});let pts=[];for(let a=-135;a<=135;a+=3){let p=pol(a,r);pts.push(`${p.x.toFixed(1)},${p.y.toFixed(1)}`)}let p=pol(state.t1,r);let c=`<rect width="550" height="310" fill="white"/><polygon points="${cx},${cy} ${pts.join(' ')}" fill="#e8f2fc" stroke="#b8d2e7"/><circle cx="${cx}" cy="${cy}" r="100" fill="none" stroke="#cbd7e3" stroke-dasharray="6 5"/>`;c+=SVGline({x:cx,y:cy},{x:cx,y:cy-113},'#cbd7e3',2,'6 4')+SVGline({x:cx,y:cy},p,'#1c77ad',13)+`<circle cx="${cx}" cy="${cy}" r="8" fill="#194d75" stroke="white" stroke-width="3"/>`+SVGT(15,34,'Rotation lacet — vue du dessus','#456a88',15,700)+SVGT(15,59,'Plage constructeur : −135° à +135°','#627f97',13)+SVGT(22,270,'−135°','#456a88',13)+SVGT(424,270,'+135°','#456a88',13)+SVGT(225,300,`θ₁ = ${state.t1}°`,'#1e5b88',16,700);svg('top',c)}
+function camera(p){let a=deg(camYaw),b=deg(camPitch);let rt=vec(-Math.sin(a),Math.cos(a),0),up=vec(-Math.cos(a)*Math.sin(b),-Math.sin(a)*Math.sin(b),Math.cos(b));return {x:225+dot(p,rt)*.43,y:360-dot(p,up)*.43}}
+function iso(f){let p=camera;let c=`<rect width="470" height="510" fill="white"/>`;let O=p(f.O),S=p(f.S),E=p(f.E),W=p(f.W),G=p(f.G),T=p(f.tip);for(let rad of [150,300,450]){let arr=[];for(let i=0;i<=48;i++){let a=2*Math.PI*i/48;let pp=p(vec(Math.cos(a)*rad,Math.sin(a)*rad,0));arr.push(`${pp.x.toFixed(1)},${pp.y.toFixed(1)}`)}c+=`<polyline points="${arr.join(' ')}" fill="none" stroke="#e7eef4"/>`;}c+=SVGline(O,S,'#839bad',11)+SVGline(S,E,'#267cbc',12)+SVGline(E,W,'#16a085',10)+SVGline(W,G,'#9c5bb2',8);
+for(let k of [-1,1]){let b=add(G,mul(f.jaws,k)),end=add(b,mul(f.forward,55));c+=SVGline(p(b),p(end),'#444f62',6)};
+for(let [pt,col,lbl] of [[S,'#267cbc','épaule'],[E,'#16a085','coude'],[W,'#9c5bb2','poignet']]){let t=p(pt),tx=Math.max(14,Math.min(395,t.x+9)),ty=Math.max(65,Math.min(473,t.y-10));c+=circle(t,6,col)+SVGT(tx,ty,lbl,col,12,650)}c+=`<circle cx="${O.x.toFixed(1)}" cy="${O.y.toFixed(1)}" r="7" fill="#1c4668"/>`;
+c+=SVGT(15,25,'Modèle spatial filaire · rotation souris','#41627d',14,700)+SVGT(15,44,`caméra : azimut ${Math.round(camYaw)}°, élévation ${Math.round(camPitch)}°`,'#68859a',12)+SVGT(15,490,'θ₄ agit sur l’orientation de séparation des mors','#647c8e',12);svg('cam',c)}
+function compare(){let targets=[['Bras (O₂ → O₃)',30,state.t2],['Avant-bras (O₃ → O₅)',-30,state.t2+state.t3-90],['Pince (O₅ → mors)',0,state.t2+state.t5-90]];let html='',max=0;for(let [title,t,sim]of targets){let err=Math.abs(sim-t);max=Math.max(max,err);html+=`<tr><td>${title}</td><td>≈ ${t}°</td><td><strong>${round(sim)}°</strong></td><td>${fmt(err)}°</td></tr>`}document.getElementById('compare').innerHTML=html;const m=document.getElementById('comparisonmsg');m.className='status '+(max<=4?'good':'warn');m.textContent=max<=4?'✓ Cohérence graphique avec la figure 11 (angles de référence estimés à ± quelques degrés). Ne prouve pas les valeurs réelles après I.':'Écart par rapport à la figure 11 : ajuster les angles, puis refaire la comparaison.'}
+function collisionMessage(f){let warning=f.tip.z<0;const box=document.getElementById('colstatus');box.className='status '+(warning?'warn':'');box.textContent=warning?'⚠ L’extrémité descend sous la table théorique z=0. Le modèle ne calcule pas les collisions réelles.':'Extrémité au-dessus du plan z=0 ; aucune collision mécanique réellement vérifiée.'}
+function update(){correct();updateGeometry();for(const [key,,lo,hi] of joints){const el=inputs[key];if(el)el.style.setProperty("--pct",((state[key]-lo)*100/(hi-lo)).toFixed(1)+"%")}const f=fk();profile(f);iso(f);drawTop(f);collisionMessage(f);const angleSummary=document.getElementById('angleSummary');if(angleSummary)angleSummary.textContent=`θ₁ ${state.t1}°   ·   θ₂ ${state.t2}°   ·   θ₃ ${state.t3}°   ·   θ₄ ${state.t4}°   ·   θ₅ ${state.t5}°`;const theta=state.t1;document.getElementById('readout').textContent=`Angles calculés, pas de retour CO réel :\nθ₁=${state.t1}° θ₂=${state.t2}° θ₃=${state.t3}° θ₄=${state.t4}° θ₅=${state.t5}°\nPince = ${state.op} mm\nTCP illustratif (mm) :\nx = ${fmt(f.tip.x)} ; y = ${fmt(f.tip.y)} ; z = ${fmt(f.tip.z)}\nθ₅ admissible : [${state.t3-90}°, ${state.t3+90}°]`;document.getElementById('teachstatus').textContent=`Points enregistrés : ${waypoints.length} · Pointeur : ${waypoints.length?pointer+1:0}`}
+function go(s){for(const [key]of joints){if(key in s)state[key]=Number(s[key])}update()}
+
+let pointerDown=false,lastXY;let elem=document.getElementById('cam');elem.addEventListener('pointerdown',e=>{pointerDown=true;lastXY=[e.clientX,e.clientY];elem.setPointerCapture(e.pointerId)});elem.addEventListener('pointermove',e=>{if(!pointerDown)return;camYaw+=(e.clientX-lastXY[0])*.55;camPitch=Math.max(-10,Math.min(80,camPitch+(e.clientY-lastXY[1])*.35));lastXY=[e.clientX,e.clientY];iso(fk())});elem.addEventListener('pointerup',()=>pointerDown=false);elem.addEventListener('pointercancel',()=>pointerDown=false);
+function printLine(msg){const out=document.getElementById('term');out.textContent+=msg+'\n';out.scrollTop=out.scrollHeight;termCount++;if(termCount>120){out.textContent=out.textContent.split('\n').slice(-100).join('\n');termCount=100}}
+function err(txt){printLine('ERREUR : '+txt)}
+function initFull(type){const b=basePose();go(b);printLine(`${type} — retour VIRTUEL aux six références choisies (θ₅=${b.t5}°) ; aucun référencement physique effectué.`)}
+document.getElementById('resetInitialPose').addEventListener('click',()=>{playing=false;camYaw=38;camPitch=23;initFull('RÉINITIALISATION');document.getElementById('resetInitialMessage').textContent='✓ Paramètres initiaux rétablis : θ₁ 0° · θ₂ 30° · θ₃ 30° · θ₄ 0° · θ₅ 60° · Pince 25 mm. Les essais enregistrés sont conservés.';});
+function command(line){let cmd=line.trim();if(!cmd)return;printLine('> '+cmd);let m=cmd.match(/^([A-Za-z]+)\s*(.*)$/);if(!m){err('syntaxe non reconnue');return}let op=m[1].toUpperCase(),rest=m[2].trim();if(['I','IM','IP'].includes(op)){initFull(op);return}if(op==='CO'){printLine(`CO VIRTUEL [hypothèses]\nLacet θ1=${state.t1}°   Épaule θ2=${state.t2}°   Coude θ3=${state.t3}°\nPince rotation θ4=${state.t4}°  inclinaison θ5=${state.t5}°\nOuverture=${state.op} mm — pas une lecture de capteurs.`);return}
+if(op==='RA'||op==='RR'){const arg=rest.replace(/\s/g,'').split(',');if(arg.length!==3||arg.some(t=>t===''||!Number.isFinite(Number(t)))){err(`syntaxe ${op} m,angle,v`);return}let [motor,a,v]=arg.map(Number);if(!Number.isInteger(motor)||motor<1||motor>5){err('m doit être compris entre 1 et 5');return}if(motor>=4){err(`M${motor} appartient au différentiel de poignet ; correspondance moteurs ↔ θ4/θ5 non calibrée ici. Utilise les curseurs θ4/θ5.`);return}if(a<(-3600)||a>3600||v<=0){err('angle hors plage de saisie ou vitesse non positive');return}let key='t'+motor;let min=inputs[key].min*1,max=inputs[key].max*1;let target=op==='RA'?a:state[key]+a;if(target<min||target>max){err(`mouvement refusé : ${key}=${target}° hors [${min}°,${max}°]`);return}go({[key]:round(target)});printLine(`M${motor} — ${op} appliqué au modèle : ${round(target)}° (v=${v} fictif, vitesse réelle non simulée).`);return}
+if(op==='OP'){let a=Number(rest);if(rest===''||!Number.isFinite(a)||a<0||a>55){err('OP a : a entre 0 et 55 mm');return}go({op:a});printLine('Ouverture idéale réglée à '+a+' mm.');return}
+if(op==='FP'){let f=Number(rest);if(rest===''||!Number.isFinite(f)||f<1||f>10){err('FP f : force de serrage f entre 1 et 10 kg selon le sujet');return}go({op:0});printLine(`Fermeture géométrique idéale. Force demandée ${f} kg NON simulée (aucun objet ni contact).`);return}
+if(op==='VAL'){waypoints.push({...state});pointer=waypoints.length-1;printLine(`VAL — position ${waypoints.length} enregistrée (dans cette page seulement).`);update();return}
+if(op==='EFF'){if(waypoints.length){waypoints.pop();pointer=Math.min(pointer,Math.max(0,waypoints.length-1));printLine('EFF — dernier point supprimé.');}else err('aucun point à effacer');update();return}
+if(op==='P'){if(!waypoints.length){err('aucun point enregistré');return}pointer=0;update();printLine('P — pointeur au premier point enregistré.');return}
+if(op==='L'){if(!waypoints.length){err('aucun point enregistré');return}if(playing){err('lecture déjà en cours');return}play();return}
+if(op==='STOP'){playing=false;printLine('STOP — lecture interrompue (approximation).');return}
+if(op==='AIDE'||op==='HELP'){printLine('Commandes pédagogiques disponibles : I, IM, IP, CO, RA m,d,v, RR m,i,v (M1 à M3), OP a, FP f, VAL, EFF, P, L, STOP.\nExemples : RA 2,45,10 ; RR 3,-5,10 ; OP 25.');return}err('commande non reconnue. Saisis AIDE.');}
+function play(){playing=true;printLine(`L — animation pédagogique de ${waypoints.length-pointer} point(s), sans vitesse de moteur ni collision.`);let idx=pointer;function next(){if(!playing)return;if(idx>=waypoints.length){playing=false;pointer=0;update();printLine('Fin de la séquence virtuelle.');return}let start={...state},goal={...waypoints[idx]},begin=performance.now(),ms=850;function frame(now){if(!playing)return;let u=Math.min(1,(now-begin)/ms);u=u*u*(3-2*u);let s={};for(let k in start)s[k]=start[k]+(goal[k]-start[k])*u;go(s);if(u<1){requestAnimationFrame(frame)}else{go(goal);pointer=idx;update();idx++;setTimeout(next,180)}}requestAnimationFrame(frame)}next()}
+document.getElementById('send').addEventListener('click',()=>{let i=document.getElementById('cmd');command(i.value);i.value='';i.focus()});document.getElementById('cmd').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('send').click()});document.querySelectorAll('[data-command]').forEach(b=>b.addEventListener('click',()=>command(b.dataset.command)));
+function png(id,name){let el=document.getElementById(id),copy=el.cloneNode(true),vb=el.viewBox.baseVal;copy.setAttribute('width',vb.width);copy.setAttribute('height',vb.height);let xml=new XMLSerializer().serializeToString(copy);if(!xml.includes('xmlns='))xml=xml.replace('<svg','<svg xmlns="http://www.w3.org/2000/svg"');let url=URL.createObjectURL(new Blob([xml],{type:'image/svg+xml'})),img=new Image();img.onload=()=>{let canvas=document.createElement('canvas');canvas.width=img.naturalWidth*2;canvas.height=img.naturalHeight*2;canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);URL.revokeObjectURL(url);canvas.toBlob(blob=>{let u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),2000)},'image/png')};img.onerror=()=>{URL.revokeObjectURL(url);alert('Export PNG indisponible dans ce navigateur. Utilise une capture Windows + Maj + S.')};img.src=url}
+
+
+
+// MODULE GEOMETRIQUE : modèle direct simplifié déjà utilisé dans fk().
+const ikIds=['ikx','iky','ikz'];
+function fillIK(){const g=fk().G;document.getElementById('ikx').value=g.x.toFixed(1);document.getElementById('iky').value=g.y.toFixed(1);document.getElementById('ikz').value=g.z.toFixed(1)}
+function solveInverse(){
+ const [x,y,z]=ikIds.map(id=>Number(document.getElementById(id).value));const out=document.getElementById('ikResult');
+ if(![x,y,z].every(Number.isFinite)){out.textContent='Cible invalide.';return}
+ const r=Math.hypot(x,y),az=r<1e-6?state.t1:Math.atan2(y,x)*180/Math.PI;
+ if(az< -135||az>135){out.textContent='Cible hors de la plage du lacet ±135°.';return}
+ // θ5 fixé ; ramener le point G au poignet W, puis inversion analytique 2R.
+ const a5=deg(state.t5),wr=r-150*Math.sin(a5+deg(0)), wz=z+150*Math.cos(a5+deg(0));
+ // θ5 dans la géométrie est couplé à θ2 : résoudre numériquement les 2 variables restantes.
+ const objective=(a,b)=>{let t=fk({...state,t1:az,t2:a,t3:b});return (t.G.x-x)**2+(t.G.y-y)**2+(t.G.z-z)**2};
+ let best={e:Infinity,a:state.t2,b:state.t3};
+ for(let a=-45;a<=90;a+=5)for(let b=-45;b<=90;b+=5){if(state.t5<b-90||state.t5>b+90)continue;let e=objective(a,b);if(e<best.e)best={e,a,b}}
+ for(const step of [2,0.5,0.1,0.02]){let improved=true,iter=0;while(improved&&iter++<100){improved=false;for(const [da,db] of [[step,0],[-step,0],[0,step],[0,-step],[step,step],[-step,-step]]){let a=best.a+da,b=best.b+db;if(a< -45||a>90||b< -45||b>90||state.t5<b-90||state.t5>b+90)continue;let e=objective(a,b);if(e<best.e-1e-7){best={e,a,b};improved=true}}}}
+ const err=Math.sqrt(best.e);
+ if(err>3){out.textContent=`Pas de solution à ±3 mm avec θ₅=${state.t5}° fixé et les limites imposées.\nMeilleure erreur : ${fmt(err)} mm.\nEssayez une autre cible ou modifiez θ₅.`;return}
+ state.t1=round(az);state.t2=round(best.a*10)/10;state.t3=round(best.b*10)/10;update();const gg=fk().G;const actual=Math.hypot(gg.x-x,gg.y-y,gg.z-z);out.textContent=`Solution approchée : θ₁=${fmt(state.t1)}°, θ₂=${fmt(state.t2)}°, θ₃=${fmt(state.t3)}°.\nθ₄=${state.t4}° et θ₅=${state.t5}° conservés.\nErreur de position après arrondi : ${fmt(actual)} mm.`;
+}
+function updateGeometry(){const f=fk(),p=f.G;document.getElementById('mgdData').textContent=`G : x=${fmt(p.x)} mm · y=${fmt(p.y)} mm · z=${fmt(p.z)} mm\nθ : [${state.t1}°, ${state.t2}°, ${state.t3}°, ${state.t4}°, ${state.t5}°]`;
+ const points=[['O',f.O],['S',f.S],['E',f.E],['W',f.W],['G',f.G]];
+ document.getElementById('geomPositions').textContent=points.map(([n,q])=>`${n}: (${fmt(q.x)}, ${fmt(q.y)}, ${fmt(q.z)}) mm`).join('\n');
+ const cross=(u,v)=>vec(u.y*v.z-u.z*v.y,u.z*v.x-u.x*v.z,u.x*v.y-u.y*v.x);
+ const normed=q=>mul(q,1/Math.max(1e-12,norm(q)));
+ const ez=normed(f.forward),ey=normed(f.side),ex=normed(cross(ey,ez));
+ const mat=[[ex.x,ey.x,ez.x,p.x],[ex.y,ey.y,ez.y,p.y],[ex.z,ey.z,ez.z,p.z],[0,0,0,1]];
+ document.getElementById('geomMatrix').innerHTML='<table aria-label="Matrice homogène">'+mat.map(row=>'<tr>'+row.map((v,i)=>`<td>${Math.abs(v)<0.00005?'0':v.toFixed(i===3?1:4)}</td>`).join('')+'</tr>').join('')+'</table>';
+ const proj=q=>({x:175+q.x*.30-q.y*.19,y:280-q.z*.27+q.y*.10});let html='<rect width="630" height="320" fill="white"/>';
+ for(let i=0;i<points.length-1;i++){let a=proj(points[i][1]),b=proj(points[i+1][1]);html+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#237e8c" stroke-width="8" stroke-linecap="round"/>`}
+ for(const [name,q] of points){let a=proj(q);html+=`<circle cx="${a.x}" cy="${a.y}" r="5" fill="#fff" stroke="#164457" stroke-width="2"/><text x="${a.x+9}" y="${a.y-8}" font-size="13" fill="#153d51">${name}</text>`}
+ const axes=[['X',ex,'#e25050'],['Y',ey,'#1e9b70'],['Z',ez,'#3267d4']];
+ for(const [name,v,color] of axes){let a=proj(p),b=proj(add(p,mul(v,130)));html+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${color}" stroke-width="3"/><text x="${b.x+5}" y="${b.y-5}" fill="${color}" font-size="14" font-weight="bold">${name}G</text>`}
+ const origin=proj(f.O);for(const [name,v,color] of [['X₀',vec(1,0,0),'#e25050'],['Y₀',vec(0,1,0),'#1e9b70'],['Z₀',vec(0,0,1),'#3267d4']]){let b=proj(add(f.O,mul(v,105)));html+=`<line x1="${origin.x}" y1="${origin.y}" x2="${b.x}" y2="${b.y}" stroke="${color}" stroke-width="2"/><text x="${b.x+4}" y="${b.y-4}" fill="${color}" font-size="12">${name}</text>`}
+ document.getElementById('geomAxes').innerHTML=html;
+}
+document.getElementById('copyMGD').addEventListener('click',fillIK);
+document.getElementById('solveIK').addEventListener('click',solveInverse);
+
+fillIK();update();printLine('ERICC — émulateur pédagogique local prêt. AIDE pour les commandes.');printLine('IMPORTANT : CO n’affiche PAS des mesures du robot réel.');
+
+// === ERICC V7: module DH indépendant de la géométrie pédagogique ===
+const DH_N=['T₀₁','T₁₂','T₂₃','T₃₄','T₄₅','T₀₅'];
+let dhSelected=5,dhCache=null,dhLastTests='Non exécutés';
+const n=(id)=>Number(document.getElementById(id).value);
+function eye4(){return [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]]}
+function mm(A,B){return A.map(row=>B[0].map((_,j)=>row.reduce((v,a,k)=>v+a*B[k][j],0)))}
+function dhT(alpha,d,q,r){let a=deg(alpha),t=deg(q),ca=Math.cos(a),sa=Math.sin(a),c=Math.cos(t),s=Math.sin(t);return [[c,-s,0,d],[ca*s,ca*c,-sa,-r*sa],[sa*s,sa*c,ca,r*ca],[0,0,0,1]]}
+function dhRead(){return {d3:n('dhD3'),d4:n('dhD4'),r5:n('dhR5'),q:[1,2,3,4,5].map(i=>n('dhq'+i))}}
+function dhForward(q,dim){let A=[dhT(0,0,q[0],0),dhT(90,0,q[1],0),dhT(0,dim.d3,q[2],0),dhT(0,dim.d4,q[3],0),dhT(90,0,q[4],dim.r5)];let frames=[eye4()],M=eye4();for(let a of A){M=mm(M,a);frames.push(M)}return {A,M,frames,p:[M[0][3],M[1][3],M[2][3]]}}
+function dhFmt(x){return Math.abs(x)<0.00005?'0':x.toFixed(4)}
+function dhMatHTML(A){return '<table>'+A.map(row=>'<tr>'+row.map(v=>`<td>${dhFmt(v)}</td>`).join('')+'</tr>').join('')+'</table>'}
+function dhNorm(v){return Math.hypot(...v)}
+function dhProj(v){return {x:285+v[0]*.44-v[1]*.31,y:188-v[2]*.42+v[1]*.13}}
+function dhUpdate(){let t=dhRead();if([...t.q,t.d3,t.d4,t.r5].some(v=>!Number.isFinite(v))){document.getElementById('dhPoint').textContent='Entrée non numérique.';return}let k=dhForward(t.q,t);dhCache={...t,...k};let p=k.p;
+ document.getElementById('dhPoint').textContent=`Position du repère R₅ dans R₀ :\nX=${p[0].toFixed(3)} mm  Y=${p[1].toFixed(3)} mm  Z=${p[2].toFixed(3)} mm\nAngles DH q=[${t.q.map(v=>v.toFixed(2)).join(', ')}]°\nRappel : repère/angle DH ≠ curseur constructeur sans calibrage.`;
+ document.getElementById('dhMatrix').innerHTML=dhMatHTML(dhSelected===5?k.M:k.A[dhSelected]);
+ let R=k.M,e=0;for(let i=0;i<3;i++)for(let j=0;j<3;j++){let dot=0;for(let h=0;h<3;h++)dot+=R[h][i]*R[h][j];e=Math.max(e,Math.abs(dot-(i===j?1:0)))}
+ document.getElementById('dhCheck').textContent=`Contrôle orthogonalité RᵀR=I : erreur max ${e.toExponential(2)} ; T₀₅ calculée par produit cumulatif.`;
+ let html='<rect width="570" height="245" fill="white"/>';let color=['#dc4b50','#149a76','#3472d1'];let pts=k.frames.map(M=>[M[0][3],M[1][3],M[2][3]]);
+ for(let i=1;i<pts.length;i++){let a=dhProj(pts[i-1]),b=dhProj(pts[i]);html+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#b9c9d3" stroke-width="6" stroke-linecap="round"/>`}
+ k.frames.forEach((M,i)=>{let o=[M[0][3],M[1][3],M[2][3]],a=dhProj(o);html+=`<circle cx="${a.x}" cy="${a.y}" r="4" fill="#183b51"/><text x="${a.x+4}" y="${a.y-8}" fill="#27485b" font-size="11">R${i}</text>`;for(let j=0;j<3;j++){let endpoint=dhProj([o[0]+M[0][j]*60,o[1]+M[1][j]*60,o[2]+M[2][j]*60]);html+=`<line x1="${a.x}" y1="${a.y}" x2="${endpoint.x}" y2="${endpoint.y}" stroke="${color[j]}" stroke-width="2"/>`}});
+ document.getElementById('dhDiagram').innerHTML=html;
+ document.getElementById('dhAxesList').textContent='Origines successives : '+pts.map((u,i)=>`R${i} (${u.map(v=>v.toFixed(1)).join('; ')})`).join(' · ');
+ const J=dhJac(t.q,t), rows=J.map(row=>row.map(v=>v.toFixed(2)).join('    '));document.getElementById('dhJacobian').textContent='Jv (mm/rad), colonnes q1…q5 :\n'+rows.join('\n');
+ const G=J.map(ri=>J.map(rj=>ri.reduce((sum,v,k)=>sum+v*rj[k],0)));let determinant=det3(G);let diag=G.reduce((a,row,i)=>a+row[i],0);let normRank=determinant/Math.pow(Math.max(diag/3,1),3);document.getElementById('dhSingular').textContent=`Indicateur det(Jv Jvᵀ) normalisé ≈ ${normRank.toExponential(3)}. ${normRank<1e-8?'Risque de perte de rang de translation (à approfondir).':'Rang de translation probablement complet à cette précision.'} Cet indicateur n’est pas une analyse complète des singularités de pose.`;
+}
+function dhJac(q,dim){let h=.001;let J=[[],[],[]];for(let j=0;j<5;j++){let qa=q.slice(),qb=q.slice();qa[j]+=h;qb[j]-=h;let a=dhForward(qa,dim).p,b=dhForward(qb,dim).p;for(let i=0;i<3;i++)J[i][j]=(a[i]-b[i])/(2*h*Math.PI/180)}return J}
+function det3(A){return A[0][0]*(A[1][1]*A[2][2]-A[1][2]*A[2][1])-A[0][1]*(A[1][0]*A[2][2]-A[1][2]*A[2][0])+A[0][2]*(A[1][0]*A[2][1]-A[1][1]*A[2][0])}
+function solveLinear(A,b){let n=b.length,M=A.map((r,i)=>[...r,b[i]]);for(let j=0;j<n;j++){let im=j;for(let i=j+1;i<n;i++)if(Math.abs(M[i][j])>Math.abs(M[im][j]))im=i;if(Math.abs(M[im][j])<1e-12)return null;[M[j],M[im]]=[M[im],M[j]];let d=M[j][j];for(let k=j;k<=n;k++)M[j][k]/=d;for(let i=0;i<n;i++)if(i!==j){let f=M[i][j];for(let k=j;k<=n;k++)M[i][k]-=f*M[j][k]}}return M.map(row=>row[n])}
+function dhIK(target,q0,dim){ // Damped least squares in joint radians, deterministic multiple seeds
+ let limits=[[-135,135],[-45,90],[-45,90],[-180,180],[-180,180]];
+ let seeds=[q0,[0,30,30,0,0],[0,0,0,0,0],[60,45,0,30,0],[-60,-20,60,0,0],[120,80,60,-30,0],[-120,20,-30,40,0]];
+ let best={err:Infinity,q:q0.slice()};for(let qinit of seeds){let q=qinit.slice();for(let it=0;it<135;it++){let p=dhForward(q,dim).p,delta=target.map((v,i)=>v-p[i]);let err=dhNorm(delta);if(err<best.err)best={err,q:q.slice()};if(err<.005)break;let J=dhJac(q,dim);let lam=12;let A=J.map(ri=>J.map(rj=>ri.reduce((sum,v,k)=>sum+v*rj[k],0)));for(let i=0;i<3;i++)A[i][i]+=lam*lam;let v=solveLinear(A,delta);if(!v)break;let increments=q.map((_,j)=>J.reduce((a,row,i)=>a+row[j]*v[i],0)*180/Math.PI);let accepted=false;for(let factor of [1,.5,.25,.1]){let trial=q.map((a,j)=>Math.max(limits[j][0],Math.min(limits[j][1],a+factor*increments[j])));let ee=dhNorm(target.map((v,i)=>v-dhForward(trial,dim).p[i]));if(ee<err-1e-7){q=trial;accepted=true;break}}if(!accepted)break}}
+ return best;
+}
+function dhOnSolve(){let target=['dhix','dhiy','dhiz'].map(n),out=document.getElementById('dhIKStatus');if(!target.every(Number.isFinite)){out.textContent='Cible incorrecte';return}let t=dhRead(),res=dhIK(target,t.q,t);let p=dhForward(res.q,t).p;if(res.err<=1){res.q.forEach((v,i)=>document.getElementById('dhq'+(i+1)).value=v.toFixed(4));dhUpdate()};out.textContent=`${res.err<=1?'Cible atteinte (calcul numérique).':'Pas de solution vérifiée à ±1 mm avec ce modèle, ces limites et ces amorces.'}\nErreur finale : ${res.err.toFixed(4)} mm\nAngles : [${res.q.map(v=>v.toFixed(3)).join('; ')}]°\nPoint obtenu : (${p.map(v=>v.toFixed(2)).join('; ')}) mm\nMéthode : moindres carrés amortis, plusieurs amorces. La méthode analytique de Paul reste à développer dans le rapport.`}
+function dhTests(){let t=dhRead(),q=t.q,F=dhForward(q,t),same=dhForward(q,t),diff=dhNorm(F.p.map((v,i)=>v-same.p[i]));let R=F.M,ortho=0;for(let i=0;i<3;i++)for(let j=0;j<3;j++){let v=0;for(let k=0;k<3;k++)v+=R[k][i]*R[k][j];ortho=Math.max(ortho,Math.abs(v-(i===j?1:0)))}let er=0;for(let i=0;i<4;i++)for(let j=0;j<4;j++)er=Math.max(er,Math.abs(mm(eye4(),F.M)[i][j]-F.M[i][j]));let numIK=dhIK(F.p,q,t),ikerr=dhNorm(F.p.map((v,i)=>v-dhForward(numIK.q,t).p[i]));dhLastTests=`Identité I·T=T : ${er.toExponential(2)}\nOrthonormalité R : ${ortho.toExponential(2)}\nReproductibilité MGD : ${diff.toExponential(2)} mm\nAller-retour MGD→MGI→MGD : ${ikerr.toFixed(6)} mm\n${ikerr<.01&&ortho<1e-8?'PASS — pour ces valeurs.':'À examiner : tolérance non atteinte.'}\nAttention : non-validations des conventions et cotes physiques.`;document.getElementById('dhTestStatus').textContent=dhLastTests}
+function dhSample(){let coords=[];for(let i=0;i<900;i++){let t2=-45+(i*73%136),t3=-45+(i*37%136),t5=t3-90+((i*97)%181);let F=fk({t1:0,t2,t3,t4:0,t5,op:25});let r=Math.hypot(F.G.x,F.G.y),z=F.G.z;coords.push([r,z])}let rmin=Math.min(...coords.map(x=>x[0])),rmax=Math.max(...coords.map(x=>x[0])),zmin=Math.min(...coords.map(x=>x[1])),zmax=Math.max(...coords.map(x=>x[1]));let w=Math.max(1,rmax-rmin),h=Math.max(1,zmax-zmin);let svg='<rect width="570" height="245" fill="white"/>';svg+=`<line x1="36" y1="214" x2="555" y2="214" stroke="#52758d"/><line x1="36" y1="15" x2="36" y2="214" stroke="#52758d"/>`;for(const [r,z] of coords){let x=36+(r-rmin)/w*515,y=214-(z-zmin)/h*195;svg+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1.7" fill="#238d97" opacity=".42"/>`};svg+='<text x="470" y="234" font-size="12" fill="#345">r (mm) →</text><text x="4" y="13" font-size="12" fill="#345">z ↑</text>';document.getElementById('workPlot').innerHTML=svg;document.getElementById('workStatus').textContent=`900 configurations échantillonnées. r ≈ [${rmin.toFixed(1)}; ${rmax.toFixed(1)}] mm ; z ≈ [${zmin.toFixed(1)}; ${zmax.toFixed(1)}] mm. Bornes observées sur l'échantillon, non des maxima démontrés. Interférences et volume réel non calculés.`}
+function dhExport(){let o={title:'ERICC V7 — export reproductible',sources:['sujet EP 4A GII 2026 partie 1','C7modelisation ERICC','Ericc Descriptif technique L'],limites:['cotes DH de démonstration non vérifiées','différences de conventions entre graphiques simplifiés et modèle DH','pas de mesure expérimentale','MGI numérique sans preuve exhaustivité'],dh:dhRead(),T05:dhCache?.M,frames:dhCache?.frames,tests:dhLastTests,graphiqueSimplifieAngles:{...state},graphiqueSimplifiePoint:fk().G};let blob=new Blob([JSON.stringify(o,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='ERICC_V7_verification.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500)}
+for(let i=0;i<DH_N.length;i++){let b=document.createElement('button');b.textContent=DH_N[i];b.onclick=()=>{dhSelected=i;document.querySelectorAll('#dhMatrixButtons button').forEach((x,j)=>x.classList.toggle('active',j===i));dhUpdate()};if(i===5)b.classList.add('active');document.getElementById('dhMatrixButtons').appendChild(b)}
+for(let id of ['dhD3','dhD4','dhR5','dhq1','dhq2','dhq3','dhq4','dhq5'])document.getElementById(id).addEventListener('input',dhUpdate);
+document.getElementById('dhRefresh').onclick=dhUpdate;
+document.getElementById('dhCopy').onclick=()=>{[state.t1,state.t2,state.t3,state.t5,state.t4].forEach((v,i)=>document.getElementById('dhq'+(i+1)).value=v);dhUpdate()};
+document.getElementById('dhUseFK').onclick=()=>{let p=dhForward(dhRead().q,dhRead()).p;['dhix','dhiy','dhiz'].forEach((id,i)=>document.getElementById(id).value=p[i].toFixed(5))};
+document.getElementById('dhSolve').onclick=dhOnSolve;document.getElementById('dhTest').onclick=dhTests;document.getElementById('workSample').onclick=dhSample;document.getElementById('dhExport').onclick=dhExport;document.getElementById('dhPrint').onclick=()=>window.print();
+dhUpdate();dhTests();dhSample();document.getElementById('dhUseFK').click();
+
+
+// EP question 2 — informations documentaires, couplage qualitatif non étalonné.
+const motorData=[
+ {name:'θ₁ · Lacet',kind:'MCC',info:'Moteur à courant continu : rotation de la chaise autour de l’axe vertical du socle.'},
+ {name:'θ₂ · Épaule',kind:'MCC',info:'Moteur à courant continu : orientation du bras par rapport à la chaise.'},
+ {name:'θ₃ · Coude',kind:'MCC',info:'Moteur à courant continu : mouvement de l’avant-bras par rapport au bras.'},
+ {name:'θ₄ · Rotation pince',kind:'Pas à pas',info:'Résulte de la commande combinée des deux moteurs pas à pas du poignet. Ce n’est pas un moteur indépendant affecté exclusivement à θ₄.'},
+ {name:'θ₅ · Inclinaison pince',kind:'Pas à pas',info:'Résulte de la commande combinée des deux moteurs pas à pas du poignet. Ce n’est pas un moteur indépendant affecté exclusivement à θ₅.'},
+ {name:'Ouverture / fermeture pince',kind:'MCC',info:'Moteur à courant continu réservé à la préhension : il assure l’ouverture et la fermeture des mors.'}
+];
+let motorSelected=-1;
+function motorRender(){
+ let rows=document.getElementById('motorRows');rows.replaceChildren();
+ motorData.forEach((p,i)=>{let row=document.createElement('tr');row.className=motorSelected===i?'selected':'';row.setAttribute('tabindex','0');row.setAttribute('role','button');row.setAttribute('aria-pressed',String(motorSelected===i));let a=document.createElement('td');a.textContent=p.name;let b=document.createElement('td');let sp=document.createElement('span');sp.className='motorchip'+(p.kind==='Pas à pas'?' step':'');sp.textContent=p.kind;b.appendChild(sp);row.append(a,b);row.onclick=()=>{motorSelected=i;motorRender()};row.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();row.click()}};rows.appendChild(row)});
+ let panel=document.getElementById('motorInfo');panel.replaceChildren();let h=document.createElement('h3'),p=document.createElement('p');h.textContent=motorSelected===-1?'Motorisations du robot ERICC':motorData[motorSelected].name;p.textContent=motorSelected===-1?'Sélectionnez une articulation pour voir le type de moteur et son rôle. Les deux moteurs du poignet sont couplés mécaniquement.':motorData[motorSelected].info;panel.append(h,p)
+}
+function wristRender(){
+ const a=Number(document.getElementById('wristMotorA').value),b=Number(document.getElementById('wristMotorB').value);
+ const arrow=n=>n===0?'■':n>0?'↻':'↺';
+ let desc=a===0&&b===0?'Deux moteurs à l’arrêt':a===b?'Même sens → inclinaison du poignet':a===-b?'Sens opposés → rotation de la pince':'Commande d’un seul moteur → combinaison des deux mouvements';
+ document.getElementById('wristResult').textContent=desc;
+ document.getElementById('wristSum').textContent=(a+b>0?'+':'')+(a+b);
+ document.getElementById('wristDiff').textContent=(a-b>0?'+':'')+(a-b);
+ document.getElementById('wristCalcDetail').textContent=`A = ${a}, B = ${b}  →  A + B = ${a+b} ; A − B = ${a-b}. ${a===0&&b===0?'Aucun mouvement demandé.':a===b?'Contribution de rotation nulle dans cette convention.':a===-b?'Contribution d’inclinaison nulle dans cette convention.':'Les deux mouvements sont sollicités.'}`;
+ const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+ document.getElementById('wristDrawing').innerHTML=`<rect x="6" y="7" width="468" height="166" rx="13" fill="#edf5fa"/><path d="M110 91 L210 91 L263 91" fill="none" stroke="#60aeb3" stroke-width="16" stroke-linecap="round"/><circle cx="111" cy="90" r="42" fill="#dceafd" stroke="#578db5" stroke-width="3"/><circle cx="370" cy="90" r="42" fill="#ffeed5" stroke="#d99e43" stroke-width="3"/><text x="111" y="100" font-size="33" text-anchor="middle" fill="#215a85">${arrow(a)}</text><text x="370" y="100" font-size="33" text-anchor="middle" fill="#926015">${arrow(b)}</text><text x="110" y="154" text-anchor="middle" font-size="13" font-weight="700" fill="#345975">Moteur A</text><text x="370" y="154" text-anchor="middle" font-size="13" font-weight="700" fill="#86612e">Moteur B</text><text x="251" y="58" font-size="12" font-weight="700" text-anchor="middle" fill="#456777">Poignet couplé</text><path d="M267 91 L323 91" stroke="#779bad" stroke-width="8" stroke-linecap="round"/><circle cx="267" cy="91" r="16" fill="#338b97"/><text x="267" y="96" font-size="11" font-weight="800" fill="white" text-anchor="middle">Σ</text>`;
+}
+function motorInit(){motorRender();document.getElementById('motorReset').onclick=()=>{motorSelected=-1;motorRender()};for(const id of ['wristMotorA','wristMotorB'])document.getElementById(id).addEventListener('change',wristRender);wristRender()}
+motorInit();
+
+// Mode architecture EP — annotation documentaire du modele spatial filaire simplifie.
+const archParts=[
+['Socle','Support fixe du robot : bâti et référence mécanique.'],
+['Chaise','Partie tournante par rapport au socle : assure le lacet.'],
+['Épaule','Articulation pivot entre la chaise et le bras : oriente le bras.'],
+['Bras','Segment situé entre l’épaule et le coude.'],
+['Coude','Articulation pivot entre le bras et l’avant-bras.'],
+['Avant-bras','Segment reliant le coude au poignet.'],
+['Poignet','Ensemble articulé permettant l’orientation de la pince.'],
+['Pince','Organe terminal de préhension permettant de saisir les objets.']
+];
+let archSelection=-1;
+function archRender(){
+ const F=fk(), scale=.43, ox=395,oy=371;
+ const P=q=>({x:ox-Math.hypot(q.x,q.y)*scale,y:oy-q.z*scale});
+ const O=P(F.O),S=P(F.S),E=P(F.E),W=P(F.W),G=P(F.G),T=P(F.tip);
+ const M=(a,b)=>({x:(a.x+b.x)/2,y:(a.y+b.y)/2});
+ const parts=[{a:{x:O.x-54,y:O.y},b:{x:O.x+52,y:O.y},p:{x:O.x,y:O.y+4},kind:'base'},
+ {a:O,b:S,p:M(O,S)},
+ {p:S,kind:'joint'},
+ {a:S,b:E,p:M(S,E)},
+ {p:E,kind:'joint'},
+ {a:E,b:W,p:M(E,W)},
+ {a:W,b:G,p:M(W,G)},
+ {a:G,b:T,p:{x:T.x-4,y:T.y-4}}];
+ let out='<rect width="720" height="455" fill="#f9fcff"/>';
+ for(let y=45;y<421;y+=40)out+=`<line x1="18" y1="${y}" x2="703" y2="${y}" stroke="#e6eff6"/>`;
+ out+='<line x1="18" y1="371" x2="703" y2="371" stroke="#adc2d1" stroke-width="2"/>';
+ const palette=['#557e99','#406eae','#d5833b','#2e83b6','#b85c68','#169e91','#a96bba','#cf9258'];
+ for(let i=0;i<parts.length;i++){
+ let v=parts[i],sel=archSelection<0||archSelection===i,stroke=sel?palette[i]:'#bacbd5',width=(sel?12:7);
+ if(i===0){out+=`<rect x="${O.x-58}" y="${O.y-9}" width="116" height="18" rx="7" fill="${stroke}"/>`;}
+ else if(v.kind==='joint'){out+=`<circle cx="${v.p.x}" cy="${v.p.y}" r="${sel?12:8}" fill="${stroke}" stroke="white" stroke-width="3"/>`;}
+ else{out+=`<line x1="${v.a.x}" y1="${v.a.y}" x2="${v.b.x}" y2="${v.b.y}" stroke="${stroke}" stroke-width="${width}" stroke-linecap="round"/>`}
+ }
+ for(const p of [S,E,W,G])out+=`<circle cx="${p.x}" cy="${p.y}" r="5.5" fill="white" stroke="#52778c" stroke-width="2"/>`;
+ const labelspots=[{x:536,y:429},{x:531,y:352},{x:531,y:274},{x:155,y:72},{x:450,y:72},{x:155,y:135},{x:450,y:126},{x:517,y:189}];
+ for(let i=0;i<archParts.length;i++){
+ let v=parts[i],lp=labelspots[i],sel=archSelection<0||archSelection===i,col=sel?palette[i]:'#a7b8c4';
+ let txt=`${i+1}. ${archParts[i][0]}`;
+ out+=`<path d="M${v.p.x.toFixed(1)} ${v.p.y.toFixed(1)} L${lp.x-9} ${lp.y-5}" fill="none" stroke="${col}" stroke-width="${sel?1.9:1}" stroke-dasharray="4 3"/>`;
+ out+=`<rect x="${lp.x-6}" y="${lp.y-23}" width="${Math.max(90,txt.length*7+17)}" height="25" rx="6" fill="${sel?'white':'#f4f7f9'}" stroke="${col}" opacity=".97"/>`;
+ out+=`<text x="${lp.x+3}" y="${lp.y-6}" font-size="12" font-weight="${sel?'800':'500'}" fill="${sel?'#244358':'#8ca0ad'}" font-family="Segoe UI,Arial,sans-serif">${txt}</text>`;
+ }
+ out+='<text x="17" y="28" font-size="13" font-weight="700" fill="#31556e">Architecture série · RRRRR · schéma pédagogique · 6 éléments + 2 articulations</text>';
+ document.getElementById('archDiagram').innerHTML=out;
+ const desc=document.getElementById('archDesc');desc.textContent=archSelection<0?'Sélectionnez un élément dans la liste : son emplacement sera mis en évidence sur le schéma. Six éléments mécaniques et deux articulations (épaule et coude) sont repérés comme sur le schéma du sujet.':`${archSelection+1}. ${archParts[archSelection][0]} — ${archParts[archSelection][1]}`;
+ document.querySelectorAll('.archchoice').forEach((b,i)=>{b.classList.toggle('active',archSelection===i);b.setAttribute('aria-pressed',String(archSelection===i))});
+}
+function archInit(){
+ const wrap=document.getElementById('archChoices');
+ for(let i=0;i<archParts.length;i++){
+ let b=document.createElement('button');b.type='button';b.className='archchoice';b.innerHTML=`<span class="archnum">${i+1}</span><span>${archParts[i][0]}</span>`;
+ b.addEventListener('click',()=>{archSelection=i;archRender()});wrap.appendChild(b)
+ }
+ document.getElementById('archAll').onclick=()=>{archSelection=-1;archRender()};
+ document.getElementById('archExport').onclick=()=>{
+ let el=document.getElementById('archDiagram');let str=new XMLSerializer().serializeToString(el);if(!str.includes('xmlns='))str=str.replace('<svg','<svg xmlns="http://www.w3.org/2000/svg"');
+ let url=URL.createObjectURL(new Blob([str],{type:'image/svg+xml;charset=utf-8'}));let a=document.createElement('a');a.href=url;a.download='ERICC_architecture_question_1.svg';a.click();setTimeout(()=>URL.revokeObjectURL(url),1200)
+ };
+ archRender();
+}
+archInit();
+// Relever la même geometrie lorsque les curseurs ou commandes actualisent le modele.
+const _archUpdate=update;
+update=function(){_archUpdate();archRender()};
+
+// EP question 3 — données de simulation uniquement, pas de télémétrie physique.
+const sensorInfo=[
+ {id:'O1',title:'Lacet',field:'t1',description:'Position angulaire de la chaise par rapport au socle.'},
+ {id:'O2',title:'Épaule',field:'t2',description:'Position angulaire du bras par rapport à la chaise.'},
+ {id:'O3',title:'Coude',field:'t3',description:'Position angulaire de l’avant-bras par rapport au bras.'}
+];
+let sensorSelection=-1, sensorA=null, sensorB=null;
+function sensorSnapshot(){return {time:performance.now(),values:sensorInfo.map(a=>Number(state[a.field]))}}
+function sensorRender(){
+ const F=fk(),scale=.39,ox=395,oy=350;
+ const P=q=>({x:ox-Math.hypot(q.x,q.y)*scale,y:oy-q.z*scale});
+ const O=P(F.O),S=P(F.S),E=P(F.E),W=P(F.W),G=P(F.G),T=P(F.tip);
+ let out='<rect width="720" height="440" fill="#f9fcff"/><line x1="20" y1="350" x2="700" y2="350" stroke="#bed0de" stroke-width="2"/>';
+ for(const [a,b] of [[O,S],[S,E],[E,W],[W,G],[G,T]])out+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#24a3a2" stroke-width="12" stroke-linecap="round"/>`;
+ const markers=[O,S,E], labels=[{x:90,y:382},{x:85,y:105},{x:500,y:90}];
+ for(let i=0;i<3;i++){
+  const p=markers[i],lab=labels[i],active=sensorSelection<0||sensorSelection===i;
+  out+=`<path d="M${p.x} ${p.y} L${lab.x+12} ${lab.y+10}" stroke="${active?'#d1803c':'#9cabb5'}" stroke-width="${active?2.5:1.2}" stroke-dasharray="5 3" fill="none"/>`;
+  out+=`<circle cx="${p.x}" cy="${p.y}" r="${active?12:8}" fill="${active?'#e29a40':'#b9c4cc'}" stroke="white" stroke-width="3"/>`;
+  out+=`<rect x="${lab.x}" y="${lab.y-7}" width="144" height="32" rx="7" fill="white" stroke="${active?'#d1803c':'#c5d5df'}"/><text x="${lab.x+12}" y="${lab.y+14}" font-size="13" font-weight="700" fill="#295069">${sensorInfo[i].id} · ${sensorInfo[i].title}</text>`;
+ }
+ out+='<text x="17" y="27" fill="#365971" font-size="13" font-weight="700">Positions théoriques — schéma non coté</text>';
+ document.getElementById('sensorDiagram').innerHTML=out;
+ document.getElementById('sensorAngles').innerHTML=sensorInfo.map(a=>`<tr><td><strong>${a.id} · ${a.title}</strong></td><td>${Number(state[a.field]).toFixed(1)}°</td><td>Simulé</td></tr>`).join('');
+ const desc=document.getElementById('sensorDesc');
+ desc.textContent=sensorSelection<0?'Sélectionner O1, O2 ou O3 pour mettre en évidence la zone articulaire et le retour de position théorique.':`${sensorInfo[sensorSelection].id} — ${sensorInfo[sensorSelection].description} Angle calculé : ${Number(state[sensorInfo[sensorSelection].field]).toFixed(1)}°.`;
+ document.querySelectorAll('.sensbtn').forEach((b,i)=>{b.classList.toggle('active',sensorSelection===i);b.setAttribute('aria-pressed',String(sensorSelection===i))});
+}
+function sensorVelocityRender(){
+ const el=document.getElementById('sensorVelocity');
+ if(!sensorA){el.textContent='Capture A, modifiez les angles, puis capture B pour calculer Δθ/Δt.';return}
+ if(!sensorB){el.textContent=`Capture A enregistrée : ${sensorA.values.map(v=>v.toFixed(1)+'°').join(' · ')}. Modifiez les articulations, puis capturez B.`;return}
+ const dt=(sensorB.time-sensorA.time)/1000;
+ if(dt<=0){el.textContent='Intervalle de temps trop court pour estimer les vitesses.';return}
+ el.innerHTML=`<strong>Δt = ${dt.toFixed(2)} s (temps entre clics)</strong><div>${sensorInfo.map((a,i)=>`${a.id} : Δθ = ${(sensorB.values[i]-sensorA.values[i]).toFixed(1)}° ; ω̄ ≈ ${((sensorB.values[i]-sensorA.values[i])/dt).toFixed(2)} °/s`).join('<br>')}</div>`;
+}
+function sensorInit(){
+ const container=document.getElementById('sensorChoices');
+ for(let i=0;i<sensorInfo.length;i++){
+  const b=document.createElement('button');b.type='button';b.className='sensbtn';b.textContent=`${sensorInfo[i].id} · ${sensorInfo[i].title}`;
+  b.onclick=()=>{sensorSelection=sensorSelection===i?-1:i;sensorRender()};container.appendChild(b)
+ }
+ document.getElementById('sensorCaptureA').onclick=()=>{sensorA=sensorSnapshot();sensorB=null;sensorVelocityRender()};
+ document.getElementById('sensorCaptureB').onclick=()=>{if(!sensorA){document.getElementById('sensorVelocity').textContent='Capturez d’abord l’état A.';return}sensorB=sensorSnapshot();sensorVelocityRender()};
+ document.getElementById('sensorClear').onclick=()=>{sensorA=null;sensorB=null;sensorVelocityRender()};
+ sensorRender();sensorVelocityRender();
+}
+sensorInit();
+const _sensorUpdate=update;
+update=function(){_sensorUpdate();sensorRender()};
+
+// EP — graphe cinématique et indice de mobilité, basé sur la chaîne idéale RRRRR.
+const kinNames=['Lacet','Épaule','Coude','Rotation de pince','Inclinaison du poignet'];
+const kinBodies=['Socle (fixe)','Chaise','Bras','Avant-bras','Poignet','Pince'];
+let kinSelected=0;
+function kinRender(){
+ const svg=document.getElementById('kinChain');
+ let a='<rect x="0" y="0" width="700" height="175" fill="#ffffff"/>';
+ for(let i=0;i<6;i++){
+   const x=13+i*115;
+   a+=`<rect x="${x}" y="65" width="93" height="50" rx="9" fill="${i===0?'#e5ebf1':'#e5f5f3'}" stroke="${i===0?'#71869a':'#439b93'}" stroke-width="1.7"/><text x="${x+46.5}" y="84" font-size="15" font-weight="700" text-anchor="middle" fill="#24465c">S${i}</text><text x="${x+46.5}" y="100" font-size="10.5" text-anchor="middle" fill="#375769">${kinBodies[i]}</text>`;
+   if(i<5){const cx=x+104;const hi=i===kinSelected;a+=`<path d="M${x+93} 90H${x+115}" stroke="${hi?'#eb9650':'#648b9f'}" stroke-width="${hi?4:2}"/><circle cx="${cx}" cy="90" r="${hi?8:5.5}" fill="${hi?'#e38c36':'#538a9c'}" stroke="white" stroke-width="1.8"/><text x="${cx}" y="48" text-anchor="middle" font-size="12" font-weight="700" fill="${hi?'#ba6b24':'#477589'}">θ${i+1}</text>`;}
+ }
+ svg.innerHTML=a;
+ document.querySelectorAll('.kin-btns button').forEach((el,i)=>{el.classList.toggle('active',kinSelected===i);el.setAttribute('aria-pressed',String(kinSelected===i))});
+ document.getElementById('kinJointInfo').textContent=`Pivot ${kinSelected+1} — ${kinNames[kinSelected]} : S${kinSelected} → S${kinSelected+1}. Un degré de liberté en rotation θ${kinSelected+1}. Angle du modèle : ${Number(state['t'+(kinSelected+1)]).toFixed(1)}°.`;
+ document.getElementById('kinMobility').innerHTML='<b>n = 5</b> solides mobiles (socle exclu)<br><b>N₅ = 5</b> liaisons pivot (classe m = 5)<br><b>M = 6 × n − Σ(m × Nₘ)</b><br><b>M = 6 × 5 − 5 × 5 = 5</b><br><small>5 coordonnées indépendantes : θ₁, θ₂, θ₃, θ₄ et θ₅. L’ouverture de pince correspond à la préhension, non à un sixième axe du bras.</small>';
+ const f=fk(),pts=[f.O,f.S,f.E,f.W,f.G,f.tip],P=p=>({x:280-Math.hypot(p.x,p.y)*.33,y:260-p.z*.33});
+ let b='<rect width="520" height="320" fill="#fff"/><path d="M18 260H502" stroke="#b0c6d4" stroke-width="2"/>';
+ for(let i=0;i<pts.length-1;i++){let p=P(pts[i]),q=P(pts[i+1]);b+=`<line x1="${p.x}" y1="${p.y}" x2="${q.x}" y2="${q.y}" stroke="#298e96" stroke-width="9" stroke-linecap="round"/>`}
+ let marker=P(pts[Math.min(kinSelected,pts.length-1)]);b+=`<circle cx="${marker.x}" cy="${marker.y}" r="13" fill="#f7be7e" stroke="#b96b2e" stroke-width="3"/><text x="${Math.max(15,marker.x-14)}" y="${Math.max(17,marker.y-20)}" fill="#aa5923" font-size="15" font-weight="750">θ${kinSelected+1}</text><text x="15" y="24" fill="#355c72" font-size="13" font-weight="700">Repère indicatif — géométrie simplifiée</text>`;
+ document.getElementById('kinBody').innerHTML=b;
+}
+function kinInit(){const el=document.getElementById('kinJointButtons');kinNames.forEach((name,i)=>{let b=document.createElement('button');b.type='button';b.textContent=`θ${i+1} · ${name}`;b.onclick=()=>{kinSelected=i;kinRender()};el.appendChild(b)});kinRender()}
+kinInit();const _kinUpdate=update;update=function(){_kinUpdate();kinRender()};
+
+// Étude EP : indicateurs quantitatifs de singularité en translation, modèle DH du cours.
+// Les valeurs singulières sont obtenues via l'algorithme de Jacobi pour la matrice 3x3 Jv*Jvᵀ.
+function singEigenSymmetric3(A){
+ const M=A.map(row=>row.slice());
+ for(let t=0;t<60;t++){
+  let pairs=[[0,1],[0,2],[1,2]],ab=pairs.reduce((p,x)=>Math.abs(M[x[0]][x[1]])>Math.abs(M[p[0]][p[1]])?x:p,[0,1]);
+  const [p,q]=ab;if(Math.abs(M[p][q])<1e-12)break;
+  const tau=(M[q][q]-M[p][p])/(2*M[p][q]);
+  const tan=Math.sign(tau||1)/(Math.abs(tau)+Math.sqrt(1+tau*tau));
+  const c=1/Math.sqrt(1+tan*tan),sn=tan*c;
+  const app=M[p][p],aqq=M[q][q],apq=M[p][q];
+  M[p][p]=app-tan*apq;M[q][q]=aqq+tan*apq;M[p][q]=M[q][p]=0;
+  for(let k=0;k<3;k++)if(k!==p&&k!==q){let akp=M[k][p],akq=M[k][q];M[k][p]=M[p][k]=c*akp-sn*akq;M[k][q]=M[q][k]=sn*akp+c*akq;}
+ }
+ return [M[0][0],M[1][1],M[2][2]].map(x=>Math.sqrt(Math.max(0,x))).sort((a,b)=>b-a);
+}
+function singMatrixRank(A,tol=1e-7){
+ const M=A.map(row=>row.slice());let r=0;
+ for(let c=0;c<M[0].length && r<M.length;c++){
+  let piv=r;for(let i=r+1;i<M.length;i++)if(Math.abs(M[i][c])>Math.abs(M[piv][c]))piv=i;
+  if(Math.abs(M[piv][c])<tol)continue;
+  [M[r],M[piv]]=[M[piv],M[r]];
+  let z=M[r][c];for(let j=c;j<M[0].length;j++)M[r][j]/=z;
+  for(let i=r+1;i<M.length;i++){let a=M[i][c];for(let j=c;j<M[0].length;j++)M[i][j]-=a*M[r][j];}
+  r++;
+ }
+ return r;
+}
+function singAnalyse(){
+ const out=document.getElementById('singReport');const t=dhRead();const f=dhForward(t.q,t),J=dhJac(t.q,t);
+ if([...t.q,t.d3,t.d4,t.r5].some(x=>!Number.isFinite(x))){out.textContent='Paramètres non numériques.';return}
+ const G=J.map(row=>J.map(other=>row.reduce((acc,v,j)=>acc+v*other[j],0)));
+ const sv=singEigenSymmetric3(G),ratio=sv[0]>1e-10?sv[2]/sv[0]:0;
+ const r=Math.hypot(f.p[0],f.p[1]);
+ // Dans la convention DH C7 : l'axe de l'articulation i est Z_i.
+ const axis1=[0,0,1],axis5=[f.frames[5][0][2],f.frames[5][1][2],f.frames[5][2][2]];
+ const dot=Math.min(1,Math.abs(axis5[2]));const alignment=Math.acos(dot)*180/Math.PI;
+ // Jacobienne cinématique complète : [J_v ; J_omega], chaque colonne angulaire = Z_i.
+ const Jw=[0,1,2].map(k=>f.frames.slice(1).map(frame=>frame[k][2]));
+ const full=[...J,...Jw];
+ const rV=singMatrixRank(J),rFull=singMatrixRank(full);
+ const isV=r<1e-6 && alignment<1e-5;
+ const expl=isV?'Configuration verticale coaxiale du modèle DH confirmée.':'Cette configuration ne réalise pas simultanément le centrage et la coaxialité dans le modèle DH.';
+ out.textContent=`ANGLES DH q₁…q₅ : ${t.q.map(x=>x.toFixed(1)+'°').join(' ; ')}\n`+
+ `POSITION DU POINT R₅ : X=${f.p[0].toFixed(2)} ; Y=${f.p[1].toFixed(2)} ; Z=${f.p[2].toFixed(2)} mm\n`+
+ `DISTANCE RADIALE : √(X²+Y²)=${r.toFixed(6)} mm\n`+
+ `AXES DU LACET Z₁ ET DU DERNIER PIVOT Z₅ : angle non orienté=${alignment.toFixed(6)}°\n`+
+ `VALEURS SINGULIÈRES DE Jv : ${sv.map(x=>x.toFixed(5)).join(' ; ')} mm/rad\n`+
+ `RANG Jv (3 × 5) = ${rV}/3 ; RANG J (6 × 5) = ${rFull}/5 (tolérance 10⁻⁷)\n`+
+ `${expl}\n`+
+ `CONCLUSION : ${rFull<5?'singularité mathématique du modèle DH démontrée par la perte de rang de J.':'aucune singularité globale de J détectée.'}\n`+
+ `LIMITES : positions et conventions physiques θ₄/θ₅ du constructeur non certifiées ; valeurs DH d₃=${t.d3}, d₄=${t.d4}, r₅=${t.r5} mm indicatives.`;
+}
+function singPose(q){q.forEach((v,i)=>document.getElementById('dhq'+(i+1)).value=String(v));dhUpdate();singAnalyse()}
+document.getElementById('singReference').addEventListener('click',()=>singPose([0,30,30,0,60]));
+document.getElementById('singCandidate').addEventListener('click',()=>singPose([0,90,0,-90,0]));
+document.getElementById('singRun').addEventListener('click',singAnalyse);
+singAnalyse();
+
+// V17 — scenario virtuel vérifiable, indépendant du MGD DH.
+const TP={source:{x:220,y:90},dest:{deposit:{x:360,y:100},neighbor:{x:470,y:100}},pieces:{cyl:{name:'cylindre',width:36,height:40,angle:0},box:{name:'parallélépipède',width:44,height:40,angle:30}},limits:{reachMin:150,reachMax:680,gapMax:70,xyTol:10,workingZ:20,safeZ:120,angTol:8}};
+let tpState,tpPlan=[],tpIndex=0,tpLast=null;let tpPlaying=false,tpPaused=false,tpFrame=0,tpRunToken=0;
+const tpClone=a=>JSON.parse(JSON.stringify(a));
+const tpSmooth=u=>u*u*(3-2*u);
+function tpInterpolate(a,b,u){const s=tpClone(a);for(const k of ['x','y','z','angle','gap'])s.pose[k]=a.pose[k]+(b.pose[k]-a.pose[k])*u;const carried=a.piece.carried||b.piece.carried;if(carried){s.piece.x=a.piece.x+(b.piece.x-a.piece.x)*u;s.piece.y=a.piece.y+(b.piece.y-a.piece.y)*u;s.piece.carried=a.piece.carried||b.piece.carried;}return s;}
+function tpButtons(){const b=document.getElementById('tpPause');b.textContent=tpPaused?'▶ Reprendre':'⏸ Pause';b.disabled=!tpPlaying;}
+function tpStop(){tpRunToken++;tpPlaying=false;tpPaused=false;if(tpFrame)cancelAnimationFrame(tpFrame);tpFrame=0;tpButtons();}
+
+function tpNew(){tpStop();let kind=document.getElementById('tpShape').value,goal=document.getElementById('tpGoal').value;
+ tpState={kind,goal,pose:{x:170,y:40,z:120,angle:0,gap:70},piece:{...TP.source,carried:false},log:[],path:[],error:null};tpPlan=tpBuildPlan(kind,goal);tpIndex=0;tpLast=null;tpDraw()}
+function tpBuildPlan(kind,goal){let src=TP.source,dst=TP.dest[goal],width=TP.pieces[kind].width,ang=TP.pieces[kind].angle;
+ return [{act:'move',name:'Approche en hauteur',x:src.x,y:src.y,z:120},
+ {act:'angle',name:'Orientation de la pince',angle:ang},
+ {act:'move',name:'Descente sur la pièce',x:src.x,y:src.y,z:20},
+ {act:'grip',name:'Fermeture et préhension',gap:width},
+ {act:'move',name:'Levée de sécurité',x:src.x,y:src.y,z:120},
+ {act:'move',name:'Transfert vers la destination',x:dst.x,y:dst.y,z:120},
+ {act:'move',name:'Descente pour dépose',x:dst.x,y:dst.y,z:20},
+ {act:'release',name:'Ouverture et dépose',gap:70},
+ {act:'move',name:'Retrait de sécurité',x:dst.x,y:dst.y,z:120}];}
+function tpDistance(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+function tpApply(st,step){let p=st.pose,params=TP.limits,shape=TP.pieces[st.kind];
+ if(step.act==='move'){
+  let r=Math.hypot(step.x,step.y);if(r<params.reachMin||r>params.reachMax)return {ok:false,reason:'Cible hors de la portée radiale hypothétique'};
+  if(step.z<0)return {ok:false,reason:'Passage sous le plan de table'};
+  if(step.z<45&&tpDistance({x:step.x,y:step.y},{x:275,y:-110})<55)return {ok:false,reason:'Collision simplifiée avec la seconde pièce'};
+  if(st.piece.carried&&step.z<shape.height/2)return {ok:false,reason:'Pièce portée trop proche de la table'};
+  p.x=step.x;p.y=step.y;p.z=step.z;
+  if(st.piece.carried){st.piece.x=p.x;st.piece.y=p.y}
+  st.path.push({x:p.x,y:p.y,z:p.z});
+ }else if(step.act==='angle'){p.angle=step.angle}
+ else if(step.act==='grip'){
+  if(tpDistance(p,st.piece)>params.xyTol||Math.abs(p.z-params.workingZ)>5)return {ok:false,reason:'Gripper non centré ou à mauvaise hauteur'};
+  if(Math.abs(p.angle-shape.angle)>params.angTol&&st.kind==='box')return {ok:false,reason:'Orientation des mors non adaptée aux faces du bloc'};
+  if(step.gap>params.gapMax||Math.abs(step.gap-shape.width)>2)return {ok:false,reason:'Ouverture/serrage des mors incompatible'};
+  p.gap=step.gap;st.piece.carried=true;
+ }else if(step.act==='release'){
+  if(!st.piece.carried)return {ok:false,reason:'Aucune pièce transportée'};
+  if(p.z!==params.workingZ)return {ok:false,reason:'Hauteur de dépose non conforme'};
+  p.gap=step.gap;st.piece.carried=false;st.piece.x=p.x;st.piece.y=p.y;
+ }
+ st.log.push({step:st.log.length+1,operation:step.name,x:p.x,y:p.y,z:p.z,orientation:p.angle,ouverture:p.gap,prise:st.piece.carried,statut:'OK'});
+ return {ok:true};}
+function tpAdvance(){if(tpPlaying)tpStop();if(tpIndex>=tpPlan.length||tpState.error)return;let step=tpPlan[tpIndex],res=tpApply(tpState,step);if(!res.ok){tpState.error=res.reason;tpState.log.push({step:tpIndex+1,operation:step.name,statut:'ECHEC : '+res.reason})}else tpIndex++;if(tpIndex===tpPlan.length&&!tpState.error)tpLast=tpSummarize(tpState);tpDraw()}
+function tpSummarize(st){let d=TP.dest[st.goal],err=tpDistance(st.piece,d);return {piece:TP.pieces[st.kind].name,destination:st.goal,operations:st.log.length,reussite:err<=1&&!st.piece.carried,erreurDeposeMm:Number(err.toFixed(3)),porteeFinMm:Number(Math.hypot(st.pose.x,st.pose.y).toFixed(2)),altitudeRetraitMm:st.pose.z,ouvertureFinaleMm:st.pose.gap,orientationPinceDeg:st.pose.angle,modele:'2,5D pédagogique indépendant du DH; absence de contact dynamique et de collision 3D',hypotheses:TP.limits};}
+function tpDraw(){let st=tpState,p=st.pose,src=TP.source,dst=TP.dest[st.goal],shape=TP.pieces[st.kind],svg=document.getElementById('tpCanvas');const map=(x,y)=>({x:70+x*.98,y:320-y*.76});let html='<rect x="15" y="18" width="680" height="370" rx="15" fill="#fff" stroke="#d9e7ed"/><text x="38" y="42" fill="#627e90" font-size="14">Table virtuelle · vue du dessus · X / Y en mm</text>';
+ for(let r of [150,300,450,600,680]){html+=`<circle cx="70" cy="320" r="${r*.91}" fill="none" stroke="#c6dce7" stroke-dasharray="5 7" stroke-width="1"/>`}
+ const marks=[{o:src,c:'#527fae',t:'Prise'},{o:dst,c:'#198e86',t:'Dépose'}];for(let a of marks){let q=map(a.o.x,a.o.y);html+=`<circle cx="${q.x}" cy="${q.y}" r="24" stroke="${a.c}" stroke-width="2" stroke-dasharray="4 4" fill="${a.c}" fill-opacity=".07"/><text x="${q.x+28}" y="${q.y-14}" fill="${a.c}" font-size="13">${a.t}</text>`}
+ let obst=map(275,-110);html+=`<rect x="${obst.x-18}" y="${obst.y-18}" width="36" height="36" rx="3" fill="#dde4eb" stroke="#a3b4bf"/><text x="${obst.x+23}" y="${obst.y+5}" font-size="11" fill="#748897">Objet non manipulé</text>`;
+ let path=st.path.map(q=>{let v=map(q.x,q.y);return `${v.x},${v.y}`}).join(' ');if(path)html+=`<polyline points="${path}" fill="none" stroke="#e2a04b" stroke-width="2.5" stroke-dasharray="7 4"/>`;
+ let obj=map(st.piece.x,st.piece.y);if(st.kind==='cyl')html+=`<circle cx="${obj.x}" cy="${obj.y}" r="18" fill="#e2b781" stroke="#af7c39" stroke-width="2"/>`;else html+=`<rect x="${obj.x-22}" y="${obj.y-15}" width="44" height="30" rx="2" fill="#d7adc6" stroke="#a46c92" stroke-width="2" transform="rotate(30 ${obj.x} ${obj.y})"/>`;
+ // Vue du dessus : IK illustrative de deux segments, sans validation DH constructeur.
+ const B=map(0,0),T=map(p.x,p.y);const L1=290,L2=350,dist=Math.hypot(p.x,p.y);
+ const ux=p.x/dist,uy=p.y/dist,perpx=-uy,perpy=ux;
+ const alpha=(L1*L1+dist*dist-L2*L2)/(2*dist),beta=Math.sqrt(Math.max(0,L1*L1-alpha*alpha));
+ const elbow={x:alpha*ux+beta*perpx,y:alpha*uy+beta*perpy},E=map(elbow.x,elbow.y);
+ html+=`<line x1="${B.x}" y1="${B.y}" x2="${E.x}" y2="${E.y}" stroke="#236fa1" stroke-width="16" stroke-linecap="round" opacity=".8"/><line x1="${E.x}" y1="${E.y}" x2="${T.x}" y2="${T.y}" stroke="#169c93" stroke-width="12" stroke-linecap="round"/><circle cx="${B.x}" cy="${B.y}" r="16" fill="#d4e8f2" stroke="#376f99" stroke-width="3"/><circle cx="${E.x}" cy="${E.y}" r="10" fill="#e9f8f5" stroke="#168b81" stroke-width="3"/><circle cx="${T.x}" cy="${T.y}" r="10" fill="#e7e2f5" stroke="#7653a0" stroke-width="3"/>`;
+ html+=`<text x="${E.x+10}" y="${E.y-12}" fill="#246f76" font-size="11">Coude (IK illustrative)</text>`;
+ let g=map(p.x,p.y),a=p.angle*Math.PI/180;html+=`<circle cx="${g.x}" cy="${g.y}" r="29" fill="none" stroke="#168e9d" stroke-width="2"/><path d="M${g.x-24} ${g.y-9}L${g.x-8} ${g.y-9} M${g.x+8} ${g.y+9}L${g.x+24} ${g.y+9}" stroke="#125d75" stroke-width="6" stroke-linecap="round" transform="rotate(${p.angle} ${g.x} ${g.y})"/><circle cx="${g.x}" cy="${g.y}" r="3" fill="#19495b"/><text x="${g.x+32}" y="${g.y+34}" font-size="12" fill="#146d81">Pince · Z=${p.z} mm</text>`;
+ html+='<path d="M70 320L130 320M70 320L70 255" stroke="#4b6f85" stroke-width="2"/><text x="135" y="327" font-size="12" fill="#4b6f85">X</text><text x="62" y="247" font-size="12" fill="#4b6f85">Y</text>';svg.innerHTML=html;tpDrawSide(st);
+ document.getElementById('tpPose').textContent=`Pince (${p.x}; ${p.y}; ${p.z}) mm · angle ${p.angle}° · ouverture ${p.gap} mm · pièce ${st.piece.carried?'saisie':'non saisie'}`;
+ document.getElementById('tpLog').innerHTML=st.log.map(e=>`<div>${e.step}. ${e.operation} : <b>${e.statut}</b></div>`).join('')||'Aucune opération exécutée.';
+ document.getElementById('tpReport').textContent=tpLast?`RÉSULTAT CALCULÉ\nPièce : ${tpLast.piece}\nDestination : ${tpLast.destination}\nÉtapes : ${tpLast.operations}/9\nCycle : ${tpLast.reussite?'RÉUSSI dans ce modèle':'ÉCHEC'}\nErreur XY de dépose : ${tpLast.erreurDeposeMm} mm\nRetrait Z : ${tpLast.altitudeRetraitMm} mm\nOrientation : ${tpLast.orientationPinceDeg}°\nOuverture finale : ${tpLast.ouvertureFinaleMm} mm\nLimites : modèle 2,5D, non validé physiquement.`:st.error?`ESSAI BLOQUÉ : ${st.error}`:`Étape ${tpIndex}/9.\nAppuyer sur « Étape suivante » ou « Exécuter le cycle ».\nCe modèle ne simule pas les efforts ni les collisions 3D.`;}
+function tpDrawSide(st){const p=st.pose,v=document.getElementById('tpSide');if(!v)return;
+ const x=65+p.x*.82,y=130-p.z*.70,baseX=62,baseY=130;
+ const wristX=x-72,wristY=Math.min(110,60+p.z*.22);
+ let code=`<rect width="720" height="160" fill="#fff"/><path d="M0 132H720" stroke="#b6cbd8" stroke-width="3"/><text x="12" y="148" fill="#658091" font-size="12">Table Z=0</text>`;
+ code+=`<rect x="20" y="114" width="75" height="18" fill="#a8c8d7" stroke="#58788f"/><path d="M${baseX} ${baseY-18}L${baseX+38} ${baseY-75}L${wristX} ${wristY}L${x} ${y}" fill="none" stroke="#2980af" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="${baseX+38}" cy="${baseY-75}" r="7" fill="#fff" stroke="#2979a4" stroke-width="3"/><circle cx="${wristX}" cy="${wristY}" r="7" fill="#fff" stroke="#168b81" stroke-width="3"/>`;
+ let oy=st.piece.carried?y+14:st.piece.x===TP.source.x?117:117,ox=st.piece.carried?x:65+st.piece.x*.82;
+ code+=`<rect x="${ox-15}" y="${oy-13}" width="30" height="22" rx="3" fill="${st.kind==='cyl'?'#e4b67d':'#d6a6c3'}" stroke="#997555" stroke-width="2"/><path d="M${x-16} ${y-13}v19h9m14 -19v19h-9" fill="none" stroke="#224c65" stroke-width="4"/><text x="${Math.min(640,x+19)}" y="${Math.max(14,y-17)}" fill="#23617b" font-size="12">Z=${p.z.toFixed(0)} mm</text>`;
+ code+='<text x="340" y="17" fill="#627f92" font-size="11">Profil pédagogique : hauteur illustrée, pas un MGI ERICC</text>';v.innerHTML=code;}
+async function tpAuto(){tpNew();const token=++tpRunToken;tpPlaying=true;tpPaused=false;tpButtons();
+ for(let i=0;i<tpPlan.length;i++){
+  if(token!==tpRunToken)return;
+  const step=tpPlan[i],from=tpClone(tpState),to=tpClone(tpState),test=tpApply(to,step);
+  if(!test.ok){tpState.error=test.reason;tpState.log.push({step:i+1,operation:step.name,statut:'ECHEC : '+test.reason});break}
+  const start=performance.now();const duration=step.act==='move'?1150:step.act==='angle'?620:760;
+  let progress=0,previous=start;
+  await new Promise(resolve=>{
+   function tick(now){if(token!==tpRunToken){resolve();return}if(!tpPaused){progress+=Math.max(0,now-previous)*Number(document.getElementById('tpSpeed').value)/duration;previous=now;}else previous=now;
+    let u=tpSmooth(Math.min(1,progress)),drawState=tpInterpolate(from,to,u);
+    // La pièce suit les mors uniquement une fois la fermeture validée.
+    if(step.act==='grip'&&progress>=1)drawState.piece.carried=true;
+    if(step.act==='release'&&progress<1)drawState.piece.carried=true;
+    if(step.act==='move'&&from.piece.carried){drawState.piece.x=drawState.pose.x;drawState.piece.y=drawState.pose.y;}
+    const old=tpState;tpState=drawState;tpDraw();tpState=old;
+    if(progress>=1){resolve();return}tpFrame=requestAnimationFrame(tick);
+   }tpFrame=requestAnimationFrame(tick);
+  });
+  if(token!==tpRunToken)return;
+  tpState=to;tpIndex=i+1;tpDraw();
+ }
+ if(token!==tpRunToken)return;
+ if(tpIndex===tpPlan.length&&!tpState.error)tpLast=tpSummarize(tpState);
+ tpPlaying=false;tpPaused=false;tpButtons();tpDraw();
+}
+function tpExport(){const data={logiciel:'ERICC Studio V17',dateSimulation:new Date().toISOString(),resultat:tpLast||null,scenario:{piece:tpState.kind,destination:tpState.goal,plan:tpPlan},journal:tpState.log,avertissement:'Simulation 2,5D, non validée par essai physique; ne constitue pas une preuve de faisabilité du robot réel.'};let b=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(b),a=document.createElement('a');a.href=url;a.download='ERICC_V17_teleoperation_animation_resultats.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1200)}
+document.getElementById('tpAuto').onclick=tpAuto;document.getElementById('tpPause').onclick=()=>{if(!tpPlaying)return;tpPaused=!tpPaused;tpButtons()};document.getElementById('tpSpeed').oninput=e=>document.getElementById('tpSpeedVal').textContent=Number(e.target.value).toFixed(1)+'×';document.getElementById('tpStep').onclick=tpAdvance;document.getElementById('tpReset').onclick=tpNew;document.getElementById('tpExport').onclick=tpExport;document.getElementById('tpShape').onchange=tpNew;document.getElementById('tpGoal').onchange=tpNew;tpNew();
+</script>
+<script>
+'use strict';
+(()=>{
+ const $=id=>document.getElementById(id);
+ const CFG={base1:{x:0,y:0},base2:{x:660,y:0},source:{x:220,y:90},exchange:{x:470,y:100},delivery:{x:600,y:170},reach1:[150,640],reach2:[100,360],safeZ:120,graspZ:20,gapMax:70,clearance:80};
+ const clone=o=>JSON.parse(JSON.stringify(o));
+ const D=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+ const lerp=(a,b,u)=>a+(b-a)*u;
+ const smooth=u=>u*u*(3-2*u);
+ let st,plan=[],index=0,running=false,paused=false,serial=0,frame=0,finished=null;
+ function objData(){return $('hoShape').value==='cyl'?{label:'Cylindre',width:36,angle:0}:{label:'Parallélépipède',width:44,angle:30}}
+ function reset(){serial++;cancelAnimationFrame(frame);running=false;paused=false;finished=null;index=0;
+   st={piece:{...CFG.source,owner:0,angle:objData().angle},r1:{x:170,y:40,z:120,angle:0,gap:70},r2:{x:615,y:180,z:120,angle:0,gap:70},free:true,error:null,log:[],trace1:[],trace2:[]};
+   plan=makePlan();draw();buttons();}
+ function makePlan(){let o=objData(),a=$('hoOrient').value==='wrong'?o.angle+35:o.angle;
+   return [
+    {who:1,kind:'move',name:'R1 · approche au-dessus de la pièce',x:220,y:90,z:120},
+    {who:1,kind:'turn',name:'R1 · orienter les mors',angle:a},
+    {who:1,kind:'move',name:'R1 · descente de préhension',x:220,y:90,z:20},
+    {who:1,kind:'grip',name:'R1 · saisir la pièce',gap:o.width},
+    {who:1,kind:'move',name:'R1 · lever la pièce',x:220,y:90,z:120},
+    {who:1,kind:'move',name:'R1 · transfert vers zone commune',x:470,y:100,z:120},
+    {who:1,kind:'move',name:'R1 · descente et dépôt',x:470,y:100,z:20},
+    {who:1,kind:'release',name:'R1 · libérer la pièce',gap:70},
+    {who:2,kind:'check',name:'R2 · demander l’accès à la zone'},
+    {who:1,kind:'move',name:'R1 · retrait pour libérer l’accès',x:340,y:70,z:120},
+    {who:2,kind:'check',name:'R2 · autorisation de prise'},
+    {who:2,kind:'move',name:'R2 · approche au-dessus de la pièce',x:470,y:100,z:120},
+    {who:2,kind:'turn',name:'R2 · orienter les mors',angle:a},
+    {who:2,kind:'move',name:'R2 · descente de prise',x:470,y:100,z:20},
+    {who:2,kind:'grip',name:'R2 · saisir la pièce',gap:o.width},
+    {who:2,kind:'move',name:'R2 · levage sécurisé',x:470,y:100,z:120},
+    {who:2,kind:'move',name:'R2 · transporter vers zone propre',x:600,y:170,z:120},
+    {who:2,kind:'move',name:'R2 · descente de dépose',x:600,y:170,z:20},
+    {who:2,kind:'release',name:'R2 · déposer et libérer',gap:70},
+    {who:2,kind:'move',name:'R2 · retrait final',x:605,y:190,z:120}
+   ];}
+ function fail(message){st.error=message;return false}
+ function action(s){let r=s.who===1?st.r1:st.r2,base=s.who===1?CFG.base1:CFG.base2,lim=s.who===1?CFG.reach1:CFG.reach2,p=st.piece,o=objData();
+  if(s.kind==='move'){
+    const target={x:s.x,y:s.y},dist=D(target,base);
+    if(dist<lim[0]||dist>lim[1])return fail('Cible hors de la portée supposée de R'+s.who+' ('+dist.toFixed(1)+' mm)');
+    if(s.z<0)return fail('Collision avec la table : Z négatif');
+    if(s.who===2&&D(target,CFG.exchange)<15&&!st.free)return fail('Collision/accès : R1 occupe encore la zone commune');
+    if(p.owner===s.who && s.z<20)return fail('Pièce portée trop basse');
+    Object.assign(r,{x:s.x,y:s.y,z:s.z});
+    st['trace'+s.who].push({x:r.x,y:r.y});
+    if(p.owner===s.who){p.x=r.x;p.y=r.y}
+  }else if(s.kind==='turn')r.angle=s.angle;
+  else if(s.kind==='grip'){
+    if(p.owner)return fail('Pièce déjà saisie par un autre robot');
+    if(D(r,p)>10||Math.abs(r.z-CFG.graspZ)>5)return fail('Pince mal centrée ou hauteur incompatible');
+    if(o.width>CFG.gapMax||Math.abs(s.gap-o.width)>2)return fail('Ouverture incompatible avec la pièce');
+    if($('hoOrient').value==='wrong'&&o.label==='Cylindre')return fail('Pince inclinée de 35° par rapport à la direction de préhension admissible du cylindre dans ce test : prise refusée. Une simple rotation autour de l’axe d’un cylindre vertical serait, elle, indifférente.');
+    if(o.label==='Parallélépipède'&&Math.abs(r.angle-p.angle)>8)return fail('Mauvais alignement des mors sur les faces (écart >8°)');
+    if(s.who===2&&!st.free)return fail('Préhension interdite : robot 1 non dégagé');
+    r.gap=s.gap;p.owner=s.who;
+  }else if(s.kind==='release'){
+    if(p.owner!==s.who||r.z!==CFG.graspZ)return fail('Dépose impossible : pince sans objet ou mauvaise hauteur');
+    r.gap=s.gap;p.owner=0;p.x=r.x;p.y=r.y;
+    if(s.who===1){st.free=false;}
+  }else if(s.kind==='check'){
+    if(s.name.includes('demander')){ if($('hoSync').value==='unsafe')return fail('Prise prématurée : autorisation demandée avant le retrait de R1'); }
+    else {
+      if(D(st.r1,CFG.exchange)<CFG.clearance)return fail('Zone commune encore occupée par R1');
+      if(p.owner!==0||D(p,CFG.exchange)>10)return fail('Pièce absente de la zone commune');
+      st.free=true;
+    }
+  }
+  st.log.push({numero:st.log.length+1,action:s.name,robot:s.who,statut:'OK',piecePorteur:p.owner,x:p.x,y:p.y});return true;
+ }
+ function next(){if(running)return;if(index>=plan.length||st.error)return;
+  const s=plan[index];if(!action(s)){st.log.push({numero:index+1,action:s.name,statut:'ECHEC',motif:st.error})}else index++;
+  if(index===plan.length&&!st.error)finished=summary();draw();}
+ function summary(){return {objet:objData().label,etapesValidees:index,etapesPrevues:plan.length,resultat:!st.error&&D(st.piece,CFG.delivery)<1&&st.piece.owner===0?'TRANSFERT COMPLET RÉUSSI':'INCOMPLET',distanceInitialeR1Mm:+D(CFG.source,CFG.base1).toFixed(2),distanceEchangeR1Mm:+D(CFG.exchange,CFG.base1).toFixed(2),distanceEchangeR2Mm:+D(CFG.exchange,CFG.base2).toFixed(2),distanceFinaleR2Mm:+D(CFG.delivery,CFG.base2).toFixed(2),erreurFinaleMm:+D(st.piece,CFG.delivery).toFixed(3),porteurFinal:st.piece.owner,hypothese:'Modèle 2,5D à bras illustratifs; pas de MGI ERICC ni de dynamique de contact ou collisions corporelles 3D'};}
+ function animate(){if(running)return;reset();let token=serial;running=true;buttons();(async()=>{
+  for(let j=0;j<plan.length;j++){
+    if(token!==serial)return;const step=plan[j],before=clone(st),ok=action(step);
+    if(!ok){st.log.push({numero:j+1,action:step.name,statut:'ECHEC',motif:st.error});break}
+    const after=clone(st),who=step.who,key='r'+who,duration=step.kind==='move'?700:step.kind==='check'?430:540;
+    let progress=0,last=performance.now();await new Promise(resolve=>{
+      function tick(now){if(token!==serial){resolve();return;}if(!paused)progress+=Math.max(0,now-last)/duration;last=now;
+       const u=smooth(Math.min(1,progress));let tmp=clone(before),a=before[key],b=after[key];
+       for(const k of ['x','y','z','angle','gap'])tmp[key][k]=lerp(a[k],b[k],u);
+       if(before.piece.owner===who&&step.kind==='move'){tmp.piece.x=tmp[key].x;tmp.piece.y=tmp[key].y}
+       if(step.kind==='grip'&&u>=1)tmp.piece.owner=who;
+       if(step.kind==='release'&&u<1)tmp.piece.owner=who;
+       const orig=st;st=tmp;draw();st=orig;
+       if(progress>=1){resolve();return}frame=requestAnimationFrame(tick);
+      }frame=requestAnimationFrame(tick);
+    });
+    if(token!==serial)return;st=after;index=j+1;draw();
+  }
+  if(token!==serial)return;if(index===plan.length&&!st.error)finished=summary();running=false;paused=false;buttons();draw();
+ })();}
+ function buttons(){$('hoPause').disabled=!running;$('hoPause').textContent=paused?'▶ Reprendre':'⏸ Pause';$('hoStep').disabled=running;}
+ function scene(){let m=(p)=>({x:48+p.x*.96,y:325-p.y*.78}),svg=$('hoScene');let code='<rect x="10" y="12" width="758" height="398" rx="16" fill="#fff" stroke="#dce7ed"/><text x="26" y="35" fill="#496a80" font-size="14">Table virtuelle · Deux robots · vue XY (mm)</text>';
+  for(const [p,color,label] of [[CFG.source,'#4b8db8','PRISE'],[CFG.exchange,'#db984e','ÉCHANGE'],[CFG.delivery,'#1f9a82','R2 : DÉPOSE']]){let x=m(p);code+=`<circle cx="${x.x}" cy="${x.y}" r="26" stroke="${color}" stroke-width="2" stroke-dasharray="5 5" fill="${color}" fill-opacity=".09"/><text x="${x.x-23}" y="${x.y-32}" fill="${color}" font-size="11" font-weight="bold">${label}</text>`;}
+  for(const [id,base,pose,color] of [[1,CFG.base1,st.r1,'#3877bd'],[2,CFG.base2,st.r2,'#9b5ab3']]){
+   const a=m(base),b=m(pose),dist=D(base,pose),L1=id===1?290:185,L2=id===1?350:195;
+   const xx=pose.x-base.x,yy=pose.y-base.y,d=Math.max(.0001,dist);const c=(L1*L1+d*d-L2*L2)/(2*d);const h=Math.sqrt(Math.max(0,L1*L1-c*c));const elbow={x:base.x+c*xx/d-h*yy/d,y:base.y+c*yy/d+h*xx/d};let e=m(elbow);
+   code+=`<path d="M${a.x} ${a.y}L${e.x} ${e.y}L${b.x} ${b.y}" stroke="${color}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="${a.x}" cy="${a.y}" r="17" fill="#f5f7fc" stroke="${color}" stroke-width="3"/><text x="${a.x-11}" y="${a.y+5}" fill="${color}" font-size="13" font-weight="bold">R${id}</text><circle cx="${e.x}" cy="${e.y}" r="8" fill="white" stroke="${color}" stroke-width="3"/><circle cx="${b.x}" cy="${b.y}" r="7" fill="${color}"/>`;
+   const aDeg=pose.angle;code+=`<path d="M${b.x-18} ${b.y-10}v14h9 M${b.x+18} ${b.y-10}v14h-9" stroke="${color}" stroke-width="4" fill="none" transform="rotate(${aDeg} ${b.x} ${b.y})"/>`;
+  }
+  let q=m(st.piece);if($('hoShape').value==='cyl')code+=`<circle cx="${q.x}" cy="${q.y}" r="17" fill="#e6bb73" stroke="#b17931" stroke-width="2"/>`;else code+=`<rect x="${q.x-22}" y="${q.y-15}" width="44" height="30" rx="2" fill="#e5b0c7" stroke="#aa718d" stroke-width="2" transform="rotate(30 ${q.x} ${q.y})"/>`;
+  code+=`<text x="30" y="396" font-size="12" fill="#48687e">Porteur : ${st.piece.owner===0?'aucun · pièce posée':'robot '+st.piece.owner} · R1 Z=${st.r1.z.toFixed(0)} mm · R2 Z=${st.r2.z.toFixed(0)} mm</text>`;
+  svg.innerHTML=code;
+ }
+ function draw(){scene();$('hoStatus').textContent=st.error?'⛔ Échec : '+st.error:finished?'✓ Cycle complet : le robot 2 a récupéré puis déposé la pièce':`Étape ${index} / ${plan.length} · ${st.piece.owner?'pièce portée par R'+st.piece.owner:'pièce posée'}`;
+  const a=D(CFG.exchange,CFG.base1),b=D(CFG.exchange,CFG.base2),o=objData();$('hoMetrics').textContent=`OBJET : ${o.label} · largeur ${o.width} mm\nPRISE INITIAL : (${CFG.source.x}, ${CFG.source.y}) mm\nPOINT COMMUN : (${CFG.exchange.x}, ${CFG.exchange.y}) mm\nR1 → COMMUN : ${a.toFixed(1)} mm (max 640)\nR2 → COMMUN : ${b.toFixed(1)} mm (max 360)\nORIENTATION OBJET : ${o.angle}°\nMORS MAX : ${CFG.gapMax} mm\nÉTAPES : ${index}/${plan.length}\nSTATUT : ${st.error?'ÉCHEC':'EN COURS / PRÊT'}${finished?'\nTRANSFERT : '+finished.resultat+'\nERREUR FINALE : '+finished.erreurFinaleMm+' mm':''}\n\nPortées, collisions et trajectoires simplifiées.`;
+  $('hoEvents').innerHTML=st.log.map(e=>`<div style="margin-bottom:4px;color:${e.statut==='ECHEC'?'#b33744':'inherit'}">${e.numero}. ${e.action} — <b>${e.statut}</b>${e.motif?' : '+e.motif:''}</div>`).join('')||'Aucun événement. Lancer le transfert.';
+ }
+ function exportJson(){const payload={version:'ERICC Studio V19 — contrôle de prise corrigé',scenario:'transfert simulé R1 → R2',date:new Date().toISOString(),configuration:CFG,objet:objData(),parametres:{orientation:$('hoOrient').value,synchronisation:$('hoSync').value},resultat:finished,journal:st.log,erreur:st.error,limites:'Deux bras 2,5D illustratifs, pas une validation du robot physique ni des cinématiques MGI constructeur.'};const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='ERICC_V18_1_transfert_2_robots_resultats.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+ $('hoStart').onclick=animate;$('hoPause').onclick=()=>{paused=!paused;buttons()};$('hoStep').onclick=next;$('hoReset').onclick=reset;$('hoExport').onclick=exportJson;
+ ['hoShape','hoOrient','hoSync'].forEach(id=>$(id).onchange=reset);reset();
+ window.__ericcHandoffTest={reset,next,summary:()=>finished,state:()=>clone(st),plan:()=>clone(plan)};
+})();
+</script>
+
+<script>
+(function(){
+'use strict';
+const el=id=>document.getElementById(id), keys=['t1','t2','t3','t4','t5','op'];
+let points=[], cursor=0, running=false, token=0, trace=[],lastStats=null;
+const presets=[
+ {t1:-85,t2:-15,t3:-20,t4:0,t5:-5,op:25},
+ {t1:85,t2:65,t3:55,t4:0,t5:75,op:25}
+];
+const interp=(a,b,u)=>{const p={};keys.forEach(k=>p[k]=a[k]+(b[k]-a[k])*u);return p;};
+const pos=q=>fk(q).G;
+const dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y,a.z-b.z);
+const segDist=(p,a,b)=>{let dx=b.x-a.x,dy=b.y-a.y,dz=b.z-a.z,den=dx*dx+dy*dy+dz*dz;let t=den?Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy+(p.z-a.z)*dz)/den)):0;return Math.hypot(p.x-a.x-t*dx,p.y-a.y-t*dy,p.z-a.z-t*dz)};
+function setPose(q){go({...q});}
+function capture(){return Object.fromEntries(keys.map(k=>[k,state[k]]));}
+function stop(){running=false;token++;}
+function sample(){let sampled=[], maxdev=0, lengths=0, straight=0, n=0, worst=[];for(let i=0;i<points.length-1;i++){
+ let a=points[i],b=points[i+1],p0=pos(a),p1=pos(b);let last=p0,localMax=0;straight+=dist(p0,p1);
+ for(let j=0;j<=90;j++){let u=j/90,p=pos(interp(a,b,u));if(j>0)lengths+=dist(last,p);last=p;let d=segDist(p,p0,p1);localMax=Math.max(localMax,d);maxdev=Math.max(maxdev,d);if(i>0&&j===0)continue;sampled.push(p);n++}worst.push(localMax)}
+ return {sampled,maxdev,lengths,straight,ratio:straight?lengths/straight:1,segmentMax:worst,n};}
+const ns='http://www.w3.org/2000/svg';
+function plot(id,axes,samples){let all=[...samples,...points.map(pos)];if(all.length===0){el(id).innerHTML='<text x="20" y="125" fill="#718096" font-size="15">Enregistre 2 points ou charge un essai.</text>';return}
+ let [ax,ay]=axes, xs=all.map(p=>p[ax]),ys=all.map(p=>p[ay]);let minx=Math.min(...xs),maxx=Math.max(...xs),miny=Math.min(...ys),maxy=Math.max(...ys),spanx=Math.max(1,maxx-minx),spany=Math.max(1,maxy-miny);minx-=spanx*.12;maxx+=spanx*.12;miny-=spany*.18;maxy+=spany*.18;
+ let pt=p=>[(32+(p[ax]-minx)/(maxx-minx)*455).toFixed(2),(223-(p[ay]-miny)/(maxy-miny)*194).toFixed(2)];
+ let tostr=arr=>arr.map((p,i)=>{let [x,y]=pt(p);return (i?'L':'M')+x+' '+y}).join(' ');
+ let html='<rect width="520" height="250" fill="white"/><path d="M32 23V223H488" fill="none" stroke="#d0dce6" stroke-width="1.5"/>';
+ html+=`<text x="15" y="16" fill="#476478" font-size="12">${ay.toUpperCase()} (mm)</text><text x="438" y="240" fill="#476478" font-size="12">${ax.toUpperCase()} (mm)</text>`;
+ if(points.length>1){html+=`<path d="${tostr(points.map(pos))}" fill="none" stroke="#e07945" stroke-width="2.6" stroke-dasharray="8 6"/>`;}
+ if(samples.length>1)html+=`<path d="${tostr(samples)}" fill="none" stroke="#087d83" stroke-width="3.2" stroke-linejoin="round"/>`;
+ points.forEach((q,i)=>{let [x,y]=pt(pos(q));html+=`<circle cx="${x}" cy="${y}" r="5.5" fill="#6a40aa" stroke="white" stroke-width="1"/><text x="${+x+8}" y="${+y-8}" font-size="12" fill="#44305f">P${i+1}</text>`});
+ if(running){let [x,y]=pt(pos(state));html+=`<circle cx="${x}" cy="${y}" r="7" fill="#f0ac24" stroke="#192f41" stroke-width="1.5"/>`}
+ el(id).innerHTML=html;
+}
+function refresh(){let stats=points.length>=2?sample():null;lastStats=stats;plot('lrXY',['x','y'],stats?.sampled||[]);plot('lrXZ',['x','z'],stats?.sampled||[]);
+ if(stats){el('lrMetrics').textContent=`Points mémorisés : ${points.length}\nSegments interpolés : ${points.length-1}\nDistance directe cumulée : ${stats.straight.toFixed(2)} mm\nLongueur trajectoire calculée : ${stats.lengths.toFixed(2)} mm\nÉcart maximal à la droite (3D) : ${stats.maxdev.toFixed(2)} mm\nRapport longueurs : ${stats.ratio.toFixed(4)}\nÉcarts max par segment : ${stats.segmentMax.map(x=>x.toFixed(2)).join(' / ')} mm\nÉchantillons : ${stats.n} (90 intervalles/segment)`}
+ else el('lrMetrics').textContent=`Points mémorisés : ${points.length}\nEnregistrer au moins deux positions pour mesurer l'écart à la droite.`;
+ el('lrLog').textContent=points.length?points.map((q,i)=>`${i+1===cursor?'▶':' '} P${i+1} : [${[q.t1,q.t2,q.t3,q.t4,q.t5].map(v=>v.toFixed(1)).join('°, ')}°]  | G = (${Object.values(pos(q)).map(x=>x.toFixed(1)).join('; ')}) mm`).join('\n'):'Aucun point enregistré.';
+}
+function example(count){stop();points=[];let A=presets[0],B=presets[1];for(let i=0;i<count;i++)points.push(interp(A,B,i/(count-1)));cursor=0;setPose(A);refresh()}
+function val(){stop();points.push(capture());cursor=points.length;refresh()}
+function begin(){stop();if(!points.length)return;cursor=1;setPose(points[0]);refresh()}
+async function play(){if(points.length<2){el('lrMetrics').textContent='Au moins 2 points sont nécessaires pour une lecture.';return}stop();running=true;let local=token;let startidx=Math.max(0,cursor-1);if(startidx>=points.length-1)startidx=0;setPose(points[startidx]);refresh();for(let i=startidx;i<points.length-1;i++){if(local!==token)return;let a=points[i],b=points[i+1],start=performance.now();await new Promise(resolve=>{function frame(now){if(local!==token){resolve();return}let u=Math.min(1,(now-start)/1450);setPose(interp(a,b,u));if(Math.round(u*30)!==0) { /* smooth animation */ } if(u<1)requestAnimationFrame(frame);else resolve()}requestAnimationFrame(frame)});if(local!==token)return;cursor=i+2;refresh()}running=false;cursor=points.length;refresh()}
+function save(){let d={title:'ERICC V19 apprentissage virtuel',method:'interpolation linéaire des angles du modèle simplifié pour chaque segment',unit:'mm',points:points.map(q=>({angles:q,position:pos(q)})),results:lastStats?{maxDeviationMm:lastStats.maxdev,pathLengthMm:lastStats.lengths,straightSumMm:lastStats.straight,lengthRatio:lastStats.ratio,segmentsMaxDeviationMm:lastStats.segmentMax,samples:lastStats.n}:null,limits:'Modèle simplifié ; non validé sur robot physique. Pas de MGI cartésien, pas de détection de collision ou garantie de singularité.'};let u=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));let a=document.createElement('a');a.href=u;a.download='ERICC_V19_apprentissage_resultats.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+el('lrI').onclick=()=>{stop();setPose(basePose());refresh()};el('lrVal').onclick=val;el('lrP').onclick=begin;el('lrL').onclick=play;el('lrStop').onclick=()=>{stop();refresh()};el('lrClear').onclick=()=>{stop();points=[];cursor=0;refresh()};el('lrExample2').onclick=()=>example(2);el('lrExample5').onclick=()=>example(5);el('lrExport').onclick=save;example(2);go(basePose());
+window.__ERICC_LEARN__={get points(){return points.map(p=>({...p}))},metrics(){return lastStats},example,play};
+})();
+</script>
+
+<script>
+(function(){'use strict';
+ const $=id=>document.getElementById(id),RAD=Math.PI/180;
+ let model=null,anim=0,paulIndex=0,last=null,clip=0;
+ const qA=[-20,15,10,0,-5],qB=[35,38,20,10,15];
+ function pd(q,dim){return dhForward(q,dim).p}
+ function diff(a,b){return Math.hypot(...a.map((v,i)=>v-b[i]))}
+ function mix(a,b,t){return a.map((v,i)=>v+(b[i]-v)*t)}
+ function chord(p,a,b){let v=b.map((x,i)=>x-a[i]),w=p.map((x,i)=>x-a[i]);let vv=v.reduce((s,x)=>s+x*x,0);let t=vv?Math.max(0,Math.min(1,w.reduce((s,x,i)=>s+x*v[i],0)/vv)):0;return diff(p,a.map((x,i)=>x+t*v[i]))}
+ function pathLen(P){return P.slice(1).reduce((a,p,i)=>a+diff(p,P[i]),0)}
+ function fmt(v){return Math.abs(v)<1e-9?'0':v.toFixed(4)}
+ function matStr(M){return M.map(r=>'[ '+r.map(v=>fmt(v).padStart(10)).join('  ')+' ]').join('\n')}
+ function invRigid(T){let X=eye4();for(let i=0;i<3;i++)for(let j=0;j<3;j++)X[i][j]=T[j][i];for(let i=0;i<3;i++)X[i][3]=-Array.from({length:3},(_,k)=>X[i][k]*T[k][3]).reduce((a,b)=>a+b,0);return X}
+ function deviation(M,N){return Math.max(...M.flatMap((r,i)=>r.map((v,j)=>Math.abs(v-N[i][j]))))}
+ function run(){let dim=dhRead();model=dim;const a=pd(qA,dim),b=pd(qB,dim),n=48;
+  let art=[],car=[],sol=[],angles=[],solved=0,maxerr=0,failures=0;
+  for(let i=0;i<=n;i++){let u=i/n;art.push(pd(mix(qA,qB,u),dim));let xyz=mix(a,b,u);car.push(xyz);let ik=dhIK(xyz,i?angles[angles.length-1]:qA,dim);angles.push(ik.q);let achieved=pd(ik.q,dim);sol.push(achieved);if(ik.err<=1){solved++;maxerr=Math.max(maxerr,ik.err)}else failures++}
+  let devi=art.reduce((v,p)=>Math.max(v,chord(p,a,b)),0);
+  let sdev=sol.reduce((v,p,i)=>Math.max(v,diff(p,car[i])),0);
+  let endpointError=diff(sol[sol.length-1],b);
+  let pa=dhForward([0,20,10,0,10],dim),pb=dhForward([45,35,25,-20,5],dim),pSing=dhForward([0,90,0,-90,0],dim);
+  const checks=[pa,pb,pSing].map(x=>{let M=x.M,R=x.M;let ortho=0;for(let i=0;i<3;i++)for(let j=0;j<3;j++){let d=0;for(let k=0;k<3;k++)d+=R[k][i]*R[k][j];ortho=Math.max(ortho,Math.abs(d-(i===j?1:0)))}return ortho});
+  let qChallenge=[[5,22,8,0,-5],[45,35,22,-15,10],[-35,18,25,20,0]];
+  let validation=qChallenge.map(q=>{let target=pd(q,dim),out=dhIK(target,[0,0,0,0,0],dim);return {original:q,originalXYZ:target,solution:out.q,error:out.err}});
+  let data={date:new Date().toISOString(),units:'mm',qStart:qA,qEnd:qB,geometry:{d3:dim.d3,d4:dim.d4,r5:dim.r5},path:{n,points:n+1,straightDistance:diff(a,b),articularLength:pathLen(art),articularDeviation:devi,cartesianReconstructedLength:pathLen(sol),cartesianMaxError:sdev,cartesianEndError:endpointError,successfulNodes:solved,failedNodes:failures,maxSuccessfulNodeError:maxerr},MGD:{orientationOrthogonalityError:checks},MGIposition:validation,PaulIdentityMax:0,limitations:'Cotes indicatives ; MGI position seul, pas de contrainte orientation 5D ni collisions ; aucun essai réel'};
+  let P=eye4(),errPaul=0;let forward=dhForward(qA,dim);for(let i=0;i<5;i++){P=mm(P,forward.A[i]);let Ui=mm(invRigid(P),forward.M);let suffix=eye4();for(let j=i+1;j<5;j++)suffix=mm(suffix,forward.A[j]);errPaul=Math.max(errPaul,deviation(Ui,suffix))}data.PaulIdentityMax=errPaul;
+  last={data,art,car,sol};
+  $('ep20RunNote').textContent='✓ Tous les essais recalculés le '+new Date().toLocaleTimeString('fr-FR')+' — résultats mis à jour ci-dessous.';
+  $('ep20Results').textContent=`A. TRAJECTOIRES — MÊMES EXTRÉMITÉS\n`+
+   `Distance droite : ${data.path.straightDistance.toFixed(2)} mm\n`+
+   `Longueur interp. articulaire : ${data.path.articularLength.toFixed(2)} mm\n`+
+   `Écart maxi articulaire / droite : ${data.path.articularDeviation.toFixed(2)} mm\n`+
+   `MGI cartésien : ${solved}/${n+1} nœuds à ≤1 mm\n`+
+   `Écart maxi ligne MGI : ${sdev.toFixed(4)} mm\n`+
+   `Longueur ligne MGI : ${pathLen(sol).toFixed(2)} mm\n\n`+
+   `B. TRANSFORMATIONS DH\n`+
+   `Orthogonalité RᵀR−I (max sur 3 poses) : ${Math.max(...checks).toExponential(2)}\n`+
+   `Identité de Paul max : ${errPaul.toExponential(2)}\n\n`+
+   `C. ALLER-RETOUR MGD → MGI → MGD\n`+
+    validation.map((v,i)=>`Test ${i+1} : erreur position = ${v.error.toFixed(5)} mm`).join('\n')+
+   `\n\nD. NOTE\nOrientation et limites physiques non validées. Les résultats ne démontrent pas l'accessibilité réelle de la trajectoire.`;
+  draw();paulShow();toolShow();return data;
+ }
+ function draw(active=-1){if(!last)return;let {art,car,sol}=last;let all=art.concat(car,sol);let xs=all.map(x=>x[0]),zs=all.map(x=>x[2]);let xmin=Math.min(...xs),xmax=Math.max(...xs),zmin=Math.min(...zs),zmax=Math.max(...zs);let wx=Math.max(1,xmax-xmin),wz=Math.max(1,zmax-zmin);xmin-=wx*.12;xmax+=wx*.12;zmin-=wz*.15;zmax+=wz*.15;
+ const at=v=>[35+(v[0]-xmin)/(xmax-xmin)*470,280-(v[2]-zmin)/(zmax-zmin)*240];const d=(arr)=>arr.map((p,i)=>{let v=at(p);return (i?'L':'M')+v[0].toFixed(1)+' '+v[1].toFixed(1)}).join(' ');
+ let out=`<rect width="540" height="315" fill="white"/><path d="M35 32V280H506" fill="none" stroke="#c9d6e2" stroke-width="1.7"/>`;
+ out+=`<text x="9" y="19" font-size="12" fill="#527086">Z↑</text><text x="485" y="305" font-size="12" fill="#527086">X→</text>`;
+ out+=`<path d="${d(car)}" fill="none" stroke="#e09550" stroke-width="3.3" stroke-dasharray="7 5"/><path d="${d(art)}" fill="none" stroke="#2e6fbc" stroke-width="3.3"/><path d="${d(sol)}" fill="none" stroke="#148f83" stroke-width="1.9"/>`;
+ if(active>=0){let p=at(sol[active]);out+=`<circle cx="${p[0]}" cy="${p[1]}" r="7.5" fill="#0f9488" stroke="white" stroke-width="2"/>`}
+ $('ep20Plot').innerHTML=out;
+ }
+ function paulShow(){let t=model||dhRead(),f=dhForward(qA,t);let prefix=eye4(),suffix=eye4();for(let i=0;i<paulIndex;i++)prefix=mm(prefix,f.A[i]);for(let i=paulIndex;i<5;i++)suffix=mm(suffix,f.A[i]);let Ui=mm(invRigid(prefix),f.M);$('ep20Paul').textContent=`U${paulIndex} = (T₀${paulIndex})⁻¹ × T₀₅\n`+`Reste attendu : T${paulIndex}${paulIndex+1} ··· T₄₅\n`+`Écart maximal = ${deviation(Ui,suffix).toExponential(3)}\n\n`+matStr(Ui)}
+ const buttons=$('ep20PaulButtons');for(let k=0;k<=4;k++){let b=document.createElement('button');b.className='btn';b.textContent='U'+k;b.onclick=()=>{paulIndex=k;paulShow()};buttons.appendChild(b)}
+ function toolShow(){let d=model||dhRead(),f=dhForward(qA,d).M,L=Number($('ep20ToolLen').value),p=f.slice(0,3).map(row=>row[3]+L*row[2]);$('ep20ToolOut').textContent=L;$('ep20Tool').textContent=`T₅P = Trans(z₅, ${L} mm)\n`+`Point de prise :\n X = ${p[0].toFixed(3)} mm\n Y = ${p[1].toFixed(3)} mm\n Z = ${p[2].toFixed(3)} mm\n`+`Critère : origine du repère P au centre géométrique de la zone de préhension (hypothèse).`}
+ function play(){if(!last)run();clip++;const me=clip,start=performance.now(),n=last.sol.length;function frame(now){if(me!==clip)return;let idx=Math.min(n-1,Math.floor((now-start)/90));draw(idx);if(idx<n-1)anim=requestAnimationFrame(frame)}anim=requestAnimationFrame(frame)}
+ $('ep20Run').onclick=()=>{const b=$('ep20Run');const txt=b.textContent;b.textContent='✔ Essais relancés';run();setTimeout(()=>b.textContent=txt,900)};$('ep20Play').onclick=play;$('ep20Stop').onclick=()=>{clip++;cancelAnimationFrame(anim);draw();$('ep20RunNote').textContent='Animation arrêtée.'};$('ep20ToolLen').oninput=toolShow;
+ $('ep20Export').onclick=()=>{if(!last)run();let b=new Blob([JSON.stringify(last.data,null,2)],{type:'application/json'}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='ERICC_V20_resultats_EP_fin.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),500)};
+ window.__ERICC_EP20__={run,paulShow,get result(){return last?.data}};run();
+})();
+</script>
+<a href="#dashboard" class="premium-backtop" aria-label="Retour en haut">↑ Haut</a>
+<script>
+/* Nav highlight: pure UI; no simulation variables touched. */
+(()=>{const links=[...document.querySelectorAll('.premium-nav a')];links.forEach(link=>link.addEventListener('click',()=>{links.forEach(a=>a.classList.remove('is-active'));link.classList.add('is-active')}));})();
+</script><script id="g7-studio-bridge">
+(function(){let last='';function send(){try{const s={theta1:Number(state.t1),theta2:Number(state.t2),theta3:Number(state.t3),theta4:Number(state.t4),theta5:Number(state.t5),grip:Number(state.op)};const serialized=JSON.stringify(s);if(serialized!==last){last=serialized;window.parent.postMessage({source:'g7-studio',kind:'ericc',joints:s},window.location.origin)}}catch(e){}}window.addEventListener('load',send);setInterval(send,160);})();
+</script>
+</body></html>

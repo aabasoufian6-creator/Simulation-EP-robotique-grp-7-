@@ -1,0 +1,937 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NAO Motion Lab V2.1 — Groupe 7 | Cinématique et mesures</title>
+<style>
+:root{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:#eaf7ff;background:#071723}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#123c56,#071723 70%)}header{padding:17px clamp(18px,4vw,56px);border-bottom:1px solid #315269;display:flex;justify-content:space-between;align-items:center;gap:12px}header strong{font-size:19px;letter-spacing:.7px}header strong span{color:#58d7e3}header small{color:#9ec2d4}.tag{border:1px solid #45748b;border-radius:30px;padding:7px 12px;color:#b5e9f2;font-size:11px}.wrap{max-width:1550px;margin:auto;padding:23px 22px 40px}.intro{display:flex;gap:15px;justify-content:space-between;align-items:end;flex-wrap:wrap}.intro h1{margin:5px 0 7px;font-size:clamp(28px,4vw,42px);letter-spacing:-1px}.intro p{max-width:800px;color:#acc9d8;font-size:13px;line-height:1.65;margin:0}.pills{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0 20px}.pills span{font-size:11px;padding:7px 10px;border-radius:30px;background:#14374b;border:1px solid #31596c;color:#a9e4e9}.main{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(350px,.8fr);gap:18px}.panel{background:#0d2839;border:1px solid #2e5368;border-radius:18px;overflow:hidden}.panel h2{font-size:15px;margin:0}.panelhead{padding:15px 17px;border-bottom:1px solid #29495d;display:flex;justify-content:space-between;align-items:center;gap:10px}.panelhead small{color:#72d8e4;font-size:11px}.viewport{position:relative;height:min(65vh,660px);min-height:400px;background:radial-gradient(ellipse at 50% 42%,#1a4760,#071925 70%);overflow:hidden}#scene{width:100%;height:100%;display:block;cursor:grab;touch-action:none}#scene:active{cursor:grabbing}.viewport .hint{position:absolute;bottom:12px;left:13px;background:#071b29b8;color:#b6d4e2;border:1px solid #365a6c;border-radius:8px;padding:8px 10px;font-size:11px;pointer-events:none}.overlay{position:absolute;top:12px;left:12px;display:grid;gap:7px;pointer-events:none}.overlay div{background:#082436cc;border:1px solid #2e5368;border-radius:8px;padding:8px 11px;font-size:11px;color:#a9d4e1}.overlay b{color:#7aebdf}.tools{display:flex;gap:7px;flex-wrap:wrap;padding:12px;border-top:1px solid #2c5165}button,select,input[type=number]{font:inherit}button{cursor:pointer;background:#1a475e;color:#dffaff;border:1px solid #49778b;padding:9px 11px;border-radius:9px;font-size:12px}button:hover{background:#28667b}button.primary{background:#167b87;border-color:#48d1db;color:white}button.active{background:#276b78;border-color:#7ce4e5}button:disabled{opacity:.45;cursor:not-allowed}.controls{padding:16px;max-height:800px;overflow:auto}.field{margin-bottom:13px}.field>label{display:block;font-size:11px;color:#a8cedb;margin-bottom:7px;font-weight:650}.field select,.field input[type=number]{width:100%;border:1px solid #416a7d;background:#0c2b3e;color:#e8faff;border-radius:9px;padding:10px;font-size:13px}.selected{border:1px solid #3b687c;border-radius:12px;background:#10384c;padding:14px;margin:12px 0}.selected h3{margin:0 0 7px;font-size:17px;color:#80e3ec}.selected p{color:#a8c8d7;font-size:12px;line-height:1.6;margin:0 0 10px}.limits{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.limits div{background:#092838;border:1px solid #315366;padding:9px;border-radius:9px}.limits small{display:block;color:#8fb3c4;font-size:10px}.limits b{color:#8be9df;font-size:16px}.sliderbox{padding:13px 0}.sliderbox label{display:flex;justify-content:space-between;color:#d5eef6;font-size:12px;gap:9px;margin-bottom:12px}.sliderbox label b{color:#78e4e9}.sliderbox input{width:100%;accent-color:#5fdae4}.subactions{display:flex;gap:7px;flex-wrap:wrap}.subactions button{padding:7px 9px}.note{font-size:11px;color:#d9c49a;background:#3b3222;border-left:3px solid #e2bd6a;padding:11px;border-radius:7px;line-height:1.6;margin:12px 0}.note.good{color:#b7e8d3;background:#163b3a;border-color:#66d2b5}.section{margin-top:20px;padding-top:16px;border-top:1px solid #34566a}.section h3{font-size:14px;margin:0 0 11px}.section p{color:#aac9d7;font-size:12px;line-height:1.6}.posebuttons{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.posebuttons button{padding:13px 5px}.posebuttons small{display:block;color:#a5cedc;font-size:10px;margin-top:4px}.snapshot{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.snapshot button{flex:1}.tablewrap{overflow:auto;max-height:360px;border:1px solid #36596b;border-radius:10px}.table{width:100%;border-collapse:collapse;font-size:11px;white-space:nowrap}.table th,.table td{padding:9px 10px;text-align:left;border-bottom:1px solid #294b5d}.table th{position:sticky;top:0;background:#1b475b;color:#a7edf0}.table td{color:#d2e6ef}.table tr:nth-child(even){background:#102f42}.table td:first-child{color:#8ddde6;font-weight:650}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.content{padding:17px}.content p{color:#b1cfdb;font-size:12px;line-height:1.7}.readout{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.readout>div{border:1px solid #35596a;border-radius:10px;padding:12px}.readout small{color:#a6c5d2;font-size:10px;display:block}.readout b{color:#77e3e9;font-size:17px}.sources a{color:#83e3ed;word-break:break-all}.sources li{color:#a8c9d7;font-size:12px;line-height:1.7;margin:6px 0}.footer{margin-top:18px;color:#83a6b9;font-size:11px;line-height:1.7}input[type=file]{display:none}@media(max-width:980px){.main{grid-template-columns:1fr}.controls{max-height:none}.viewport{height:520px}.bottom{grid-template-columns:1fr}}@media(max-width:550px){.wrap{padding:15px 12px}.viewport{height:450px;min-height:350px}.readout{grid-template-columns:repeat(2,1fr)}.posebuttons{grid-template-columns:1fr 1fr 1fr}header{padding:14px}}
+</style><style id="g7-visual-identity">
+:root{--g7red:#d21c23}
+body{background:#121417!important}
+header{background:#17191d!important;border-bottom:3px solid #d21c23!important}
+header strong span{color:#f04b4f!important}
+button.primary, .primary{background:#c91e25!important;border-color:#c91e25!important}
+.panel{border-radius:12px!important}
+</style></head><body>
+<header><strong><span>NAO</span> MOTION LAB <small> / GROUPE 7</small></strong><span class="tag">CINÉMATIQUE 3D · V1.7</span></header>
+<div class="wrap"><div class="intro"><div><small style="color:#6adbe6;letter-spacing:1.5px;font-weight:750">POLYTECH MARSEILLE · GII 4A · ROBOTIQUE</small><h1>Laboratoire de simulation NAO</h1><p>Modèle articulé tridimensionnel basé sur les dimensions et les limites documentées du NAO. Manipulez les axes, observez les mouvements, mesurez les positions géométriques et exportez les résultats pour votre rapport.</p></div></div>
+<div class="pills"><span>25 commandes indépendantes</span><span>Audit dimensionnel du manuel · chap. 5</span><span>26 noms d'axes avec couplage des hanches</span><span>Dimensions en millimètres</span><span>Limites documentées</span><span>Calcul cinématique 3D</span><span>Sans connexion au robot réel</span><span>Comparateur URDF indépendant</span><span>Visualisation directe de la chaîne URDF</span><span>Import de maillages STL / OBJ / DAE</span><span>Import et rejeu de mesures Choregraphe</span></div>
+<div class="main"><section class="panel"><div class="panelhead"><h2>Vue 3D du robot</h2><small id="renderState">MODÈLE CINÉMATIQUE</small></div><div class="viewport"><canvas id="scene"></canvas><div class="overlay"><div>Modèle : <b id="modelLabel">Manuel NAO — 90 mm</b></div><div>Posture : <b id="poseLabel">Position de démonstration</b></div><div>Hanches : <b>HipYawPitch couplées</b></div></div><div class="hint">Glisser : tourner · Molette : zoom · Cliquer une articulation : sélectionner</div></div><div class="tools"><button id="front">Face</button><button id="side">Profil</button><button id="iso">3D isométrique</button><button id="axes">Axes articulaires</button><button id="trail">Trajectoires des mains</button><button id="clearTrail">Effacer trajectoires</button><button id="grid">Sol / repères</button><button id="shot" class="primary">Capture PNG</button><button id="resetView">Réinitialiser la vue</button><button id="viewURDF" class="primary">Vue URDF réelle (structure)</button><button id="viewSimplified">Vue simplifiée</button><button id="viewMesh" class="primary">Vue URDF + pièces 3D</button></div></section>
+<section class="panel"><div class="panelhead"><h2>Commandes et mesures</h2><small>UNITÉS : DEGRÉS</small></div><div class="controls"><div class="field"><label for="model">Version géométrique</label><select id="model"><option value="manual">Manuel NAO fourni — bras 90 / 50,55 mm</option><option value="v33">NAO V3.3 documenté — bras 105 / 55,95 mm</option></select></div><div class="field"><label for="group">Chaîne cinématique</label><select id="group"><option value="head">Tête</option><option value="rarm">Bras droit + main</option><option value="larm">Bras gauche + main</option><option value="legs">Jambes</option><option value="all">Tous les axes</option></select></div><div class="field"><label for="joint">Articulation</label><select id="joint"></select></div><div class="selected"><h3 id="jointTitle">HeadYaw</h3><p id="jointDesc">Rotation de la tête</p><div class="limits"><div><small>Minimum</small><b id="vmin">−119,5°</b></div><div><small>Maximum</small><b id="vmax">119,5°</b></div><div><small>Amplitude</small><b id="vamp">239°</b></div></div><div class="sliderbox"><label><span>Consigne articulaire</span><b id="vnow">0°</b></label><input type="range" id="angle" step="0.1"></div><div class="subactions"><button id="min">Minimum</button><button id="zero">0° / plus proche</button><button id="max">Maximum</button><button id="mid">Milieu</button></div></div><div id="warnings" class="note good">Les consignes sont limitées à la plage de l'articulation sélectionnée.</div>
+<div class="section"><h3>Postures et mouvement</h3><p>Les trois boutons ci-dessous montrent des <b>configurations de démonstration</b>. Elles ne sont pas les relevés officiels de Choregraphe.</p><div class="posebuttons"><button id="stand">Stand<small>démo</small></button><button id="standinit">StandInit<small>démo</small></button><button id="standzero">StandZero<small>zéros bornés</small></button></div><div class="snapshot"><button id="pause">Pause / reprise</button><button id="saveJson">Exporter les angles JSON</button><button id="loadJson">Importer JSON</button><input id="loadFile" type="file" accept=".json,application/json"></div></div>
+<div class="section" id="measurements"><h3>Relevés Choregraphe — acquisition et rejeu</h3>
+<p>Chargez les valeurs réellement relevées sur le robot (CSV ou JSON). Le simulateur les applique aux articulations, contrôle les limites et calcule les différences entre postures. <b>Aucune valeur expérimentale n'est préremplie.</b></p>
+<div class="snapshot"><button id="loadMeasured" class="primary">Importer relevés CSV / JSON</button><input id="measuredFile" type="file" accept=".csv,.txt,.json,text/csv,application/json"><button id="downloadTemplate">Modèle CSV vierge</button></div>
+<div class="field" style="margin-top:12px"><label for="measuredUnits">Unité des valeurs importées</label><select id="measuredUnits"><option value="deg">Degrés (°)</option><option value="rad">Radians (rad)</option></select></div>
+<div class="field"><label for="measuredPose">Posture à reproduire</label><select id="measuredPose"><option value="Stand">Stand</option><option value="StandInit">StandInit</option><option value="StandZero">StandZero</option></select></div>
+<div class="snapshot"><button id="applyMeasured" class="primary" disabled>Appliquer les angles mesurés</button><button id="exportMeasured" disabled>Exporter audit des mesures</button></div>
+<div class="note" id="measuredStatus">Aucun relevé importé. Les boutons de démonstration ne sont pas des mesures.</div>
+<div class="tablewrap" style="max-height:230px"><table class="table"><thead><tr><th>Articulation</th><th>Stand °</th><th>StandInit °</th><th>StandZero °</th><th>Contrôle</th></tr></thead><tbody id="measuredRows"><tr><td colspan="5">Importer des mesures pour les visualiser.</td></tr></tbody></table></div>
+</div>
+<div class="section"><h3>Tableau des limites articulaires</h3><p>Valeurs issues du manuel NAO fourni. L'amplitude est calculée automatiquement par maximum − minimum. La limite de HeadPitch dépend aussi de HeadYaw ; le tableau ci-dessous présente les bornes nominales.</p><div class="tablewrap"><table class="table"><thead><tr><th>Axe</th><th>Min °</th><th>Max °</th><th>Amplitude °</th></tr></thead><tbody id="limitRows"></tbody></table></div><div class="snapshot"><button id="exportLimits">Exporter les limites CSV</button><button id="exportPoses">Exporter les postures CSV</button></div></div>
+<div class="section"><h3>Configurations mémorisées (données, pas réponses au TP)</h3><p>Ces configurations sont des jeux de consignes pour reproduire et comparer des mouvements. Elles ne sont pas des mesures de Choregraphe.</p><div class="field"><label for="slot">Colonne à mémoriser</label><select id="slot"><option>Stand</option><option>StandInit</option><option>StandZero</option></select></div><div class="snapshot"><button id="capture">Mémoriser la pose actuelle</button><button id="clearSlots">Vider les relevés</button></div><div class="tablewrap" style="margin-top:10px"><table class="table"><thead><tr><th>Axe</th><th>Stand</th><th>StandInit</th><th>StandZero</th></tr></thead><tbody id="poseRows"></tbody></table></div><div id="slotInfo" style="font-size:11px;color:#b8d7e2;margin-top:8px">Aucune valeur mémorisée.</div></div>
+</div></section></div>
+<section class="panel" style="margin-top:18px"><div class="panelhead"><h2>Validation géométrique — manuel du professeur</h2><small>CHAPITRE 5 · PAGES 186–192</small></div><div class="content">
+<p>Contrôle des <b>distances entre centres d'articulation</b> calculées par la simulation. Les références proviennent du manuel NAO, pages 186–188. Le profil « Manuel » correspond aux dimensions de l'ancienne génération décrite dans ce document. Les profils plus récents ne doivent pas être mélangés.</p>
+<div class="snapshot"><button id="auditRun" class="primary">Vérifier les dimensions maintenant</button><button id="auditCsv">Exporter le contrôle CSV</button></div>
+<div id="auditStatus" class="note">Lancer la vérification après avoir choisi le profil géométrique.</div>
+<div class="tablewrap"><table class="table"><thead><tr><th>Distance / repère</th><th>Référence manuel (mm)</th><th>Simulation (mm)</th><th>Écart (mm)</th><th>État</th></tr></thead><tbody id="auditRows"></tbody></table></div>
+<p>Les distances géométriques restent constantes lorsque les articulations tournent. Ce contrôle ne vérifie <b>ni les orientations réelles des axes, ni la précision du modèle CAO, ni la dynamique</b>. La main est représentée par un point théorique ; ce n'est pas une mesure physique.</p>
+<div class="section"><h3>Contrôle de la chaîne cinématique du bras</h3><p>Référence : torse (X avant, Y gauche, Z haut). Le manuel décrit les transformations successives <b>torse → épaule → coude → poignet → main</b> et le calcul matriciel au chapitre 5 (pages 197–204). La V1.7 affiche ci-dessous les centres géométriques du modèle simplifié, pas les matrices DH constructeur.</p><div class="tablewrap"><table class="table"><thead><tr><th>Bras</th><th>Épaule (mm)</th><th>Coude (mm)</th><th>Poignet (mm)</th><th>Main (mm)</th></tr></thead><tbody id="armFrames"></tbody></table></div></div>
+<div class="note">Point de vigilance : le manuel est daté de 2011 et précise qu'il existe des différences entre NAO V3.2 et V3.3. Les données ne doivent pas être considérées automatiquement comme celles du robot de laboratoire. Les valeurs Stand, StandInit et StandZero doivent être relevées dans Choregraphe.</div>
+</div></section><div class="bottom"><section class="panel"><div class="panelhead"><h2>Résultats de cinématique directe</h2><small>REPÈRE TORSO</small></div><div class="content"><p>Les coordonnées des extrémités sont calculées à partir des rotations articulaires et des dimensions choisies. Origine au centre du torse ; X vers l'avant, Y vers la gauche, Z vers le haut.</p><div class="readout"><div><small>Main droite · X</small><b id="rx">—</b></div><div><small>Main droite · Y</small><b id="ry">—</b></div><div><small>Main droite · Z</small><b id="rz">—</b></div><div><small>Main gauche · X</small><b id="lx">—</b></div><div><small>Main gauche · Y</small><b id="ly">—</b></div><div><small>Main gauche · Z</small><b id="lz">—</b></div></div><div class="snapshot" style="margin-top:12px"><button id="exportCoordinates">Exporter les coordonnées CSV</button><button id="exportTrail">Exporter trajectoires CSV</button><button id="exportAudit">Exporter audit des axes CSV</button></div>
+<div class="section"><h3>Mesures géométriques calculées</h3><div class="readout"><div><small>Écart mains</small><b id="handGap">—</b></div><div><small>Hauteur main D</small><b id="handRHeight">—</b></div><div><small>Hauteur main G</small><b id="handLHeight">—</b></div><div><small>Longueur trajectoire D</small><b id="pathR">—</b></div><div><small>Longueur trajectoire G</small><b id="pathL">—</b></div><div><small>Axes hors plage</small><b id="violations">0</b></div></div><p>Les trajectoires sont géométriques et échantillonnées pendant l'animation. Elles ne prouvent ni l'équilibre ni l'absence de collision.</p></div><p id="floorStatus">Les mouvements ne sont pas validés pour l'équilibre ou les collisions.</p></div></section>
+<section class="panel"><div class="panelhead"><h2>Validation cinématique par URDF</h2><small>URDF · COMPARAISON INDÉPENDANTE</small></div><div class="content">
+<p>Importer une description <b>URDF</b> du NAO pour calculer les transformations articulaires à partir de ses repères <code>origin</code>, axes et angles. Le modèle URDF n'est <b>pas</b> une preuve de fidélité du dessin 3D : c'est une seconde chaîne de calcul à comparer.</p>
+<div class="snapshot"><button id="loadUrdf" class="primary">Importer un fichier .urdf</button><input id="urdfFile" type="file" accept=".urdf,.xml,text/xml,application/xml"><button id="urdfReset">Retirer le modèle URDF</button></div>
+<p><a href="https://github.com/ros-naoqi/nao_robot/blob/master/nao_description/urdf/naoV50_generated_urdf/nao.urdf" target="_blank" rel="noopener">Obtenir le modèle URDF NAO H25 V5.0 (GitHub)</a> : ouvrir « Raw », puis enregistrer le fichier .urdf. Aucune connexion internet n'est nécessaire après l'import.</p>
+<div class="section" style="margin-top:12px"><h3>Pièces 3D du robot (fichiers locaux)</h3><p>Après avoir importé le fichier URDF, sélectionnez les fichiers <b>.stl, .obj ou .dae</b> associés à ses liens. Les fichiers restent sur votre appareil : aucun envoi à un serveur. Les fichiers .dae sont pris en charge pour les géométries triangulées simples ; certaines fonctions avancées de COLLADA ne sont pas prises en charge.</p><div class="snapshot"><button id="loadMeshes" class="primary">Charger les maillages 3D</button><input id="meshFiles" type="file" accept=".stl,.obj,.dae" multiple><button id="clearMeshes">Retirer les maillages</button></div><div class="section" style="margin-top:12px"><h3>Import complet d’un dossier de description NAO</h3><p>Choisir le dossier <b>nao_description</b> extrait localement. Le laboratoire recherche les fichiers URDF et les maillages dans les sous-dossiers, sans envoyer de données en ligne. Le chargement des véritables pièces dépend de leur présence dans ce dossier et de leur compatibilité avec le lecteur.</p><div class="snapshot"><button id="loadBundle" class="primary">Choisir le dossier NAO complet</button><input id="bundleFolder" type="file" webkitdirectory directory multiple style="display:none"><button id="bundleAudit">Exporter le diagnostic du modèle</button></div><div class="note" id="bundleStatus">Aucun dossier complet importé. Import manuel URDF et maillages toujours disponible.</div><div class="tablewrap" style="max-height:210px"><table class="table"><thead><tr><th>Contrôle</th><th>Résultat</th></tr></thead><tbody id="bundleRows"><tr><td colspan="2">Importer un dossier NAO pour lancer les vérifications.</td></tr></tbody></table></div></div>
+<div class="note" id="meshStatus">Aucun maillage chargé. Les pièces 3D sont optionnelles et doivent correspondre au modèle URDF.</div><div class="snapshot"><button id="exportMeshAudit">Exporter la correspondance URDF / maillages</button></div></div>
+<div class="note good" id="urdfViewStatus">Mode visuel : modèle géométrique pédagogique. Importez un URDF pour activer la chaîne articulée issue du fichier.</div>
+<div class="field"><label for="urdfJointSelect">Articulation du fichier URDF</label><select id="urdfJointSelect"><option value="">Importer un URDF d’abord</option></select></div>
+<div class="sliderbox"><label><span>Consigne URDF</span><b id="urdfAngleValue">—</b></label><input id="urdfJointAngle" type="range" min="-180" max="180" step="0.1" value="0" disabled></div>
+<div class="subactions"><button id="urdfJointZero">Zéro</button><button id="urdfJointMin">Minimum</button><button id="urdfJointMax">Maximum</button><button id="urdfExportAll">Exporter tous les repères CSV</button></div>
+<div id="urdfJointInfo" class="note">Les consignes URDF sont en degrés. Le fichier donne les limites en radians ; elles sont converties automatiquement.</div>
+<div id="urdfStatus" class="note">Aucun URDF chargé. Les mesures visibles proviennent uniquement du modèle géométrique pédagogique.</div>
+<div class="tablewrap"><table class="table"><thead><tr><th>Repère URDF</th><th>X (mm)</th><th>Y (mm)</th><th>Z (mm)</th><th>Origine</th></tr></thead><tbody id="urdfRows"><tr><td colspan="5">Importer un fichier URDF pour calculer les repères.</td></tr></tbody></table></div>
+<div class="snapshot"><button id="exportUrdf">Exporter repères URDF CSV</button><button id="exportUrdfLimits">Exporter limites URDF CSV</button></div>
+<p id="urdfWarning">Le calcul URDF donne la position de l'origine de chaque lien, pas nécessairement celle du bout des doigts ou de la semelle. Il ne calcule ni collision, ni stabilité, ni dynamique.</p>
+</div></section>
+<section class="panel"><div class="panelhead"><h2>Fidélité du modèle et références</h2><small>TRAÇABILITÉ</small></div><div class="content"><p><b>V1.8 : laboratoire MGD/MGI et tests reproductibles. Nouveau V1.2 :</b> import d’une description URDF, calcul indépendant des transformations articulaires et comparaison des repères, sans prétendre reproduire les maillages. <b>V1.1 :</b> affichage des axes locaux transformés dans le repère global, suivi géométrique des mains, longueurs parcourues, distance entre mains, export des trajectoires et audit des consignes. <b>Ce qui est modélisé :</b> chaîne cinématique tridimensionnelle, axes de rotation, dimensions principales, couplage HipYawPitch, limites nominales, interpolation des consignes et positions géométriques des mains.</p><p><b>Ce qui reste simplifié :</b> enveloppes 3D dessinées à partir de volumes géométriques (pas les maillages CAD officiels), collision entre pièces, dynamique, équilibre, capteurs réels, marche et trajectoires de Choregraphe. Les trois postures de démonstration ne remplacent pas leurs valeurs relevées.</p><ul class="sources"><li>Manuel NAO fourni, chapitre 5 : dimensions et limites articulaires (référence principale de ce modèle).</li><li><a href="https://www.cs.cmu.edu/~cga/nao/doc/reference-documentation/nao/hardware/kinematics/nao-links-33.html" target="_blank" rel="noopener">Documentation NAO — longueurs V3.3</a> (profil géométrique alternatif).</li><li><a href="https://www.cs.cmu.edu/~cga/nao/doc/reference-documentation/nao/hardware/kinematics/nao-joints-33.html" target="_blank" rel="noopener">Documentation NAO — articulations et limites dépendantes</a>.</li><li><a href="https://doc.nao6.maxtronics.com/naoqi/motion/alrobotposture.html" target="_blank" rel="noopener">Documentation ALRobotPosture — Stand, StandInit, StandZero</a>.</li></ul><p style="color:#e4c78f">La version NAO H21 ne dispose pas des mêmes articulations que H25. Le sujet comporte une ambiguïté sur ce point : il faudra confirmer la version utilisée au laboratoire.</p></div></section></div>
+
+<section class="panel" id="kinematicUpgrade" style="margin-top:20px">
+<div class="panelhead"><h2>V1.8 · Laboratoire de cinématique du bras droit</h2><small>MGD MATRICIEL · MGI NUMÉRIQUE · VALIDATION</small></div>
+<div class="content">
+<p>Chaîne homogène cohérente avec les axes du <b>modèle simplifié affiché</b> : épaule (Pitch, Roll), coude (Yaw, Roll), poignet (Yaw). Ce modèle est un outil de vérification interne, <b>pas un modèle constructeur DH certifié</b>. Pour des résultats officiels, importer et valider le fichier URDF correspondant à la version du robot.</p>
+<div class="readout"><div><small>MGD bras droit X</small><b id="kinX">—</b></div><div><small>MGD bras droit Y</small><b id="kinY">—</b></div><div><small>MGD bras droit Z</small><b id="kinZ">—</b></div><div><small>Écart avec scène 3D</small><b id="kinErr">—</b></div><div><small>Jac. position · rang</small><b id="kinRank">—</b></div><div><small>Manipulabilité (indicative)</small><b id="kinManip">—</b></div></div>
+<h3 style="margin:18px 0 8px">Cinématique inverse — cible dans le repère Torso</h3>
+<div style="display:flex;gap:10px;flex-wrap:wrap;align-items:end">
+<label style="display:grid;gap:5px;font-size:12px">X (mm)<input id="ikX" type="number" step="1" value="110" style="width:110px"></label>
+<label style="display:grid;gap:5px;font-size:12px">Y (mm)<input id="ikY" type="number" step="1" value="-115" style="width:110px"></label>
+<label style="display:grid;gap:5px;font-size:12px">Z (mm)<input id="ikZ" type="number" step="1" value="80" style="width:110px"></label>
+<button class="primary" id="ikCurrent">Utiliser position actuelle</button>
+<button class="primary" id="ikSolve">Résoudre MGI</button>
+<button id="ikUndo">Annuler MGI</button>
+</div>
+<div id="ikStatus" class="note" style="margin-top:10px">Le solveur applique des limites articulaires et affiche l'erreur résiduelle. Une cible impossible peut ne pas être atteinte.</div>
+<h3 style="margin:18px 0 8px">Tests reproductibles</h3>
+<div class="snapshot"><button id="kinTest" class="primary">Exécuter les tests MGD / Jacobienne / MGI</button><button id="kinExport">Exporter résultats CSV</button><button id="kinMatrix">Exporter matrices JSON</button></div>
+<div class="tablewrap" style="margin-top:12px"><table class="table"><thead><tr><th>Test</th><th>Critère</th><th>Résultat</th><th>État</th></tr></thead><tbody id="kinTests"><tr><td colspan="4">Lancer les tests.</td></tr></tbody></table></div>
+<p style="font-size:12px;color:#b9d2dd">Méthode : MGD par rotations/translations successives en 3D ; Jacobienne de position par différences centrées ; MGI par moindres carrés amortis avec recherche multi-départs. Aucun mouvement n'est envoyé au robot.</p>
+</div></section>
+
+<section class="panel" id="scientificAudit" style="margin-top:20px">
+ <div class="panelhead"><h2>V1.9 · Audit cinématique et comparaison URDF</h2><small>JACOBIENNE SPATIALE 6×5 · VALIDATION INDÉPENDANTE</small></div>
+ <div class="content">
+  <p>Contrôle indépendant du <b>bras droit simplifié</b> : Jacobienne géométrique analytique (translation + rotation), test par différences finies et diagnostic des limites. Un URDF réel peut servir de <b>référence indépendante</b> pour comparer les positions. Aucune équivalence constructeur n'est présumée.</p>
+  <div class="readout"><div><small>Rang J spatiale</small><b id="v19auditRank">—</b></div><div><small>Erreur J linéaire</small><b id="v19auditJerr">—</b></div><div><small>URDF vs simplifié</small><b id="v19auditUrdfErr">Non chargé</b></div><div><small>Limites URDF</small><b id="v19auditLimits">Non chargé</b></div></div>
+  <div class="snapshot" style="margin-top:12px"><button id="auditKinematicRun" class="primary">Valider le modèle actuel</button><button id="v19auditCsv">Exporter audit CSV</button><button id="v19auditJson">Exporter Jacobienne 6×5</button></div>
+  <div id="v19auditStatus" class="note" style="margin-top:10px">Importer le fichier URDF de la version exacte du NAO dans le module URDF ci-dessus pour obtenir une comparaison indépendante.</div>
+  <div class="tablewrap" style="margin-top:12px"><table class="table"><thead><tr><th>Vérification</th><th>Résultat</th><th>Interprétation</th></tr></thead><tbody id="v19auditRows"><tr><td colspan="3">Cliquer sur « Valider le modèle actuel ».</td></tr></tbody></table></div>
+  <p style="font-size:12px;color:#b9d2dd">Repère Torso (mm) · angles en degrés · colonnes J : ShoulderPitch, ShoulderRoll, ElbowYaw, ElbowRoll, WristYaw. Jacobienne linéaire en mm/rad et angulaire en rad/rad. Le modèle simplifié n'inclut pas la géométrie CAO, les collisions ni la dynamique.</p>
+ </div>
+</section>
+
+<section class="panel" id="v20Verification" style="margin-top:20px">
+<div class="panelhead"><h2>V2.0 · Validation scientifique multi-configurations</h2><small>TESTS REPRODUCTIBLES · CINÉMATIQUE DU BRAS DROIT</small></div>
+<div class="content">
+<p>Cette campagne teste plusieurs configurations articulaires et vérifie <b>indépendamment</b> les dérivées de position et d'orientation, la cohérence de la matrice de rotation et les limites. Le résultat est celui du <b>modèle pédagogique</b>, et ne constitue pas une certification du NAO constructeur.</p>
+<div class="snapshot"><button class="primary" id="v20Run">Lancer les tests complets</button><button id="v20Csv">Exporter les tests CSV</button><button id="v20Json">Exporter le rapport JSON</button></div>
+<div class="readout" style="margin-top:12px"><div><small>Cas validés</small><b id="v20Pass">—</b></div><div><small>Erreur linéaire maximale</small><b id="v20Linear">—</b></div><div><small>Erreur angulaire maximale</small><b id="v20Angular">—</b></div><div><small>Référence constructeur</small><b id="v20Official">Non validée</b></div></div>
+<div class="note" id="v20Status">Les essais sont prêts. Aucun résultat constructeur n'est revendiqué sans un URDF correspondant à la version du NAO.</div>
+<div class="tablewrap" style="margin-top:12px"><table class="table"><thead><tr><th>Configuration</th><th>Angles (°)</th><th>MGD (mm)</th><th>Erreur Jv (mm/rad)</th><th>Erreur Jω (rad/rad)</th><th>RᵀR−I</th><th>État</th></tr></thead><tbody id="v20Rows"><tr><td colspan="7">Cliquer sur « Lancer les tests complets ».</td></tr></tbody></table></div>
+<p style="font-size:12px;color:#b9d2dd">Tolérances numériques : Jv &lt; 0,01 mm/rad, Jω &lt; 0,0001 rad/rad, orthogonalité &lt; 10⁻⁹. Les angles testés sont bornés par les limites de l'interface ; les bornes constructeur doivent être contrôlées dans le fichier URDF correspondant.</p>
+</div></section>
+
+<section class="panel" id="v21Official" style="margin-top:20px">
+ <div class="panelhead"><h2>V2.1 · Référence constructeur NAO H25 V5.0</h2><small>BRAS DROIT · PARAMÈTRES ROS URDF · MGD / MGI / JACOBIENNE</small></div>
+ <div class="content">
+  <p><b>Nouvelle chaîne constructeur indépendante du modèle pédagogique :</b> positions et axes articulaires recopiés du fichier public <code>NaoH25V50/nao.urdf</code> de ros-naoqi. Les positions sont exprimées dans le repère <b>torso</b>, en millimètres. La commande <code>RHand</code> est normalisée et n'est pas un sixième angle de poignet.</p>
+  <div class="note">Référence : <a href="https://github.com/ros-naoqi/nao_robot/blob/master/nao_description/urdf/naoV50_generated_urdf/nao.urdf" target="_blank" rel="noopener">ros-naoqi / NaoH25V50 URDF</a>. <b>Ce profil V5.0 n'est pas nécessairement la version du robot de votre laboratoire.</b> Le manuel 2011 peut décrire une autre génération.</div>
+  <div class="snapshot" style="margin-top:12px"><button id="v21Sync">Reprendre les angles du modèle actuel</button><button id="v21Zero">Zéro borné constructeur</button><button id="v21Overlay" class="primary">Afficher chaîne constructeur en 3D</button></div>
+  <div class="tablewrap" style="margin-top:10px"><table class="table"><thead><tr><th>Articulation</th><th>Angle (°)</th><th>Min (°)</th><th>Max (°)</th></tr></thead><tbody id="v21Sliders"></tbody></table></div>
+  <div class="readout" style="margin-top:12px"><div><small>Position main X (mm)</small><b id="v21X">—</b></div><div><small>Position main Y (mm)</small><b id="v21Y">—</b></div><div><small>Position main Z (mm)</small><b id="v21Z">—</b></div><div><small>Rang Jacobienne 6×5</small><b id="v21Rank">—</b></div></div>
+  <div class="snapshot" style="margin-top:12px"><button id="v21Test" class="primary">Tester la chaîne constructeur</button><button id="v21Export">Exporter le rapport JSON</button><button id="v21CSV">Exporter la trajectoire CSV</button></div>
+  <div class="note" id="v21Status">Profil constructeur chargé dans la page. Lancer les tests numériques pour vérifier les calculs.</div>
+  <div class="tablewrap" style="margin-top:10px"><table class="table"><thead><tr><th>Essai</th><th>Erreur Jacobienne (mm/rad)</th><th>Comparaison URDF importé</th><th>État</th></tr></thead><tbody id="v21Rows"><tr><td colspan="4">Tests non lancés.</td></tr></tbody></table></div>
+  <h3 style="margin-top:16px">MGI constructeur — cible de position</h3>
+  <p>Résolution numérique amortie des 3 coordonnées de la main dans le repère torso. Les 5 angles respectent les limites constantes du fichier URDF ; orientation et collisions non contraintes. Une cible inaccessible reste signalée.</p>
+  <div class="snapshot"><label>X (mm) <input id="v21Tx" type="number" step="1" value="190" style="width:95px"></label><label>Y (mm) <input id="v21Ty" type="number" step="1" value="-120" style="width:95px"></label><label>Z (mm) <input id="v21Tz" type="number" step="1" value="100" style="width:95px"></label><button id="v21IK" class="primary">Calculer MGI</button></div>
+  <div class="note" id="v21IKStatus">Les solutions MGI sont calculées uniquement à partir de la chaîne constructeur V5.0.</div>
+  <h3 style="margin-top:16px">Traçabilité et limites</h3>
+  <p>Les tests internes vérifient la dérivée de la MGD par différences finies et les limites angulaires. L'import d'un URDF correspondant permet en plus une <b>comparaison de positions indépendante</b>. Pour revendiquer une fidélité au robot physique, il manque encore les mesures Choregraphe/NAOqi, la calibration réelle, les maillages exacts, les collisions et les effets dynamiques.</p>
+ </div>
+</section>
+<div class="footer">NAO Motion Lab · Polytech Marseille · Groupe 7 · Étude pédagogique autonome. Aucun ordre n'est envoyé à un robot physique. La simulation ne remplace pas les mesures du robot, les modèles CAO exacts ou une validation de dynamique.</div></div>
+<script>
+'use strict';
+const D=Math.PI/180, round=(v,n=2)=>Number(v).toFixed(n), fmt=v=>round(v,1).replace('.',',')+'°', clamp=(x,a,b)=>Math.min(b,Math.max(a,x));
+const defs=[];function add(name,min,max,group,axis,description){defs.push({name,min,max,group,axis,description})}
+add('HeadYaw',-119.5,119.5,'head','Z','Rotation gauche-droite de la tête (lacet).');add('HeadPitch',-38.5,29.5,'head','Y','Inclinaison de la tête vers le haut ou le bas (tangage).');
+for(const [s,g] of [['R','rarm'],['L','larm']]){add(s+'ShoulderPitch',-119.5,119.5,g,'Y','Avance ou recule le bras à partir de l’épaule.');add(s+'ShoulderRoll',s==='R'?-94.5:.5,s==='R'?-.5:94.5,g,'Z','Écarte ou rapproche le bras latéralement.');add(s+'ElbowYaw',-119.5,119.5,g,'X','Rotation axiale de l’avant-bras.');add(s+'ElbowRoll',s==='R'?.5:-89.5,s==='R'?89.5:-.5,g,'Z','Flexion du coude.');add(s+'WristYaw',-104.5,104.5,g,'X','Rotation du poignet.');add(s+'Hand',0,1,g,'H','Commande normalisée de la main : 0 fermée, 1 ouverte (sans unité).')}
+add('HipYawPitch',-65.62,42.44,'legs','YZ','Commande commune aux deux hanches : axes mécaniquement couplés à 45° dans le plan YZ.');
+for(const [s] of [['R'],['L']]){add(s+'HipRoll',s==='R'?-42.30:-21.74,s==='R'?23.76:45.29,'legs','X','Inclinaison latérale de la hanche.');add(s+'HipPitch',s==='R'?-101.54:-101.63,s==='R'?27.82:27.73,'legs','Y','Flexion ou extension de la hanche.');add(s+'KneePitch',s==='R'?-5.90:-5.29,s==='R'?121.47:121.04,'legs','Y','Flexion ou extension du genou.');add(s+'AnklePitch',s==='R'?-67.97:-68.15,s==='R'?53.40:52.86,'legs','Y','Inclinaison avant-arrière de la cheville.');add(s+'AnkleRoll',s==='R'?-22.27:-44.06,s==='R'?45.03:22.79,'legs','X','Inclinaison latérale de la cheville.')}
+const by=Object.fromEntries(defs.map(d=>[d.name,d]));const target={},actual={};for(const d of defs)target[d.name]=actual[d.name]=clamp(0,d.min,d.max);
+let geometry='manual',showAxes=false,showTrail=false,showGrid=true,selected='HeadYaw',activePose='Libre',paused=false;
+const lengths=()=>geometry==='manual'?{upper:90,lower:50.55,hand:58,handz:15.9,tibia:102.74,foot:45.11}:{upper:105,lower:55.95,hand:57.75,handz:12.31,tibia:102.90,foot:45.19};
+const headEnvelope=[[-119.52,-25.73,18.91],[-87.49,-18.91,11.46],[-62.45,-24.64,17.19],[-51.74,-27.50,18.91],[-43.32,-31.40,21.20],[-27.85,-38.50,24.18],[0,-38.50,29.51],[27.85,-38.50,24.18],[43.32,-31.40,21.20],[51.74,-27.50,18.91],[62.45,-24.64,17.19],[87.49,-18.91,11.46],[119.52,-25.73,18.91]];
+function limits(name){const d=by[name];if(name==='HeadPitch'){let y=target.HeadYaw,i=0;while(i<headEnvelope.length-2&&y>headEnvelope[i+1][0])i++;const a=headEnvelope[i],b=headEnvelope[i+1],t=clamp((y-a[0])/(b[0]-a[0]),0,1);return {min:Math.max(d.min,a[1]+t*(b[1]-a[1])),max:Math.min(d.max,a[2]+t*(b[2]-a[2]))}}return {min:d.min,max:d.max}}
+function setAngle(name,v){const l=limits(name);target[name]=clamp(Number(v)||0,l.min,l.max);if(name==='HeadYaw'){const h=limits('HeadPitch');target.HeadPitch=clamp(target.HeadPitch,h.min,h.max)}activePose='Personnalisée';document.getElementById('poseLabel').textContent=activePose;refreshSelected()}
+function poseDemo(which){const p={};for(const d of defs)p[d.name]=clamp(0,d.min,d.max);if(which!=='StandZero'){Object.assign(p,{RShoulderPitch:which==='Stand'?79:83,LShoulderPitch:which==='Stand'?79:83,RShoulderRoll:-12,LShoulderRoll:12,RElbowYaw:80,LElbowYaw:-80,RElbowRoll:which==='Stand'?30:45,LElbowRoll:which==='Stand'?-30:-45,RHipPitch:which==='Stand'?-18:-25,LHipPitch:which==='Stand'?-18:-25,RKneePitch:which==='Stand'?34:45,LKneePitch:which==='Stand'?34:45,RAnklePitch:which==='Stand'?-16:-21,LAnklePitch:which==='Stand'?-16:-21,RHand:.55,LHand:.55})}for(const d of defs)target[d.name]=clamp(p[d.name],d.min,d.max);activePose=which+' — démonstration';document.getElementById('poseLabel').textContent=activePose;refreshSelected()}
+const V=(x,y,z)=>[x,y,z], plus=(a,b)=>a.map((v,i)=>v+b[i]),minus=(a,b)=>a.map((v,i)=>v-b[i]),mulv=(a,s)=>a.map(v=>v*s),dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0),cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],norm=a=>{let l=Math.hypot(...a)||1;return a.map(v=>v/l)};
+const I=[1,0,0,0,1,0,0,0,1];function matmul(a,b){const c=new Array(9).fill(0);for(let i=0;i<3;i++)for(let j=0;j<3;j++)for(let k=0;k<3;k++)c[i*3+j]+=a[i*3+k]*b[k*3+j];return c}function mv(m,v){return [dot(m.slice(0,3),v),dot(m.slice(3,6),v),dot(m.slice(6,9),v)]}function rot(axis,deg){let [x,y,z]=norm(axis),a=deg*D,c=Math.cos(a),s=Math.sin(a),t=1-c;return [t*x*x+c,t*x*y-s*z,t*x*z+s*y,t*x*y+s*z,t*y*y+c,t*y*z-s*x,t*x*z-s*y,t*y*z+s*x,t*z*z+c]}
+function frame(o=[0,0,0],m=I){return {o,m}}function trans(f,v){return frame(plus(f.o,mv(f.m,v)),f.m)}function turn(f,axis,deg){return frame(f.o,matmul(f.m,rot(axis,deg)))}function pos(f,p){return plus(f.o,mv(f.m,p))}
+let pieces=[],marks=[],endpoints={},feet=[];const COLORS={white:'#e7f1f5',blue:'#1495e9',navy:'#143954',dark:'#243845',gray:'#8a9eab',eye:'#111e2d',glow:'#50d4ff',sole:'#343c44'};
+function ell(f,c,r,color,detail=1){pieces.push({kind:'ell',f,c,r,color,detail})}function tube(a,b,r,color){pieces.push({kind:'tube',a,b,r,color})}function mark(f,name){
+ const d=by[name]||by.HipYawPitch;
+ let local=d.axis==='Z'?[0,0,1]:d.axis==='Y'?[0,1,0]:d.axis==='X'?[1,0,0]:d.axis==='YZ'?[0,Math.SQRT1_2,Math.SQRT1_2]:[0,0,0];
+ if(name==='LHipYawPitch')local=[0,Math.SQRT1_2,-Math.SQRT1_2];
+ marks.push({p:f.o,name,axis:norm(mv(f.m,local))})
+}
+function build(){pieces=[];marks=[];endpoints={};feet=[];const L=lengths(),t=frame([0,0,333],I);ell(t,[0,0,-3],[70,89,111],COLORS.white);ell(t,[41,0,20],[24,68,61],COLORS.navy);ell(t,[60,0,35],[5,19,23],COLORS.glow);ell(t,[0,0,-79],[57,74,34],COLORS.blue);ell(t,[-19,0,65],[22,78,32],COLORS.white);
+let h=trans(t,[0,0,126.5]);mark(h,'HeadYaw');h=turn(h,[0,0,1],actual.HeadYaw);mark(h,'HeadPitch');h=turn(h,[0,1,0],actual.HeadPitch);ell(h,[4,0,59],[62,66,67],COLORS.white);ell(h,[20,0,104],[49,55,18],COLORS.blue);ell(h,[57,0,52],[13,48,27],COLORS.white);for(const s of [-1,1]){ell(h,[62,s*29,57],[8,13,10],COLORS.eye);ell(h,[64,s*29,58],[3,4,4],COLORS.glow);ell(h,[0,s*66,63],[19,11,30],COLORS.navy);ell(h,[0,s*75,63],[12,4,22],COLORS.gray)}
+for(const s of [-1,1]){const n=s<0?'R':'L';let sh=trans(t,[0,s*98,100]);mark(sh,n+'ShoulderPitch');sh=turn(sh,[0,1,0],actual[n+'ShoulderPitch']);mark(sh,n+'ShoulderRoll');sh=turn(sh,[0,0,1],actual[n+'ShoulderRoll']);ell(sh,[8,0,0],[30,30,31],COLORS.blue);const el=trans(sh,[L.upper,0,0]);tube(pos(sh,[10,0,0]),pos(el,[-8,0,0]),22,COLORS.white);ell(el,[0,0,0],[24,23,22],COLORS.gray);mark(el,n+'ElbowYaw');let e=turn(el,[1,0,0],actual[n+'ElbowYaw']);mark(e,n+'ElbowRoll');e=turn(e,[0,0,1],actual[n+'ElbowRoll']);const wr=trans(e,[L.lower,0,0]);tube(pos(e,[8,0,0]),pos(wr,[-5,0,0]),18,COLORS.white);ell(wr,[0,0,0],[18,20,20],COLORS.blue);mark(wr,n+'WristYaw');let w=turn(wr,[1,0,0],actual[n+'WristYaw']);let hp=trans(w,[L.hand,0,-L.handz]);ell(w,[L.hand*.48,0,-L.handz*.45],[L.hand*.51,25,19],COLORS.white);ell(hp,[2,0,0],[14,24,16],COLORS.gray);mark(hp,n+'Hand');const opening=actual[n+'Hand'];for(let finger=0;finger<3;finger++){const spread=(finger-1)*15;let start=pos(hp,[4,spread,0]);let tip=pos(hp,[17,spread*(.6+opening*.55),-3]);tube(start,tip,4,COLORS.white)}endpoints[n+'Hand']=hp.o}
+for(const s of [-1,1]){const n=s<0?'R':'L';let hip=trans(t,[0,s*50,-85]);mark(hip,n+'HipYawPitch');hip=turn(hip,[0,s*Math.SQRT1_2,Math.SQRT1_2],actual.HipYawPitch);mark(hip,n+'HipRoll');hip=turn(hip,[1,0,0],actual[n+'HipRoll']);mark(hip,n+'HipPitch');hip=turn(hip,[0,1,0],actual[n+'HipPitch']);ell(hip,[0,0,-12],[37,35,35],COLORS.blue);let kn=trans(hip,[0,0,-100]);tube(pos(hip,[0,0,-12]),pos(kn,[0,0,8]),29,COLORS.white);ell(kn,[0,0,0],[30,28,29],COLORS.navy);mark(kn,n+'KneePitch');kn=turn(kn,[0,1,0],actual[n+'KneePitch']);let an=trans(kn,[0,0,-L.tibia]);tube(pos(kn,[0,0,-14]),pos(an,[0,0,12]),25,COLORS.white);ell(an,[0,0,0],[24,25,24],COLORS.blue);mark(an,n+'AnklePitch');an=turn(an,[0,1,0],actual[n+'AnklePitch']);mark(an,n+'AnkleRoll');an=turn(an,[1,0,0],actual[n+'AnkleRoll']);ell(an,[22,0,-L.foot+17],[82,44,21],COLORS.white);ell(an,[25,0,-L.foot+4],[82,43,7],COLORS.sole);feet.push(pos(an,[25,0,-L.foot]));endpoints[n+'Foot']=pos(an,[25,0,-L.foot])}
+}
+const canvas=document.getElementById('scene'),ctx=canvas.getContext('2d');let cw=600,ch=550,az=-.55,el=.21,zoom=1.0,origin=[0,0,265],clickMarkers=[];
+function camera(v){const p=minus(v,origin),r=[Math.cos(az),-Math.sin(az),0],up=[-Math.sin(az)*Math.sin(el),-Math.cos(az)*Math.sin(el),Math.cos(el)],eye=[Math.sin(az)*Math.cos(el),Math.cos(az)*Math.cos(el),Math.sin(el)];const sc=Math.min(cw/680,ch/700)*zoom;return [cw/2+dot(p,r)*sc,ch/2-dot(p,up)*sc,dot(p,eye)]}
+function faceColor(hex,light){const c=hex.replace('#',''),v=[0,2,4].map(i=>parseInt(c.slice(i,i+2),16)),k=clamp(light,.25,1.3);return `rgb(${v.map(x=>Math.round(clamp(x*k,0,255))).join(',')})`}
+function pushTri(out,a,b,c,col){let n=norm(cross(minus(b,a),minus(c,a)));let lighting=.50+.55*Math.max(0,dot(n,norm([.8,-.35,1.4])));let q=[camera(a),camera(b),camera(c)];out.push({p:q,d:(q[0][2]+q[1][2]+q[2][2])/3,col:faceColor(col,lighting)})}
+function drawEll(out,obj){let {f,c,r,color,detail}=obj,lat=detail===0?6:8,lon=detail===0?9:12;const vert=[];for(let i=0;i<=lat;i++){let th=i*Math.PI/lat,row=[];for(let j=0;j<=lon;j++){let ph=j*Math.PI*2/lon;row.push(pos(f,[c[0]+r[0]*Math.cos(ph)*Math.sin(th),c[1]+r[1]*Math.sin(ph)*Math.sin(th),c[2]+r[2]*Math.cos(th)]))}vert.push(row)}for(let i=0;i<lat;i++)for(let j=0;j<lon;j++){let a=vert[i][j],b=vert[i+1][j],c=vert[i+1][j+1],d=vert[i][j+1];pushTri(out,a,b,c,color);pushTri(out,a,c,d,color)}}
+function drawTube(out,obj){let {a,b,r,color}=obj,d=norm(minus(b,a)),u=norm(cross(d,[0,0,1]));if(Math.hypot(...cross(d,[0,0,1]))<.001)u=[1,0,0];let v=norm(cross(d,u));const count=10;for(let i=0;i<count;i++){let a0=i*2*Math.PI/count,a1=(i+1)*2*Math.PI/count;let p0=plus(a,mulv(plus(mulv(u,Math.cos(a0)),mulv(v,Math.sin(a0))),r)),p1=plus(a,mulv(plus(mulv(u,Math.cos(a1)),mulv(v,Math.sin(a1))),r)),q0=plus(b,minus(p0,a)),q1=plus(b,minus(p1,a));pushTri(out,p0,p1,q1,color);pushTri(out,p0,q1,q0,color)}}
+function line3(a,b,color='#426276',width=1){let p=camera(a),q=camera(b);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(p[0],p[1]);ctx.lineTo(q[0],q[1]);ctx.stroke()}
+function render(){let rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);cw=rect.width;ch=rect.height;if(canvas.width!==Math.round(cw*dpr)||canvas.height!==Math.round(ch*dpr)){canvas.width=Math.round(cw*dpr);canvas.height=Math.round(ch*dpr)}ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,cw,ch);if(showGrid){for(let v=-400;v<=400;v+=100){line3([-300,v,0],[300,v,0],'#24475a');line3([v,-300,0],[v,300,0],'#24475a')}line3([0,0,0],[160,0,0],'#e59c64',2);line3([0,0,0],[0,160,0],'#68d7c3',2);line3([0,0,0],[0,0,160],'#84b8fc',2)}let polys=[];for(const p of pieces)p.kind==='ell'?drawEll(polys,p):drawTube(polys,p);if(typeof meshObjects!=='undefined')for(const m of meshObjects)drawImportedMesh(polys,m);polys.sort((a,b)=>a.d-b.d);for(const p of polys){ctx.beginPath();ctx.moveTo(p.p[0][0],p.p[0][1]);ctx.lineTo(p.p[1][0],p.p[1][1]);ctx.lineTo(p.p[2][0],p.p[2][1]);ctx.closePath();ctx.fillStyle=p.col;ctx.fill()}if(showTrail){for(const n of ['R','L']){const t=trails[n];for(let i=1;i<t.length;i++)line3(t[i-1],t[i],n==='R'?'#ffbf74':'#7de6d3',2)}}
+if(showAxes){for(const m of marks){if(m.name.endsWith('Hand'))continue;const a=minus(m.p,mulv(m.axis,23)),b=plus(m.p,mulv(m.axis,23));line3(a,b,m.name===selected?'#ffce6b':'#80ebf4',m.name===selected?3:1.5)}}
+if(typeof v21DrawOverlay==='function')v21DrawOverlay();clickMarkers=[];for(const m of marks){let [x,y]=camera(m.p);clickMarkers.push({x,y,name:m.name});if(showAxes||m.name===selected){ctx.beginPath();ctx.arc(x,y,m.name===selected?6:3,0,Math.PI*2);ctx.fillStyle=m.name===selected?'#f8d56e':'#68f0f0';ctx.fill();if(m.name===selected){ctx.font='bold 12px system-ui';ctx.fillStyle='#f7e8c3';ctx.fillText(m.name,x+11,y-10)}}}}
+let trails={R:[],L:[]},travel={R:0,L:0},trailLast=0;
+function resetTrails(){trails={R:[],L:[]};travel={R:0,L:0};trailLast=0}
+function captureTrails(now){if(!showTrail||now-trailLast<70)return;trailLast=now;for(const n of ['R','L']){let p=endpoints[n+'Hand'];if(!p)continue;let a=trails[n],last=a[a.length-1];if(last&&Math.hypot(...minus(p,last))<.5)continue;if(last)travel[n]+=Math.hypot(...minus(p,last));a.push([...p]);if(a.length>850)a.shift()}}
+let prev=0;function animate(now){let dt=Math.min(.05,(now-prev)/1000||.016);prev=now;if(!paused){for(const d of defs){let a=actual[d.name],b=target[d.name],speed=d.name.endsWith('Hand')?1.5:100,step=speed*dt;actual[d.name]=Math.abs(b-a)<step?b:a+Math.sign(b-a)*step}}build();captureTrails(now);render();updateCoords();requestAnimationFrame(animate)}
+let down=null;canvas.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,az,el,moved:false};canvas.setPointerCapture(e.pointerId)});canvas.addEventListener('pointermove',e=>{if(!down)return;let dx=e.clientX-down.x,dy=e.clientY-down.y;if(Math.abs(dx)+Math.abs(dy)>5)down.moved=true;az=down.az-dx*.008;el=clamp(down.el+dy*.006,-1.2,1.2)});canvas.addEventListener('pointerup',e=>{if(down&&!down.moved){const r=canvas.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;let m=clickMarkers.map(o=>({...o,d:Math.hypot(o.x-x,o.y-y)})).sort((a,b)=>a.d-b.d)[0];if(m&&m.d<22){selected=m.name==='RHipYawPitch'||m.name==='LHipYawPitch'?'HipYawPitch':m.name;document.getElementById('group').value=by[selected].group;refreshJointList();refreshSelected()}}down=null});canvas.addEventListener('wheel',e=>{e.preventDefault();zoom=clamp(zoom*Math.exp(-e.deltaY*.001),.55,3)},{passive:false});
+const $=id=>document.getElementById(id);function refreshJointList(){const g=$('group').value,list=defs.filter(d=>g==='all'||d.group===g);$('joint').innerHTML=list.map(d=>`<option value="${d.name}">${d.name}</option>`).join('');if(!list.some(d=>d.name===selected))selected=list[0].name;$('joint').value=selected}
+function refreshSelected(){const d=by[selected],l=limits(selected);$('jointTitle').textContent=d.name;$('jointDesc').textContent=d.description+' Axe : '+d.axis+'.'+(d.name==='HipYawPitch'?' Le mouvement est partagé entre les deux jambes.':'');$('vmin').textContent=d.axis==='H'?round(l.min,1):fmt(l.min);$('vmax').textContent=d.axis==='H'?round(l.max,1):fmt(l.max);$('vamp').textContent=d.axis==='H'?round(l.max-l.min,1):fmt(l.max-l.min);$('vnow').textContent=d.axis==='H'?round(target[selected],2):fmt(target[selected]);$('angle').min=l.min;$('angle').max=l.max;$('angle').step=d.axis==='H'?.01:.1;$('angle').value=target[selected];$('warnings').className='note good';$('warnings').textContent=d.name==='HeadPitch'?'Limite dynamique : HeadPitch dépend de HeadYaw. La plage affichée est ajustée à la rotation actuelle de la tête.':d.axis==='H'?'Main : commande normalisée entre 0 (fermée) et 1 (ouverte), sans unité angulaire.':(l.min>0||l.max<0?'L’angle zéro n’appartient pas à la plage de cet axe. Le bouton « 0° » applique la limite la plus proche.':'L’angle zéro est accessible dans les limites nominales.');if(l.min>0||l.max<0)$('warnings').className='note'}
+$('group').onchange=()=>{selected=defs.find(d=>$('group').value==='all'||d.group===$('group').value).name;refreshJointList();refreshSelected()};$('joint').onchange=e=>{selected=e.target.value;refreshSelected()};$('angle').oninput=e=>setAngle(selected,e.target.value);for(const [id,fn] of [['min',l=>l.min],['max',l=>l.max],['zero',l=>clamp(0,l.min,l.max)],['mid',l=>(l.min+l.max)/2]])$(id).onclick=()=>setAngle(selected,fn(limits(selected)));
+$('stand').onclick=()=>poseDemo('Stand');$('standinit').onclick=()=>poseDemo('StandInit');$('standzero').onclick=()=>poseDemo('StandZero');$('pause').onclick=()=>{paused=!paused;$('pause').classList.toggle('active',paused)};
+$('front').onclick=()=>{az=0;el=.04};$('side').onclick=()=>{az=Math.PI/2;el=.04};$('iso').onclick=()=>{az=-.55;el=.21};$('resetView').onclick=()=>{az=-.55;el=.21;zoom=1};$('axes').onclick=()=>{showAxes=!showAxes;$('axes').classList.toggle('active',showAxes)};$('trail').onclick=()=>{showTrail=!showTrail;$('trail').classList.toggle('active',showTrail);if(showTrail)resetTrails()};$('clearTrail').onclick=resetTrails;$('grid').onclick=()=>{showGrid=!showGrid;$('grid').classList.toggle('active',showGrid)};$('shot').onclick=()=>{let a=document.createElement('a');a.href=canvas.toDataURL('image/png');a.download='NAO_Groupe7_simulation_3D.png';a.click()};$('model').onchange=e=>{geometry=e.target.value;$('modelLabel').textContent=geometry==='manual'?'Manuel NAO — 90 mm':'NAO V3.3 — 105 mm'};
+function updateCoords(){for(const n of ['R','L']){const p=endpoints[n+'Hand'];if(!p)continue;$(n.toLowerCase()+'x').textContent=round(p[0])+' mm';$(n.toLowerCase()+'y').textContent=round(p[1])+' mm';$(n.toLowerCase()+'z').textContent=round(p[2]-333)+' mm'}let low=Math.min(...feet.map(p=>p[2]));$('handGap').textContent=round(Math.hypot(...minus(endpoints.RHand,endpoints.LHand)),1)+' mm';
+$('handRHeight').textContent=round(endpoints.RHand[2]-333,1)+' mm';$('handLHeight').textContent=round(endpoints.LHand[2]-333,1)+' mm';
+$('pathR').textContent=round(travel.R,1)+' mm';$('pathL').textContent=round(travel.L,1)+' mm';
+$('violations').textContent=defs.filter(d=>actual[d.name]<limits(d.name).min-.001||actual[d.name]>limits(d.name).max+.001).length;
+$('floorStatus').textContent='Position la plus basse d’un pied : '+round(low,1)+' mm par rapport au sol indicatif. Le modèle n’assure ni contact stable, ni équilibre dynamique.'}
+function csvFile(name,rows){const txt='\ufeff'+rows.map(r=>r.map(x=>'"'+String(x??'').replaceAll('"','""')+'"').join(';')).join('\r\n');download(name,new Blob([txt],{type:'text/csv;charset=utf-8'}))}function download(name,blob){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),3000)}
+function renderLimits(){let rows=defs.map(d=>`<tr><td>${d.name}${d.name==='HipYawPitch'?' (L/R)':''}${d.axis==='H'?' (0–1)':''}</td><td>${round(d.min,2)}</td><td>${round(d.max,2)}</td><td>${round(d.max-d.min,2)}</td></tr>`);$('limitRows').innerHTML=rows.join('')}
+$('exportLimits').onclick=()=>csvFile('NAO_limites_constructeur_manuel.csv',[['Axe','Minimum_deg','Maximum_deg','Amplitude_deg','Source'],...defs.map(d=>[d.name,d.min,d.max,round(d.max-d.min,2),d.axis==='H'?'Main normalisée, non angulaire':'Manuel NAO chap. 5, limites nominales'])]);
+const postureSlots={Stand:null,StandInit:null,StandZero:null};function renderPoses(){const names=['HeadYaw','HeadPitch',...['R','L'].flatMap(s=>['ShoulderPitch','ShoulderRoll','ElbowYaw','ElbowRoll','WristYaw'].map(j=>s+j)),...['R','L'].flatMap(s=>['HipRoll','HipPitch','KneePitch','AnklePitch','AnkleRoll'].map(j=>s+j))];$('poseRows').innerHTML=names.map(n=>`<tr><td>${n}</td>${['Stand','StandInit','StandZero'].map(s=>`<td>${postureSlots[s]?round(postureSlots[s].angles[n],2):'—'}</td>`).join('')}</tr>`).join('');$('slotInfo').textContent=['Stand','StandInit','StandZero'].map(s=>s+': '+(postureSlots[s]?'simulation enregistrée':'non renseigné')).join(' · ')}
+$('capture').onclick=()=>{let s=$('slot').value;postureSlots[s]={angles:{...target},source:'simulation',model:geometry};renderPoses()};$('clearSlots').onclick=()=>{for(const s of Object.keys(postureSlots))postureSlots[s]=null;renderPoses()};$('exportPoses').onclick=()=>{let names=['HeadYaw','HeadPitch',...['R','L'].flatMap(s=>['ShoulderPitch','ShoulderRoll','ElbowYaw','ElbowRoll','WristYaw'].map(j=>s+j)),...['R','L'].flatMap(s=>['HipRoll','HipPitch','KneePitch','AnklePitch','AnkleRoll'].map(j=>s+j))];csvFile('NAO_postures_releves_simulation.csv',[['Axe','Stand_deg','StandInit_deg','StandZero_deg','Origine_des_donnees'],...names.map(n=>[n,...['Stand','StandInit','StandZero'].map(s=>postureSlots[s]?round(postureSlots[s].angles[n],2):''),'Simulation pédagogique, non mesuré dans Choregraphe'])])};
+$('saveJson').onclick=()=>download('NAO_configuration_Groupe7.json',new Blob([JSON.stringify({schema:'NAO Motion Lab 1.1',model:geometry,pose:activePose,angles:target,postures:postureSlots,source:'simulation'},null,2)],{type:'application/json'}));$('loadJson').onclick=()=>$('loadFile').click();$('loadFile').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse(await file.text());const a=data.angles||data;if(!a||typeof a!=='object')throw Error('Angles manquants');for(const d of defs)if(typeof a[d.name]==='number'&&Number.isFinite(a[d.name]))target[d.name]=clamp(a[d.name],d.min,d.max);target.HeadPitch=clamp(target.HeadPitch,limits('HeadPitch').min,limits('HeadPitch').max);if(data.postures){for(const s of Object.keys(postureSlots))if(data.postures[s]?.angles)postureSlots[s]=data.postures[s];renderPoses()}activePose='Import JSON';$('poseLabel').textContent=activePose;refreshSelected()}catch(err){alert('Import impossible : '+err.message)}e.target.value=''};
+$('exportTrail').onclick=()=>csvFile('NAO_trajectoires_mains.csv',[['Main','Index','X_TORSO_mm','Y_TORSO_mm','Z_TORSO_mm','Source'],...['R','L'].flatMap(n=>trails[n].map((p,i)=>[n,i,round(p[0]-0,3),round(p[1],3),round(p[2]-333,3),'Cinématique simulée']))]);
+$('exportAudit').onclick=()=>csvFile('NAO_audit_articulations.csv',[['Articulation','Consigne_deg','Valeur_actuelle_deg','Min_deg','Max_deg','Amplitude_deg','Axe_local','Accessible_zero','Source'],...defs.map(d=>{let l=limits(d.name);return[d.name,round(target[d.name],3),round(actual[d.name],3),round(l.min,3),round(l.max,3),round(l.max-l.min,3),d.axis,l.min<=0&&l.max>=0?'oui':'non','Manuel NAO fourni / simulation']})]);
+$('exportCoordinates').onclick=()=>csvFile('NAO_MGD_coordonnees_mains.csv',[['Extrémité','X_mm','Y_mm','Z_mm','Référence'],...['R','L'].map(n=>[n+'Hand',...endpoints[n+'Hand'].map((v,i)=>round(i===2?v-333:v,3)),'TORSO, géométrie '+geometry])]);
+
+// V1.2 : cinématique URDF indépendante, sans chargement réseau et sans maillages externes.
+let urdfJoints=[],urdfLinks={},urdfLabel='',urdfRowsCache=[],urdfFrames={},urdfAngleOverrides={},urdfVisualMode='simplified';
+const urdfVec=(raw,defaultV=[0,0,0])=>{if(!raw)return [...defaultV];let v=raw.trim().split(/\s+/).map(Number);return v.length===3&&v.every(Number.isFinite)?v:[...defaultV]};
+function urdfRpy(v){const [r,p,y]=v;return matmul(matmul(rot([0,0,1],y/D),rot([0,1,0],p/D)),rot([1,0,0],r/D))}
+function parseURDF(xml){
+ const doc=new DOMParser().parseFromString(xml,'application/xml');
+ if(doc.querySelector('parsererror'))throw Error('Le document XML n’est pas valide.');
+ const root=doc.documentElement;if(root.tagName!=='robot')throw Error('Racine <robot> absente.');
+ const list=[...root.children].filter(e=>e.tagName==='joint').map(el=>{
+   const node=tag=>[...el.children].find(e=>e.tagName===tag);
+   const name=el.getAttribute('name'),type=el.getAttribute('type');
+   const parent=node('parent')?.getAttribute('link'),child=node('child')?.getAttribute('link');
+   if(!name||!parent||!child)throw Error('Joint sans nom, parent ou enfant.');
+   const o=node('origin'),a=node('axis'),l=node('limit');
+   const xyz=urdfVec(o?.getAttribute('xyz')).map(v=>v*1000),rpy=urdfVec(o?.getAttribute('rpy'));
+   const axis=urdfVec(a?.getAttribute('xyz'),[1,0,0]);
+   const low=Number(l?.getAttribute('lower')),high=Number(l?.getAttribute('upper'));
+   return {name,type,parent,child,xyz,rpy,axis,lower:l?.hasAttribute('lower')?low:null,upper:l?.hasAttribute('upper')?high:null};
+ });
+ if(list.length<3)throw Error('Le modèle doit contenir au moins trois articulations.');
+ const children=new Map();for(const j of list){if(!children.has(j.parent))children.set(j.parent,[]);children.get(j.parent).push(j)}
+ const childSet=new Set(list.map(j=>j.child));const roots=[...new Set(list.map(j=>j.parent))].filter(n=>!childSet.has(n));
+ const start=roots.includes('torso')?'torso':roots.includes('base_link')?'base_link':roots[0];
+ if(!start)throw Error('Racine cinématique introuvable.');
+ const visuals=[];
+ for(const link of [...root.children].filter(e=>e.tagName==='link')){
+  const lname=link.getAttribute('name');
+  for(const v of [...link.children].filter(e=>e.tagName==='visual')){
+   const origin=[...v.children].find(e=>e.tagName==='origin');
+   const geo=[...v.children].find(e=>e.tagName==='geometry');if(!geo)continue;
+   const shape=[...geo.children].find(e=>['mesh','box','sphere','cylinder'].includes(e.tagName));if(!shape)continue;
+   visuals.push({link:lname,kind:shape.tagName,filename:shape.getAttribute('filename')||'',scale:urdfVec(shape.getAttribute('scale'),[1,1,1]),size:urdfVec(shape.getAttribute('size'),[.04,.04,.04]),radius:Number(shape.getAttribute('radius')||.02),length:Number(shape.getAttribute('length')||.08),xyz:urdfVec(origin?.getAttribute('xyz')).map(x=>x*1000),rpy:urdfVec(origin?.getAttribute('rpy'))});
+  }
+ }
+ return {list,children,start,visuals,name:root.getAttribute('name')||'robot sans nom'};
+}
+function urdfCompute(){
+ if(!urdfJoints.length)return;
+ const computed={};const root=urdfLinks.start;
+ computed[root]=frame([0,0,0],I);const queue=[root],visited=new Set([root]);
+ for(let count=0;queue.length&&count<250;count++){
+  const parent=queue.shift(),f=computed[parent];
+  for(const j of urdfLinks.children.get(parent)||[]){
+   if(visited.has(j.child))continue;
+   let jf=trans(f,j.xyz);jf=frame(jf.o,matmul(jf.m,urdfRpy(j.rpy)));
+   const key=j.name==='LHipYawPitch'||j.name==='RHipYawPitch'?'HipYawPitch':j.name;
+   let angle=Object.prototype.hasOwnProperty.call(urdfAngleOverrides,j.name)?urdfAngleOverrides[j.name]:(actual[key]||0);
+   if(j.type==='revolute'||j.type==='continuous')jf=turn(jf,j.axis,angle);
+   else if(j.type==='prismatic')jf=trans(jf,mulv(j.axis,angle));
+   computed[j.child]=jf;visited.add(j.child);queue.push(j.child)
+  }
+ }
+ urdfFrames=computed;urdfRowsCache=Object.entries(computed).filter(([n])=>/hand|wrist|foot|sole|ankle|head|torso|gripper/i.test(n)).map(([name,f])=>({name,xyz:f.o}));
+ $('urdfRows').innerHTML=urdfRowsCache.map(r=>'<tr><td>'+escapeText(r.name)+'</td>'+r.xyz.map(x=>'<td>'+round(x,2)+'</td>').join('')+'<td>'+escapeText(root)+'</td></tr>').join('')||'<tr><td colspan="5">Aucun repère cible trouvé dans ce fichier.</td></tr>';
+}
+function escapeText(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+$('loadUrdf').onclick=()=>$('urdfFile').click();
+$('urdfFile').onchange=async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{if(file.size>8e6)throw Error('Fichier trop volumineux (> 8 Mo).');const p=parseURDF(await file.text());urdfJoints=p.list;urdfLinks=p;urdfLabel=p.name;urdfAngleOverrides={};urdfCompute();initUrdfJointUI();urdfVisualMode='urdf';updateUrdfViewStatus();
+ $('urdfStatus').className='note good';$('urdfStatus').textContent='URDF chargé : '+p.name+' · '+p.list.length+' articulations · racine '+p.start+'. Les repères sont calculés avec les angles actuels, en millimètres. Modèle graphique toujours simplifié.';
+ }catch(err){$('urdfStatus').className='note';$('urdfStatus').textContent='Échec import URDF : '+err.message}
+ e.target.value='';
+};
+$('urdfReset').onclick=()=>{urdfJoints=[];urdfLinks={};urdfRowsCache=[];urdfFrames={};urdfAngleOverrides={};urdfLabel='';urdfVisualMode='simplified';initUrdfJointUI();updateUrdfViewStatus();$('urdfRows').innerHTML='<tr><td colspan="5">Aucun URDF chargé.</td></tr>';$('urdfStatus').className='note';$('urdfStatus').textContent='Aucun URDF chargé.'};
+$('exportUrdf').onclick=()=>{if(!urdfJoints.length){alert('Importer d’abord un URDF.');return}csvFile('NAO_URDF_reperes.csv',[['Lien','X_mm','Y_mm','Z_mm','Racine','Modele'],...urdfRowsCache.map(r=>[r.name,...r.xyz.map(x=>round(x,4)),urdfLinks.start,urdfLabel])])};
+$('exportUrdfLimits').onclick=()=>{if(!urdfJoints.length){alert('Importer d’abord un URDF.');return}csvFile('NAO_URDF_limites.csv',[['Joint','Type','Min_deg','Max_deg','Amplitude_deg','Axe_X','Axe_Y','Axe_Z','Modele'],...urdfJoints.filter(j=>j.type==='revolute').map(j=>[j.name,j.type,j.lower===null?'':round(j.lower/D,4),j.upper===null?'':round(j.upper/D,4),j.lower===null||j.upper===null?'':round((j.upper-j.lower)/D,4),...j.axis,urdfLabel])])};
+const originalUpdateCoords=updateCoords;
+updateCoords=function(){originalUpdateCoords();if(urdfJoints.length)urdfCompute()};
+
+
+// V1.3 : rendu 3D de la structure cinématique calculée depuis le fichier URDF.
+// Les segments et sphères visualisent les repères, PAS les maillages constructeur.
+function updateUrdfViewStatus(){
+ const ready=urdfJoints.length>0;
+ $('viewURDF').disabled=!ready;
+ $('viewURDF').classList.toggle('active',ready&&urdfVisualMode==='urdf');$('viewMesh').disabled=!ready;$('viewMesh').classList.toggle('active',ready&&urdfVisualMode==='mesh');
+ $('viewSimplified').classList.toggle('active',urdfVisualMode==='simplified');
+ $('urdfViewStatus').textContent=ready?(urdfVisualMode==='mesh'?'Vue maillages : géométrie issue des fichiers locaux, placée selon les repères URDF. Les maillages manquants sont représentés par la structure.':urdfVisualMode==='urdf'?'Vue URDF : les positions et orientations des liaisons sont calculées à partir du fichier importé. Les segments sont une représentation de structure, sans maillages constructeur.':'Vue pédagogique : volumes simplifiés, distincts du modèle URDF importé.'):'Importez un URDF pour afficher directement sa chaîne cinématique. La vue actuelle reste une approximation pédagogique.';
+ $('renderState').textContent=ready&&urdfVisualMode==='mesh'?'URDF + MAILLAGES 3D':ready&&urdfVisualMode==='urdf'?'STRUCTURE URDF IMPORTÉE':'MODÈLE PÉDAGOGIQUE';
+}
+$('viewURDF').onclick=()=>{if(!urdfJoints.length)return;urdfVisualMode='urdf';updateUrdfViewStatus()};
+$('viewSimplified').onclick=()=>{urdfVisualMode='simplified';updateUrdfViewStatus()};
+function urdfJointSelected(){return urdfJoints.find(j=>j.name===$('urdfJointSelect').value)}
+function initUrdfJointUI(){
+ const choices=urdfJoints.filter(j=>['revolute','continuous'].includes(j.type));
+ $('urdfJointSelect').innerHTML=choices.length?choices.map(j=>`<option value="${escapeText(j.name)}">${escapeText(j.name)}</option>`).join(''):'<option value="">Importer un URDF d’abord</option>';
+ refreshUrdfJointUI();
+}
+function refreshUrdfJointUI(){
+ const j=urdfJointSelected(),r=$('urdfJointAngle');r.disabled=!j;
+ if(!j){$('urdfAngleValue').textContent='—';$('urdfJointInfo').textContent='Aucun axe URDF sélectionné.';return}
+ const key=j.name==='LHipYawPitch'||j.name==='RHipYawPitch'?'HipYawPitch':j.name;
+ const min=j.lower!==null?j.lower/D:-180,max=j.upper!==null?j.upper/D:180;
+ const v=Object.prototype.hasOwnProperty.call(urdfAngleOverrides,j.name)?urdfAngleOverrides[j.name]:(actual[key]||0);
+ r.min=min;r.max=max;r.step=.1;r.value=clamp(v,min,max);
+ $('urdfAngleValue').textContent=fmt(Number(r.value));
+ $('urdfJointInfo').textContent=j.name+' · axe local ('+j.axis.join(', ')+') · limites '+fmt(min)+' à '+fmt(max)+' · amplitude '+fmt(max-min)+' · source : URDF importé.';
+}
+$('urdfJointSelect').onchange=refreshUrdfJointUI;
+$('urdfJointAngle').oninput=e=>{
+ const j=urdfJointSelected();if(!j)return;
+ const v=Number(e.target.value);urdfAngleOverrides[j.name]=v;
+ const key=j.name==='LHipYawPitch'||j.name==='RHipYawPitch'?'HipYawPitch':j.name;
+ if(by[key]){target[key]=clamp(v,limits(key).min,limits(key).max);refreshSelected()}
+ $('urdfAngleValue').textContent=fmt(v);urdfCompute();
+};
+for(const [id,which] of [['urdfJointZero','zero'],['urdfJointMin','min'],['urdfJointMax','max']])$(id).onclick=()=>{
+ const j=urdfJointSelected();if(!j)return;
+ const min=j.lower!==null?j.lower/D:-180,max=j.upper!==null?j.upper/D:180;
+ const v=which==='min'?min:which==='max'?max:clamp(0,min,max);
+ $('urdfJointAngle').value=v;$('urdfJointAngle').oninput({target:{value:v}});
+};
+$('urdfExportAll').onclick=()=>{
+ if(!urdfJoints.length){alert('Importer un URDF.');return}
+ csvFile('NAO_URDF_tous_reperes.csv',[['Lien','X_mm','Y_mm','Z_mm','Modele'],...Object.entries(urdfFrames).map(([n,f])=>[n,...f.o.map(v=>round(v,4)),urdfLabel])]);
+};
+const renderPedagogical=render;
+render=function(){
+ if(!['urdf','mesh'].includes(urdfVisualMode)||!urdfJoints.length){renderPedagogical();return}
+ const savedPieces=pieces,savedMarks=marks;
+ const skeleton=[];
+ const root=urdfLinks.start;
+ const base=[0,0,333];
+ // All URDF frame positions are in millimetres, rooted at the torso / base link.
+ const toScene=p=>plus(p,base);
+ for(const j of urdfJoints){
+  const parent=urdfFrames[j.parent],child=urdfFrames[j.child];
+  if(!parent||!child)continue;
+  const a=toScene(parent.o),b=toScene(child.o);
+  const moving=j.type==='revolute'||j.type==='continuous';
+  if(urdfVisualMode!=='mesh'&&Math.hypot(...minus(b,a))>0.5)skeleton.push({kind:'tube',a,b,r:moving?6:4,color:moving?'#8bcaf0':'#607c8c'});
+  if(urdfVisualMode!=='mesh'&&moving)skeleton.push({kind:'ell',f:frame(b,I),c:[0,0,0],r:[9,9,9],color:'#20b7e2',detail:0});
+ }
+ pieces=skeleton;marks=[];
+ renderPedagogical();
+ pieces=savedPieces;marks=savedMarks;
+ const chosen=urdfJointSelected();
+ if(chosen&&urdfFrames[chosen.child]){
+  const f=urdfFrames[chosen.child],p=toScene(f.o),ax=norm(mv(f.m,chosen.axis));
+  line3(minus(p,mulv(ax,37)),plus(p,mulv(ax,37)),'#ffd57b',3);
+  const [x,y]=camera(p);ctx.fillStyle='#ffe8ae';ctx.font='bold 12px system-ui';ctx.fillText(chosen.name,x+12,y-12);
+ }
+};
+
+
+// V1.6 : import de données externes, sans les présenter comme des mesures si elles ne le sont pas.
+const measurementSlots={Stand:{},StandInit:{},StandZero:{}};
+let measuredOrigin='',measuredImportCount=0,measuredWarnings=[];
+const measuredNames=['HeadYaw','HeadPitch',...['R','L'].flatMap(k=>['ShoulderPitch','ShoulderRoll','ElbowYaw','ElbowRoll','WristYaw'].map(x=>k+x)),...['R','L'].flatMap(k=>['HipRoll','HipPitch','KneePitch','AnklePitch','AnkleRoll'].map(x=>k+x))];
+function parseCsvRows(text){
+ const rows=[],line=[];let cell='',quoted=false;
+ for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){cell+='"';i++}else quoted=!quoted}
+ else if(!quoted&&(c===';'||c===','||c==='\t')){line.push(cell.trim());cell=''}
+ else if(!quoted&&(c==='\n'||c==='\r')){line.push(cell.trim());cell='';if(line.some(x=>x!==''))rows.push([...line]);line.length=0;if(c==='\r'&&text[i+1]==='\n')i++}
+ else cell+=c;
+ }
+ line.push(cell.trim());if(line.some(x=>x!==''))rows.push([...line]);return rows;
+}
+// Common Choregraphe naming aliases (do not silently merge different physical axes).
+function canonicalJoint(raw){const name=String(raw||'').trim().replace(/^R\s*\[.*?\]\s*/i,'').replace(/\s+/g,'');
+ if(name==='LHipYawPitch'||name==='RHipYawPitch')return 'HipYawPitch';
+ const alias={'RShoulderRol':'RShoulderRoll','LShoulderRol':'LShoulderRoll'};
+ return alias[name]||name;
+}
+function cleanAngle(raw){if(raw===null||raw===undefined||String(raw).trim()==='')return null;const v=Number(String(raw).trim().replace(',','.'));return Number.isFinite(v)?v:null}
+function importMeasuredRows(rows,units){
+ if(rows.length<2)throw Error('Le fichier ne contient pas de tableau de mesures.');
+ const head=rows[0].map(x=>x.toLowerCase().replace(/[^a-z0-9]/g,''));
+ const ax=head.findIndex(x=>['axe','joint','articulation','name'].includes(x));
+ const cols=['Stand','StandInit','StandZero'].map(x=>head.indexOf(x.toLowerCase()));
+ if(ax<0||cols.every(x=>x<0))throw Error('Colonnes attendues : Axe ; Stand ; StandInit ; StandZero.');
+ const result={Stand:{},StandInit:{},StandZero:{}},warn=[];let count=0;
+ for(const row of rows.slice(1)){
+  const key=canonicalJoint(row[ax]);if(!by[key]){if(row[ax])warn.push('Axe inconnu : '+row[ax]);continue}
+  ['Stand','StandInit','StandZero'].forEach((pose,i)=>{if(cols[i]<0)return;const val=cleanAngle(row[cols[i]]);if(val===null)return;const deg=units==='rad'?val/D:val;result[pose][key]=deg;count++});
+ }
+ if(!count)throw Error('Aucune valeur numérique reconnue pour les articulations NAO.');
+ return {result,warn,count};
+}
+function importMeasuredJson(txt,units){
+ const obj=JSON.parse(txt),poses=obj.postures||obj;
+ const result={Stand:{},StandInit:{},StandZero:{}},warn=[];let count=0;
+ for(const pose of Object.keys(result)){
+  const data=poses[pose]?.angles||poses[pose]||{};
+  for(const [raw,val] of Object.entries(data)){const key=canonicalJoint(raw),v=cleanAngle(val);if(!by[key]||v===null)continue;result[pose][key]=units==='rad'?v/D:v;count++}
+ }
+ if(!count)throw Error('JSON attendu : {"Stand":{"HeadYaw":0},"StandInit":{},"StandZero":{}}');
+ return {result,warn,count};
+}
+function checkMeasured(pose,key,val){
+ if(!Number.isFinite(val))return 'valeur invalide';
+ const d=by[key],a=d.min,b=d.max;
+ if(val<a-1e-5||val>b+1e-5)return 'HORS LIMITES';
+ if(key==='HeadPitch'&&Number.isFinite(measurementSlots[pose].HeadYaw)){
+  const old=target.HeadYaw;target.HeadYaw=measurementSlots[pose].HeadYaw;
+  const l=limits('HeadPitch');target.HeadYaw=old;
+  if(val<l.min-1e-5||val>l.max+1e-5)return 'hors enveloppe tête';
+ }
+ return 'OK';
+}
+function renderMeasured(){
+ const rows=measuredNames.map(key=>{
+  const vals=['Stand','StandInit','StandZero'].map(p=>measurementSlots[p][key]);
+  const status=['Stand','StandInit','StandZero'].map((p,i)=>vals[i]===undefined?'—':checkMeasured(p,key,vals[i]));
+  const bad=status.some(x=>x!=='OK'&&x!=='—');
+  return '<tr><td>'+escapeText(key)+'</td>'+vals.map(v=>'<td>'+(v===undefined?'—':round(v,2))+'</td>').join('')+'<td style="color:'+(bad?'#ffc68b':'#8ce9d5')+'">'+status.join(' / ')+'</td></tr>';
+ });
+ $('measuredRows').innerHTML=rows.join('');
+ const n=Object.values(measurementSlots).reduce((sum,p)=>sum+Object.keys(p).length,0);
+ $('applyMeasured').disabled=n===0;$('exportMeasured').disabled=n===0;
+ $('measuredStatus').className=n?'note good':'note';
+ $('measuredStatus').textContent=n?('Source : '+measuredOrigin+' · '+n+' consignes importées. '+measuredWarnings.length+' avertissement(s). Les angles hors limites seront bornés lors de leur application.'): 'Aucun relevé importé.';
+}
+$('loadMeasured').onclick=()=>$('measuredFile').click();
+$('measuredFile').onchange=async e=>{
+ const file=e.target.files?.[0];if(!file)return;
+ try{
+  if(file.size>2e6)throw Error('Fichier trop volumineux (> 2 Mo).');
+  const text=await file.text(),unit=$('measuredUnits').value;
+  const parsed=file.name.toLowerCase().endsWith('.json')?importMeasuredJson(text,unit):importMeasuredRows(parseCsvRows(text),unit);
+  for(const p of Object.keys(measurementSlots))measurementSlots[p]=parsed.result[p];
+  measuredOrigin=file.name+' ('+unit+')';measuredImportCount=parsed.count;measuredWarnings=parsed.warn;
+  renderMeasured();
+ }catch(err){$('measuredStatus').className='note';$('measuredStatus').textContent='Import impossible : '+err.message}
+ e.target.value='';
+};
+$('downloadTemplate').onclick=()=>csvFile('NAO_Choregraphe_modele_vierge.csv',[['Axe','Stand','StandInit','StandZero'],...measuredNames.map(n=>[n,'','',''])]);
+$('applyMeasured').onclick=()=>{
+ const pose=$('measuredPose').value,data=measurementSlots[pose],entries=Object.entries(data);
+ if(!entries.length){$('measuredStatus').className='note';$('measuredStatus').textContent='Aucune valeur importée pour '+pose+'.';return}
+ const warnings=[];
+ // Set HeadYaw first to obtain the correct HeadPitch dependent bounds.
+ if(Number.isFinite(data.HeadYaw))target.HeadYaw=clamp(data.HeadYaw,by.HeadYaw.min,by.HeadYaw.max);
+ for(const [name,val] of entries){const l=limits(name);const applied=clamp(val,l.min,l.max);target[name]=applied;if(Math.abs(val-applied)>1e-6)warnings.push(name+': '+round(val,2)+'° → '+round(applied,2)+'°')}
+ // Synchronize the imported URDF chain: old manual overrides must not mask pose changes.
+ for(const j of urdfJoints){const key=['LHipYawPitch','RHipYawPitch'].includes(j.name)?'HipYawPitch':j.name;if(by[key])delete urdfAngleOverrides[j.name]}
+ activePose=pose+' — données importées';$('poseLabel').textContent=activePose;
+ refreshSelected();if(urdfJoints.length){urdfCompute();refreshUrdfJointUI()}
+ $('measuredStatus').className=warnings.length?'note':'note good';
+ $('measuredStatus').textContent='Posture '+pose+' appliquée : '+entries.length+' axes. '+(warnings.length?'Limites : '+warnings.join(' ; '):'Aucun dépassement des bornes nominales relevé.')+' Source : '+measuredOrigin+'. Les autres axes conservent leurs consignes précédentes.';
+};
+$('exportMeasured').onclick=()=>{
+ csvFile('NAO_Choregraphe_audit.csv',[['Axe','Stand_deg','StandInit_deg','StandZero_deg','Stand_statut','StandInit_statut','StandZero_statut','Origine'],...measuredNames.map(key=>[key,...['Stand','StandInit','StandZero'].map(p=>measurementSlots[p][key]??''),...['Stand','StandInit','StandZero'].map(p=>measurementSlots[p][key]===undefined?'non mesure':checkMeasured(p,key,measurementSlots[p][key])),measuredOrigin])]);
+};
+renderMeasured();
+
+// V1.4 : maillages locaux ancrés dans les repères des liens URDF.
+// Unités URDF en mètres ; coordonnées de scène en millimètres.
+let meshFilesMap=new Map(),meshObjects=[],meshDiagnostics=[];
+const meshKey=s=>String(s||'').replace(/\\/g,'/').split('/').pop().toLowerCase();
+function decimate(tris,cap=450){if(tris.length<=cap)return tris;const stride=tris.length/cap;return Array.from({length:cap},(_,i)=>tris[Math.floor(i*stride)])}
+function parseSTL(buffer){
+ const view=new DataView(buffer),n=buffer.byteLength>=84?view.getUint32(80,true):-1;
+ const binary=n>=0&&84+n*50===buffer.byteLength;
+ const tris=[];
+ if(binary){for(let i=0;i<n;i++){const o=84+i*50,tri=[];for(let k=0;k<3;k++){let v=[];for(let j=0;j<3;j++)v.push(view.getFloat32(o+12+k*12+j*4,true));tri.push(v)}tris.push(tri)}}
+ else {const txt=new TextDecoder().decode(buffer),re=/vertex\s+([-+\deE.]+)\s+([-+\deE.]+)\s+([-+\deE.]+)/g;let m,vs=[];while((m=re.exec(txt))){vs.push([+m[1],+m[2],+m[3]]);if(vs.length===3){tris.push(vs);vs=[]}}}
+ if(!tris.length)throw Error('STL vide ou non reconnu');return decimate(tris);
+}
+function parseOBJ(txt){const verts=[],tris=[];for(const line of txt.split(/\r?\n/)){const p=line.trim().split(/\s+/);if(p[0]==='v'&&p.length>=4)verts.push(p.slice(1,4).map(Number));if(p[0]==='f'&&p.length>=4){const ids=p.slice(1).map(v=>{let i=parseInt(v.split('/')[0]);return i<0?verts.length+i:i-1});for(let i=1;i<ids.length-1;i++){const tri=[verts[ids[0]],verts[ids[i]],verts[ids[i+1]]];if(tri.every(v=>v&&v.every(Number.isFinite)))tris.push(tri)}}}if(!tris.length)throw Error('OBJ sans faces triangulables');return decimate(tris)}
+function parseDAE(txt){
+ const doc=new DOMParser().parseFromString(txt,'application/xml');if(doc.querySelector('parsererror'))throw Error('XML COLLADA non valide');
+ const mesh=doc.querySelector('library_geometries geometry mesh');if(!mesh)throw Error('COLLADA sans mesh géométrique');
+ const sources=new Map();for(const el of mesh.querySelectorAll('source')){const arr=el.querySelector('float_array');if(!arr)continue;const stride=Number(el.querySelector('accessor')?.getAttribute('stride')||3);sources.set('#'+el.id,{vals:arr.textContent.trim().split(/\s+/).map(Number),stride})}
+ const vertices=new Map();for(const v of mesh.querySelectorAll('vertices')){const inp=v.querySelector('input[semantic="POSITION"]');if(inp)vertices.set('#'+v.id,inp.getAttribute('source'))}
+ const tris=[];for(const prim of mesh.children){if(!['triangles','polylist'].includes(prim.localName))continue;const inputs=[...prim.children].filter(x=>x.localName==='input');const step=1+Math.max(...inputs.map(x=>Number(x.getAttribute('offset')||0)));const posInput=inputs.find(x=>['VERTEX','POSITION'].includes(x.getAttribute('semantic')));if(!posInput)continue;const key=posInput.getAttribute('semantic')==='VERTEX'?vertices.get(posInput.getAttribute('source')):posInput.getAttribute('source');const src=sources.get(key);if(!src)continue;const off=Number(posInput.getAttribute('offset')||0);const data=[...prim.children].find(x=>x.localName==='p')?.textContent.trim().split(/\s+/).map(Number)||[];
+  let faces=[];if(prim.localName==='triangles'){for(let k=0;k+3*step<=data.length;k+=3*step)faces.push([k,k+step,k+2*step])}else{const counts=[...prim.children].find(x=>x.localName==='vcount')?.textContent.trim().split(/\s+/).map(Number)||[];let at=0;for(const count of counts){for(let k=1;k<count-1;k++)faces.push([at,at+k*step,at+(k+1)*step]);at+=count*step}}
+  for(const f of faces){const t=f.map(i=>{const idx=data[i+off],o=idx*src.stride;return src.vals.slice(o,o+3)});if(t.every(v=>v.length===3&&v.every(Number.isFinite)))tris.push(t)}
+ }
+ if(!tris.length)throw Error('DAE : aucune face triangulée compatible');const unit=Number(doc.querySelector('asset unit')?.getAttribute('meter')||1);return {tris:decimate(tris),unit};
+}
+async function parseMeshFile(file){const ext=file.name.split('.').pop().toLowerCase();let tris,unit=1;if(ext==='stl')tris=parseSTL(await file.arrayBuffer());else if(ext==='obj')tris=parseOBJ(await file.text());else if(ext==='dae'){const d=parseDAE(await file.text());tris=d.tris;unit=d.unit}else throw Error('Format non pris en charge');return {tris,unit,file:file.name}}
+function urdfMeshFrame(v){const parent=urdfFrames[v.link];if(!parent)return null;const f=trans(parent,v.xyz);return frame(f.o,matmul(f.m,urdfRpy(v.rpy)))}
+function updateMeshObjects(){meshObjects=[];meshDiagnostics=[];if(urdfVisualMode!=='mesh'||!urdfJoints.length)return;
+ const visuals=urdfLinks.visuals||[];
+ for(const v of visuals){const f=urdfMeshFrame(v);if(!f)continue;
+  if(v.kind==='mesh'){const key=meshKey(v.filename),m=meshFilesMap.get(key);if(!m){meshDiagnostics.push({link:v.link,file:key,status:'manquant'});continue}meshObjects.push({f,mesh:m,scale:v.scale,link:v.link});meshDiagnostics.push({link:v.link,file:key,status:'chargé'})}
+  else if(v.kind==='box')meshObjects.push({f,primitive:'box',size:v.size.map(x=>x*1000),link:v.link});
+  else if(v.kind==='sphere')meshObjects.push({f,primitive:'sphere',radius:v.radius*1000,link:v.link});
+  else if(v.kind==='cylinder')meshObjects.push({f,primitive:'cylinder',radius:v.radius*1000,length:v.length*1000,link:v.link});
+ }
+}
+function drawImportedMesh(out,obj){const f=frame(plus(obj.f.o,[0,0,333]),obj.f.m),col=obj.link.toLowerCase().includes('head')?'#c8e9f8':obj.link.toLowerCase().includes('arm')?'#dcebf3':'#7db9d9';
+ if(obj.primitive){if(obj.primitive==='sphere')drawEll(out,{f,c:[0,0,0],r:[obj.radius,obj.radius,obj.radius],color:col,detail:0});else if(obj.primitive==='box')drawEll(out,{f,c:[0,0,0],r:obj.size.map(x=>x/2),color:col,detail:0});else{drawTube(out,{a:pos(f,[0,0,-obj.length/2]),b:pos(f,[0,0,obj.length/2]),r:obj.radius,color:col})}return}
+ const k=1000*obj.mesh.unit,sc=obj.scale;
+ for(const tri of obj.mesh.tris){const a=tri.map(p=>pos(f,[p[0]*sc[0]*k,p[1]*sc[1]*k,p[2]*sc[2]*k]));pushTri(out,a[0],a[1],a[2],col)}
+}
+function meshStatus(){const visual=(urdfLinks.visuals||[]).filter(v=>v.kind==='mesh'),loaded=visual.filter(v=>meshFilesMap.has(meshKey(v.filename))).length;$('meshStatus').className=loaded?'note good':'note';$('meshStatus').textContent=meshFilesMap.size+' fichier(s) chargé(s) · '+loaded+'/'+visual.length+' référence(s) de maillage URDF correspondante(s). '+(visual.length?'Sélectionnez « Vue URDF + pièces 3D » pour afficher les pièces.':'Importer un URDF contenant des éléments visual/mesh.');}
+$('loadMeshes').onclick=()=>$('meshFiles').click();
+$('meshFiles').onchange=async e=>{const fs=[...e.target.files];let ok=0,errs=[];for(const f of fs){try{if(f.size>12e6)throw Error('plus de 12 Mo');meshFilesMap.set(meshKey(f.name),await parseMeshFile(f));ok++}catch(err){errs.push(f.name+': '+err.message)}}meshStatus();if(errs.length)$('meshStatus').textContent+=' Erreurs : '+errs.join(' ; ');if(ok&&urdfJoints.length){urdfVisualMode='mesh';updateUrdfViewStatus()}e.target.value=''};
+$('clearMeshes').onclick=()=>{meshFilesMap.clear();meshStatus()};
+$('viewMesh').onclick=()=>{if(!urdfJoints.length)return;urdfVisualMode='mesh';updateUrdfViewStatus();meshStatus()};
+$('exportMeshAudit').onclick=()=>{if(!urdfJoints.length){alert('Importer d’abord un URDF.');return}csvFile('NAO_audit_maillages.csv',[['Lien','Fichier_URDF','Type','Statut'],...(urdfLinks.visuals||[]).map(v=>[v.link,v.filename||'—',v.kind,v.kind==='mesh'?(meshFilesMap.has(meshKey(v.filename))?'Chargé':'Manquant'):'Primitive intégrée'])])};
+const renderV13=render;render=function(){updateMeshObjects();renderV13()};
+const oldUrdfFileHandler=$('urdfFile').onchange;$('urdfFile').onchange=async e=>{await oldUrdfFileHandler(e);meshStatus()};
+const oldUrdfResetHandler=$('urdfReset').onclick;$('urdfReset').onclick=()=>{oldUrdfResetHandler();meshStatus()};
+meshStatus();
+
+updateUrdfViewStatus();
+
+refreshJointList();refreshSelected();renderLimits();renderPoses();activePose='Zéro articulaire borné (état initial)';$('poseLabel').textContent=activePose;requestAnimationFrame(animate);
+
+// V1.6 : dossier de description complet, traçabilité et audit des pièces.
+let bundleInfo={folder:'',urdf:'',found:0,matched:0,missing:[],duplicates:[],errors:[],joints:0,classification:'non identifié',files:0};
+const bundleFolder=$('bundleFolder');
+$('loadBundle').onclick=()=>bundleFolder.click();
+function bundleTable(){
+ const b=bundleInfo;
+ const checks=[
+  ['Fichiers présents',String(b.files)],
+  ['Description cinématique',b.urdf||'Non trouvée'],
+  ['Type estimé',b.classification],
+  ['Articulations URDF',String(b.joints)],
+  ['Maillages référencés trouvés',b.matched+' / '+b.found],
+  ['Maillages manquants',b.missing.length?b.missing.slice(0,12).join(' ; ')+(b.missing.length>12?' …':''):'Aucun (ou aucun maillage référencé)'],
+  ['Noms de maillages ambigus',b.duplicates.length?b.duplicates.join(' ; '):'Aucun'],
+  ['Erreurs de lecture',b.errors.length?b.errors.slice(0,6).join(' ; '):'Aucune']
+ ];
+ $('bundleRows').innerHTML=checks.map(([k,v])=>'<tr><td>'+escapeText(k)+'</td><td>'+escapeText(v)+'</td></tr>').join('');
+ const valid=b.joints>0&&b.found>0&&b.matched===b.found&&!b.errors.length&&!b.duplicates.length;
+ $('bundleStatus').className=valid?'note good':'note';
+ $('bundleStatus').textContent=valid?'Toutes les références de maillage du modèle sélectionné ont été résolues. Cela ne garantit pas la justesse du rendu, des échelles ou de la cinématique.':b.joints?'Description chargée, mais le modèle n’est pas encore intégralement vérifié : consulter les contrôles ci-dessous.':'Aucun modèle valide chargé.';
+}
+function classifyNao(joints){
+ const names=new Set(joints.map(j=>j.name));
+ if(joints.length<20)return 'Modèle partiel : version non identifiable';
+ const wrists=['RWristYaw','LWristYaw'];
+ const hands=['RHand','LHand'];
+ const nW=wrists.filter(n=>names.has(n)).length,nH=hands.filter(n=>names.has(n)).length;
+ if(nW===2&&nH===2)return 'Compatible avec une structure H25 (à confirmer avec le robot)';
+ if(nW===0&&nH===0)return 'Compatible avec une structure H21 (à confirmer avec le robot)';
+ return 'Variante ou modèle incomplet : vérifier les articulations';
+}
+async function importBundle(files){
+ bundleInfo={folder:'',urdf:'',found:0,matched:0,missing:[],duplicates:[],errors:[],joints:0,classification:'non identifié',files:files.length};
+ const paths=files.map(f=>(f.webkitRelativePath||f.name).replace(/\\/g,'/'));
+ bundleInfo.folder=paths[0]?.split('/')[0]||'';
+ const candidates=files.map((f,i)=>({f,path:paths[i]})).filter(x=>/\.urdf$/i.test(x.path));
+ if(!candidates.length){bundleInfo.errors.push('Aucun fichier .urdf dans le dossier');bundleTable();return}
+ // Explicitly prefer a NAO model over generic support URDFs.
+ candidates.sort((a,b)=>{
+  const score=x=> (/\/nao\.urdf$/i.test(x.path)?100:0)+(/generated_urdf/i.test(x.path)?20:0)+(/nao/i.test(x.path)?10:0);
+  return score(b)-score(a);
+ });
+ const picked=candidates[0];bundleInfo.urdf=picked.path;
+ let parsed;
+ try{parsed=parseURDF(await picked.f.text())}catch(e){bundleInfo.errors.push('URDF : '+e.message);bundleTable();return}
+ urdfJoints=parsed.list;urdfLinks=parsed;urdfLabel=parsed.name;urdfAngleOverrides={};urdfCompute();initUrdfJointUI();
+ bundleInfo.joints=parsed.list.length;bundleInfo.classification=classifyNao(parsed.list);
+ const referenced=(parsed.visuals||[]).filter(v=>v.kind==='mesh');bundleInfo.found=referenced.length;
+ const wanted=new Set(referenced.map(v=>meshKey(v.filename)));
+ const candidatesByName=new Map();
+ for(let i=0;i<files.length;i++){
+  const f=files[i],key=meshKey(f.name);
+  if(!wanted.has(key))continue;
+  if(!candidatesByName.has(key))candidatesByName.set(key,[]);
+  candidatesByName.get(key).push({f,path:paths[i]});
+ }
+ meshFilesMap.clear();
+ for(const [key,arr] of candidatesByName){
+  // A basename alone cannot distinguish two geometries in different directories.
+  if(arr.length>1){bundleInfo.duplicates.push(key+' ('+arr.length+' fichiers)');continue}
+  try{if(arr[0].f.size>12e6)throw Error('plus de 12 Mo');meshFilesMap.set(key,await parseMeshFile(arr[0].f))}
+  catch(e){bundleInfo.errors.push(arr[0].path+': '+e.message)}
+ }
+ bundleInfo.matched=referenced.filter(v=>meshFilesMap.has(meshKey(v.filename))).length;
+ bundleInfo.missing=[...new Set(referenced.filter(v=>!meshFilesMap.has(meshKey(v.filename))).map(v=>v.filename))];
+ urdfVisualMode='mesh';updateUrdfViewStatus();meshStatus();bundleTable();
+ $('urdfStatus').className='note good';$('urdfStatus').textContent='URDF local : '+picked.path+' · '+parsed.list.length+' articulations. Vérifier le type H21/H25 et les dimensions du modèle.';
+}
+bundleFolder.onchange=async e=>{
+ $('bundleStatus').textContent='Analyse des fichiers locaux en cours…';
+ try{await importBundle([...e.target.files])}catch(err){bundleInfo.errors.push(err.message);bundleTable()}
+ e.target.value='';
+};
+$('bundleAudit').onclick=()=>{
+ const b=bundleInfo;
+ csvFile('NAO_diagnostic_modele_V1_6.csv',[
+  ['Controle','Valeur'],['Dossier',b.folder],['URDF',b.urdf],['Version estimee',b.classification],['Nombre de joints',b.joints],['Maillages attendus',b.found],['Maillages resolus',b.matched],
+  ...b.missing.map(x=>['Maillage manquant',x]),...b.duplicates.map(x=>['Nom ambigu',x]),...b.errors.map(x=>['Erreur',x])
+ ]);
+};
+
+
+// V1.7 — contrôle dimensionnel directement traçable au manuel fourni (pages 186–188).
+// Ce contrôle porte sur la géométrie des centres et ne certifie pas les orientations URDF/DH.
+const docChecks=[
+ ['Cou D / Torse','HeadYaw',null,126.50,'neck'],
+ ['Épaule D / Torse','RShoulderPitch',null,Math.hypot(98,100),'shoulder'],
+ ['Épaule G / Torse','LShoulderPitch',null,Math.hypot(98,100),'shoulder'],
+ ['Épaule D → Coude D','RShoulderPitch','RElbowYaw',90,'upper'],
+ ['Épaule G → Coude G','LShoulderPitch','LElbowYaw',90,'upper'],
+ ['Coude D → Poignet D','RElbowYaw','RWristYaw',50.55,'lower'],
+ ['Coude G → Poignet G','LElbowYaw','LWristYaw',50.55,'lower'],
+ ['Hanche D → Genou D','RHipRoll','RKneePitch',100,'thigh'],
+ ['Hanche G → Genou G','LHipRoll','LKneePitch',100,'thigh'],
+ ['Genou D → Cheville D','RKneePitch','RAnklePitch',102.74,'tibia'],
+ ['Genou G → Cheville G','LKneePitch','LAnklePitch',102.74,'tibia']
+];
+function center(name){const m=marks.find(m=>m.name===name);return m?.p||null}
+function docAudit(){
+ // Force a fresh FK state, independent of the drawing mode.
+ build();
+ const rows=docChecks.map(([label,a,b,ref,kind])=>{
+  const pa=center(a),pb=b?center(b):[0,0,333];const observed=pa&&pb?Math.hypot(...minus(pa,pb)):NaN;
+  const delta=observed-ref,ok=Number.isFinite(delta)&&Math.abs(delta)<=.2;
+  return {label,ref,observed,delta,kind,ok};
+ });
+ const valid=rows.filter(r=>r.ok).length;
+ $('auditRows').innerHTML=rows.map(r=>'<tr><td>'+escapeText(r.label)+'</td><td>'+r.ref.toFixed(2)+'</td><td>'+(Number.isFinite(r.observed)?r.observed.toFixed(2):'—')+'</td><td>'+(Number.isFinite(r.delta)?r.delta.toFixed(2):'—')+'</td><td>'+(r.ok?'Conforme':'À examiner')+'</td></tr>').join('');
+ $('auditStatus').className=valid===rows.length&&geometry==='manual'?'note good':'note';
+ $('auditStatus').textContent=valid+'/'+rows.length+' contrôles dans la tolérance de 0,2 mm. Profil : '+(geometry==='manual'?'manuel fourni':'V3.3 (comparaison au manuel V3.2 non équivalente)')+'. '+(valid===rows.length&&geometry==='manual'?'Longueurs des segments testés conformes. La cinématique complète reste à valider.':'Examiner les écarts et la version géométrique.');
+ const fmtP=name=>{const p=center(name);return p?p.map((v,i)=>(v-(i===2?333:0)).toFixed(1)).join(' ; '):'—'};
+ $('armFrames').innerHTML=['R','L'].map(n=>'<tr><td>'+(n==='R'?'Droit':'Gauche')+'</td>'+[n+'ShoulderPitch',n+'ElbowYaw',n+'WristYaw'].map(k=>'<td>'+fmtP(k)+'</td>').join('')+'<td>'+((endpoints[n+'Hand']||[]).map((v,i)=>(v-(i===2?333:0)).toFixed(1)).join(' ; '))+'</td></tr>').join('');
+ return rows;
+}
+$('auditRun').onclick=()=>docAudit();
+$('auditCsv').onclick=()=>csvFile('NAO_controle_dimensions_manuel_V1_7.csv',[
+ ['Segment','Reference_manuel_mm','Distance_simulee_mm','Ecart_mm','Conforme_0_2mm','Profil','Source'],
+ ...docAudit().map(r=>[r.label,r.ref,Number.isFinite(r.observed)?r.observed.toFixed(3):'',Number.isFinite(r.delta)?r.delta.toFixed(3):'',r.ok?'Oui':'Non',geometry,'Manuel NAO fourni, chapitre 5, pages 186-188'])
+]);
+docAudit();
+
+// ===== V1.8 : kinematics laboratory (standalone, no external libraries) =====
+const kinNames=['RShoulderPitch','RShoulderRoll','RElbowYaw','RElbowRoll','RWristYaw'];
+const kinStart={};
+function kinFk(q){
+  const L=lengths();
+  let f=frame([0,-98,100],I); // Torso origin, X forward, Y left, Z up
+  f=turn(f,[0,1,0],q[0]);
+  f=turn(f,[0,0,1],q[1]);
+  f=trans(f,[L.upper,0,0]);
+  f=turn(f,[1,0,0],q[2]);
+  f=turn(f,[0,0,1],q[3]);
+  f=trans(f,[L.lower,0,0]);
+  f=turn(f,[1,0,0],q[4]);
+  f=trans(f,[L.hand,0,-L.handz]);
+  return {p:f.o,R:f.m,T:[f.m[0],f.m[1],f.m[2],f.o[0],f.m[3],f.m[4],f.m[5],f.o[1],f.m[6],f.m[7],f.m[8],f.o[2],0,0,0,1]};
+}
+function kinAngles(source=actual){return kinNames.map(n=>source[n]);}
+function kinJac(q){const h=.02, j=[[],[],[]];for(let k=0;k<5;k++){const qp=[...q],qm=[...q];qp[k]+=h;qm[k]-=h;const a=kinFk(qp).p,b=kinFk(qm).p;for(let r=0;r<3;r++)j[r][k]=(a[r]-b[r])/(2*h)}return j;}
+function kinSolve3(A,b){let m=A.map((row,i)=>[...row,b[i]]);for(let i=0;i<3;i++){let pivot=i;for(let k=i+1;k<3;k++)if(Math.abs(m[k][i])>Math.abs(m[pivot][i]))pivot=k;if(Math.abs(m[pivot][i])<1e-13)return null;[m[i],m[pivot]]=[m[pivot],m[i]];let s=m[i][i];for(let j=i;j<4;j++)m[i][j]/=s;for(let k=0;k<3;k++)if(k!==i){let c=m[k][i];for(let j=i;j<4;j++)m[k][j]-=c*m[i][j]}}return m.map(row=>row[3]);}
+function kinGram(J){return J.map(a=>J.map(b=>a.reduce((s,v,i)=>s+v*b[i],0)));}
+function kinDet3(m){return m[0][0]*(m[1][1]*m[2][2]-m[1][2]*m[2][1])-m[0][1]*(m[1][0]*m[2][2]-m[1][2]*m[2][0])+m[0][2]*(m[1][0]*m[2][1]-m[1][1]*m[2][0]);}
+function kinRank3(J){let a=J.map(r=>[...r]),rank=0;for(let col=0;col<5&&rank<3;col++){let piv=rank;for(let i=rank+1;i<3;i++)if(Math.abs(a[i][col])>Math.abs(a[piv][col]))piv=i;if(Math.abs(a[piv][col])<1e-5)continue;[a[rank],a[piv]]=[a[piv],a[rank]];let d=a[rank][col];for(let k=col;k<5;k++)a[rank][k]/=d;for(let i=0;i<3;i++)if(i!==rank){let v=a[i][col];for(let k=col;k<5;k++)a[i][k]-=v*a[rank][k]}rank++}return rank;}
+function kinErrDist(a,b){return Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);}
+function kinIkOne(goal,seed,maxIter=220){let q=[...seed],best={q:[...q],err:Infinity};for(let i=0;i<maxIter;i++){
+ const p=kinFk(q).p,e=goal.map((x,k)=>x-p[k]),dist=Math.hypot(...e);
+ if(dist<best.err)best={q:[...q],err:dist};if(dist<.25)break;
+ const J=kinJac(q),G=kinGram(J),lambda=dist>20?2.5:1.2;
+ for(let d=0;d<3;d++)G[d][d]+=lambda*lambda;
+ const v=kinSolve3(G,e);if(!v)break;
+ const dq=kinNames.map((_,k)=>J.reduce((s,row,r)=>s+row[k]*v[r],0));
+ const maxMove=Math.max(...dq.map(Math.abs));const scale=maxMove>8?8/maxMove:1;
+ let improved=false;
+ for(const alpha of [1,.5,.2,.08]){const next=q.map((x,k)=>clamp(x+alpha*scale*dq[k],by[kinNames[k]].min,by[kinNames[k]].max));if(kinErrDist(kinFk(next).p,goal)<dist-1e-7){q=next;improved=true;break}}
+ if(!improved)break;
+ }return best;}
+function kinIk(goal,initial){const starts=[initial,[0,-30,0,45,0],[60,-25,40,45,0],[-60,-25,-40,70,0],[110,-40,90,55,0],[-110,-50,-90,30,0]];let best={err:Infinity};for(const s of starts){const q=s.map((v,k)=>clamp(v,by[kinNames[k]].min,by[kinNames[k]].max)),sol=kinIkOne(goal,q);if(sol.err<best.err)best=sol;if(best.err<.25)break;}return best;}
+function kinRefresh(){if(!document.getElementById('kinX'))return;const q=kinAngles(),fk=kinFk(q),ref=endpoints.RHand?minus(endpoints.RHand,[0,0,333]):null;for(let k=0;k<3;k++)document.getElementById(['kinX','kinY','kinZ'][k]).textContent=fk.p[k].toFixed(2)+' mm';document.getElementById('kinErr').textContent=ref?kinErrDist(fk.p,ref).toFixed(3)+' mm':'—';const J=kinJac(q),det=Math.max(0,kinDet3(kinGram(J)));document.getElementById('kinRank').textContent=kinRank3(J)+' / 3';document.getElementById('kinManip').textContent=Math.sqrt(det).toFixed(3)+' mm³/°³';}
+let kinPrevious=null,kinResults=[];
+document.getElementById('ikCurrent').onclick=()=>{const p=kinFk(kinAngles()).p;['ikX','ikY','ikZ'].forEach((id,k)=>document.getElementById(id).value=p[k].toFixed(2));};
+document.getElementById('ikSolve').onclick=()=>{const goal=['ikX','ikY','ikZ'].map(id=>Number(document.getElementById(id).value));if(goal.some(v=>!Number.isFinite(v))){document.getElementById('ikStatus').textContent='Coordonnées invalides.';return;}kinPrevious={...target};const result=kinIk(goal,kinAngles(target));kinNames.forEach((n,k)=>{target[n]=result.q[k];actual[n]=result.q[k]});activePose='MGI — bras droit';document.getElementById('poseLabel').textContent=activePose;build();kinRefresh();refreshSelected();document.getElementById('ikStatus').className=result.err<1?'note good':'note';document.getElementById('ikStatus').textContent=(result.err<1?'Cible atteinte dans la tolérance. ':'Cible non atteinte dans la tolérance ; position la plus proche trouvée. ')+'Erreur résiduelle : '+result.err.toFixed(2)+' mm. Angles : '+result.q.map((v,i)=>kinNames[i]+' '+v.toFixed(1)+'°').join(' · ');};
+document.getElementById('ikUndo').onclick=()=>{if(!kinPrevious)return;for(const n of kinNames){target[n]=kinPrevious[n];actual[n]=kinPrevious[n]}kinPrevious=null;build();kinRefresh();refreshSelected();document.getElementById('ikStatus').textContent='Configuration précédente restaurée.';};
+document.getElementById('kinTest').onclick=()=>{
+ const rows=[];const push=(name,criterion,result,ok)=>rows.push({name,criterion,result,ok});
+ for(const [name,q] of [['Zéros bornés',kinNames.map(n=>clamp(0,by[n].min,by[n].max))],['Bras avancé',[65,-20,30,55,10]],['Bras fléchi',[-25,-50,-40,75,-25]]]){
+ const fk=kinFk(q);const a=kinFk([...q]);push('MGD déterministe — '+name,'écart < 10⁻⁹ mm',kinErrDist(fk.p,a.p).toExponential(2)+' mm',kinErrDist(fk.p,a.p)<1e-9);
+ const J=kinJac(q);let e=0;for(let k=0;k<5;k++){const p=[...q];p[k]+=.1;const observed=kinFk(p).p;for(let r=0;r<3;r++)e=Math.max(e,Math.abs(observed[r]-fk.p[r]-J[r][k]*.1));}push('Jacobienne — '+name,'erreur locale < 0,01 mm',e.toFixed(5)+' mm',e<.01);
+ const ik=kinIk(fk.p,q);push('MGI aller-retour — '+name,'erreur < 1 mm',ik.err.toFixed(4)+' mm',ik.err<1);
+ }
+ const q=kinAngles(),scene=endpoints.RHand?minus(endpoints.RHand,[0,0,333]):null,d=scene?kinErrDist(kinFk(q).p,scene):Infinity;push('Accord avec scène 3D','écart < 0,001 mm',Number.isFinite(d)?d.toFixed(5)+' mm':'pas de scène',d<.001);
+ kinResults=rows;document.getElementById('kinTests').innerHTML=rows.map(r=>'<tr><td>'+r.name+'</td><td>'+r.criterion+'</td><td>'+r.result+'</td><td>'+(r.ok?'OK':'À vérifier')+'</td></tr>').join('');document.getElementById('kinTest').textContent='Tests : '+rows.filter(r=>r.ok).length+'/'+rows.length+' conformes';
+};
+document.getElementById('kinExport').onclick=()=>{if(!kinResults.length)document.getElementById('kinTest').click();csvFile('NAO_validation_cinematique_V1_8.csv',[['Test','Critere','Resultat','Conforme'],...kinResults.map(r=>[r.name,r.criterion,r.result,r.ok?'Oui':'Non'])]);};
+document.getElementById('kinMatrix').onclick=()=>{const q=kinAngles(),fk=kinFk(q),j=kinJac(q);download('NAO_MGD_Jacobienne_V1_8.json',new Blob([JSON.stringify({reference:'modele simplifie V1.8 - non certifie constructeur',geometry,anglesDeg:Object.fromEntries(kinNames.map((n,k)=>[n,q[k]])),positionTorsoMm:fk.p,transformationHomogeneRowMajor:fk.T,jacobiennePositionMmParDeg:j},null,2)],{type:'application/json'}));};
+// Update the diagnostics at a moderate rate, without altering the existing animation loop.
+let kinLastUpdate=0;function kinLoop(t){if(t-kinLastUpdate>170){kinRefresh();kinLastUpdate=t}requestAnimationFrame(kinLoop)}requestAnimationFrame(kinLoop);
+
+
+// ===== V1.9 : audit mathematique independent du modele pedagogique =====
+const auditNames=['RShoulderPitch','RShoulderRoll','RElbowYaw','RElbowRoll','RWristYaw'];
+const auditAxisLocal=[[0,1,0],[0,0,1],[1,0,0],[0,0,1],[1,0,0]];
+function auditChain(q){
+ const L=lengths(), axes=[], origins=[];
+ let f=frame([0,-98,100],I);
+ for(let k=0;k<5;k++){
+  axes.push(norm(mv(f.m,auditAxisLocal[k])));origins.push([...f.o]);
+  f=turn(f,auditAxisLocal[k],q[k]);
+  if(k===1)f=trans(f,[L.upper,0,0]);
+  if(k===3)f=trans(f,[L.lower,0,0]);
+ }
+ f=trans(f,[L.hand,0,-L.handz]);
+ const p=f.o;
+ const J=Array.from({length:6},()=>[]);
+ for(let k=0;k<5;k++){
+  const v=cross(axes[k],minus(p,origins[k]));
+  for(let r=0;r<3;r++){J[r][k]=v[r];J[r+3][k]=axes[k][r];}
+ }
+ return {p,R:f.m,J,axes,origins};
+}
+function auditMatrixRank(matrix,eps=1e-7){const a=matrix.map(row=>[...row]);let rank=0;const rows=a.length,cols=a[0].length;
+ for(let col=0;col<cols&&rank<rows;col++){
+  let pivot=rank;for(let r=rank+1;r<rows;r++)if(Math.abs(a[r][col])>Math.abs(a[pivot][col]))pivot=r;
+  if(Math.abs(a[pivot][col])<eps)continue;
+  [a[pivot],a[rank]]=[a[rank],a[pivot]];
+  const d=a[rank][col];for(let c=col;c<cols;c++)a[rank][c]/=d;
+  for(let r=0;r<rows;r++)if(r!==rank){const x=a[r][col];for(let c=col;c<cols;c++)a[r][c]-=x*a[rank][c];}
+  rank++;
+ }return rank;
+}
+function auditNumericCheck(q){const h=1e-3;const a=auditChain(q);let worst=0;
+ for(let k=0;k<5;k++){
+  const qp=[...q],qm=[...q];qp[k]+=h;qm[k]-=h;
+  const p1=kinFk(qp).p,p0=kinFk(qm).p;
+  for(let r=0;r<3;r++)worst=Math.max(worst,Math.abs((p1[r]-p0[r])/(2*h*D)-a.J[r][k]));
+ }return worst;
+}
+function auditURDF(q){
+ if(!urdfJoints.length||!urdfLinks?.start)return {ready:false,reason:'URDF non chargé'};
+ const root=urdfLinks.start,frames={[root]:frame([0,0,0],I)},queue=[root];
+ for(let n=0;queue.length&&n<300;n++){
+  const parent=queue.shift(),f=frames[parent];
+  for(const j of urdfLinks.children.get(parent)||[]){
+   let jf=trans(f,j.xyz);jf=frame(jf.o,matmul(jf.m,urdfRpy(j.rpy)));
+   const index=auditNames.indexOf(j.name);
+   const key=j.name==='LHipYawPitch'||j.name==='RHipYawPitch'?'HipYawPitch':j.name;
+   const angle=index>=0?q[index]:(Object.prototype.hasOwnProperty.call(urdfAngleOverrides,j.name)?urdfAngleOverrides[j.name]:(actual[key]||0));
+   if(j.type==='revolute'||j.type==='continuous')jf=turn(jf,j.axis,angle);
+   else if(j.type==='prismatic')jf=trans(jf,mulv(j.axis,angle));
+   if(!frames[j.child]){frames[j.child]=jf;queue.push(j.child);}
+  }
+ }
+ const candidates=Object.keys(frames).filter(x=>/rhand|r_hand|right.hand|rgripper|r_gripper|right.gripper/i.test(x));
+ const end=candidates.find(x=>/hand/i.test(x))||candidates[0];
+ const torso=Object.keys(frames).find(x=>x.toLowerCase()==='torso');
+ const joints=auditNames.map(name=>urdfJoints.find(j=>j.name===name));
+ const available=joints.filter(Boolean).length;
+ const violations=[];
+ for(let k=0;k<5;k++){const j=joints[k];if(!j)continue;
+  const lo=j.lower===null?-Infinity:j.lower/D,hi=j.upper===null?Infinity:j.upper/D;
+  if(q[k]<lo-1e-5||q[k]>hi+1e-5)violations.push(j.name);
+ }
+ if(!end||!torso)return {ready:true,available,violations,reason:'Lien Torso ou main droite introuvable dans URDF. Comparaison impossible.'};
+ const torsoF=frames[torso],handF=frames[end],relative=mv([torsoF.m[0],torsoF.m[3],torsoF.m[6],torsoF.m[1],torsoF.m[4],torsoF.m[7],torsoF.m[2],torsoF.m[5],torsoF.m[8]],minus(handF.o,torsoF.o));
+ const simp=kinFk(q).p;
+ return {ready:true,available,violations,end,urdfPosition:relative,simPosition:simp,distance:kinErrDist(relative,simp),note:'La position du lien URDF n\'est pas necessairement le centre de la paume du modele simplifie.'};
+}
+let auditData=null;
+function auditRun(){
+ const q=kinAngles(),ch=auditChain(q),fk=kinFk(q),e=kinErrDist(ch.p,fk.p),jacError=auditNumericCheck(q),rank=auditMatrixRank(ch.J),urdf=auditURDF(q);
+ const rows=[['MGD matriciel vs chaine analytique',e.toFixed(7)+' mm',e<1e-6?'Concordance interne':'Écart à corriger'],['Jacobienne analytique vs différences finies',jacError.toExponential(3)+' mm/rad',jacError<1e-3?'Concordance interne':'Écart à corriger'],['Rang Jacobienne spatiale 6×5',rank+' / 5','Dépend de la configuration ; ce rang ne prouve pas la validité constructeur']];
+ if(urdf.ready){rows.push(['Articulations du bras présentes dans URDF',urdf.available+' / 5',urdf.available===5?'Noms reconnus':'Vérifier les noms et la version du robot']);rows.push(['Angles dans les limites URDF',urdf.violations.length?urdf.violations.join(', '):'Aucun dépassement',urdf.violations.length?'Incompatibilité à vérifier':'Angles compatibles avec les bornes importées']);rows.push(['Position main URDF vs modèle simplifié',Number.isFinite(urdf.distance)?urdf.distance.toFixed(2)+' mm':'Non comparable',urdf.reason||('Lien : '+urdf.end+' ; '+urdf.note)]);}
+ else rows.push(['Validation URDF indépendante','Non effectuée','Importer un URDF du modèle NAO utilisé au laboratoire']);
+ document.getElementById('v19auditRows').innerHTML=rows.map(row=>'<tr>'+row.map(x=>'<td>'+escapeText(x)+'</td>').join('')+'</tr>').join('');
+ document.getElementById('v19auditRank').textContent=rank+' / 5';document.getElementById('v19auditJerr').textContent=jacError.toExponential(2)+' mm/rad';
+ document.getElementById('v19auditUrdfErr').textContent=Number.isFinite(urdf.distance)?urdf.distance.toFixed(2)+' mm':(urdf.ready?'Non comparable':'Non chargé');
+ document.getElementById('v19auditLimits').textContent=urdf.ready?(urdf.violations.length?urdf.violations.length+' hors bornes':'0 dépassement'):'Non chargé';
+ const internalOK=e<1e-6&&jacError<1e-3;
+ document.getElementById('v19auditStatus').textContent=(internalOK?'Tests internes conformes. ':'Échec des tests internes. ')+(urdf.ready?'URDF chargé : '+(urdf.reason||'comparaison indicative effectuée'):'Aucune validation constructeur sans URDF de la version correspondante.');
+ document.getElementById('v19auditStatus').className=internalOK?'note good':'note';
+ auditData={reference:'modele pedagogique V1.9, non certifie constructeur',qDeg:q,positionMm:ch.p,jacobienneSpatiale6x5_mmParRad_et_radParRad:ch.J,rank,jacError,mgdError:e,urdf,rows};
+ return auditData;
+}
+document.getElementById('auditKinematicRun').onclick=auditRun;
+document.getElementById('v19auditCsv').onclick=()=>{const a=auditRun();csvFile('NAO_audit_V1_9.csv',[['Verification','Resultat','Interpretation'],...a.rows]);};
+document.getElementById('v19auditJson').onclick=()=>{const a=auditRun();download('NAO_Jacobienne_Spatiale_V1_9.json',new Blob([JSON.stringify(a,null,2)],{type:'application/json'}));};
+
+
+// ===== V2.0 : campagne reproductible de verification des derivees spatiales =====
+const v20Cases=[
+ ['Zéro borné',[0,0,0,0,0]],
+ ['Épaule avancée',[30,-20,15,45,20]],
+ ['Coude replié',[65,-35,70,75,-30]],
+ ['Épaule arrière',[-45,-45,-45,25,45]],
+ ['Bras proche limite',[100,-65,100,80,65]],
+ ['Configuration mixte',[-75,-15,55,100,-65]],
+ ['Petit mouvement',[10,-10,10,10,10]],
+ ['Configuration étendue',[90,-40,-60,60,90]]
+];
+function v20Transpose(A){return [A[0],A[3],A[6],A[1],A[4],A[7],A[2],A[5],A[8]]}
+function v20OrthError(R){const P=matmul(v20Transpose(R),R);return Math.max(...P.map((x,i)=>Math.abs(x-(i%4===0?1:0))))}
+function v20AngularDerivative(q,k,h){const qp=[...q],qm=[...q];qp[k]+=h;qm[k]-=h;
+ const Rp=kinFk(qp).R,Rm=kinFk(qm).R,R=kinFk(q).R;
+ const dR=Rp.map((v,i)=>(v-Rm[i])/(2*h*D));const S=matmul(dR,v20Transpose(R));
+ return [(S[7]-S[5])/2,(S[2]-S[6])/2,(S[3]-S[1])/2];
+}
+let v20Report=null;
+function v20Validate(){
+ const results=[];let maxLin=0,maxAng=0,pass=0;
+ for(const [label,angles] of v20Cases){
+  const q=angles.map((a,i)=>clamp(a,by[kinNames[i]].min,by[kinNames[i]].max));
+  const f=kinFk(q),a=auditChain(q),h=1e-3;
+  let lin=0,ang=0;
+  for(let k=0;k<5;k++){
+   const qp=[...q],qm=[...q];qp[k]+=h;qm[k]-=h;
+   const pp=kinFk(qp).p,pm=kinFk(qm).p;
+   for(let r=0;r<3;r++)lin=Math.max(lin,Math.abs((pp[r]-pm[r])/(2*h*D)-a.J[r][k]));
+   const w=v20AngularDerivative(q,k,h);
+   for(let r=0;r<3;r++)ang=Math.max(ang,Math.abs(w[r]-a.J[r+3][k]));
+  }
+  const orth=v20OrthError(f.R),mgd=kinErrDist(f.p,a.p);
+  const ok=lin<.01&&ang<.0001&&orth<1e-9&&mgd<1e-6;
+  results.push({configuration:label,anglesDeg:q,positionMm:f.p,linearErrorMmPerRad:lin,angularErrorRadPerRad:ang,orthogonalityError:orth,mgdErrorMm:mgd,passed:ok});
+  maxLin=Math.max(maxLin,lin);maxAng=Math.max(maxAng,ang);if(ok)pass++;
+ }
+ const loaded=urdfJoints.length>0;
+ v20Report={version:'V2.0',model:'bras droit simplifie, non certifie constructeur',urdfLoaded:loaded,urdfName:loaded?urdfLabel:null,tests:results,passed:pass,total:results.length,thresholds:{linearMmPerRad:.01,angularRadPerRad:.0001,orthogonality:1e-9,mgdMm:1e-6}};
+ document.getElementById('v20Pass').textContent=pass+'/'+results.length;
+ document.getElementById('v20Linear').textContent=maxLin.toExponential(2);
+ document.getElementById('v20Angular').textContent=maxAng.toExponential(2);
+ document.getElementById('v20Official').textContent=loaded?'URDF à comparer':'Non validée';
+ document.getElementById('v20Rows').innerHTML=results.map(r=>'<tr><td>'+escapeText(r.configuration)+'</td><td>'+r.anglesDeg.map(v=>v.toFixed(1)).join(' / ')+'</td><td>'+r.positionMm.map(v=>v.toFixed(1)).join(' ; ')+'</td><td>'+r.linearErrorMmPerRad.toExponential(2)+'</td><td>'+r.angularErrorRadPerRad.toExponential(2)+'</td><td>'+r.orthogonalityError.toExponential(2)+'</td><td>'+(r.passed?'Conforme':'Échec')+'</td></tr>').join('');
+ document.getElementById('v20Status').className=pass===results.length?'note good':'note';
+ document.getElementById('v20Status').textContent=(pass===results.length?'Tests internes réussis. ':'Des tests internes ont échoué. ')+(loaded?'Un URDF est chargé, mais la comparaison des axes et des repères doit être interprétée séparément.':'Pour valider la fidélité constructeur, importer le fichier URDF de la version exacte du NAO.');
+ return v20Report;
+}
+document.getElementById('v20Run').onclick=v20Validate;
+document.getElementById('v20Csv').onclick=()=>{const r=v20Validate();csvFile('NAO_V2_0_validation_multi_configurations.csv',[['Configuration','Angles_deg','X_mm','Y_mm','Z_mm','Erreur_Jv_mm_rad','Erreur_Jw_rad_rad','Erreur_orthogonalite','Erreur_MGD_mm','Conforme'],...r.tests.map(x=>[x.configuration,x.anglesDeg.join(';'),...x.positionMm,x.linearErrorMmPerRad,x.angularErrorRadPerRad,x.orthogonalityError,x.mgdErrorMm,x.passed?'Oui':'Non'])]);};
+document.getElementById('v20Json').onclick=()=>{const r=v20Validate();download('NAO_V2_0_rapport_validation.json',new Blob([JSON.stringify(r,null,2)],{type:'application/json'}));};
+
+
+// V2.1 — Chaîne du bras droit NAO H25 V5.0, référence ros-naoqi/nao_robot (URDF public).
+// Repère torso, translations en mm, axes locaux, angles en degrés.
+const V21_JOINTS=[
+ {n:'RShoulderPitch',xyz:[0,-98,100],axis:[0,1,0],lo:-2.08567,hi:2.08567,child:'RShoulder'},
+ {n:'RShoulderRoll',xyz:[0,0,0],axis:[0,0,1],lo:-1.32645,hi:0.314159,child:'RBicep'},
+ {n:'RElbowYaw',xyz:[105,-15,0],axis:[1,0,0],lo:-2.08567,hi:2.08567,child:'RElbow'},
+ {n:'RElbowRoll',xyz:[0,0,0],axis:[0,0,1],lo:0.0349066,hi:1.54462,child:'RForeArm'},
+ {n:'RWristYaw',xyz:[55.95,0,0],axis:[1,0,0],lo:-1.82387,hi:1.82387,child:'r_wrist'}
+];
+const V21_HAND={xyz:[57.75,0,-12.13],child:'r_gripper'};
+const v21Clamp=(q)=>q.map((v,i)=>clamp(v,V21_JOINTS[i].lo/D,V21_JOINTS[i].hi/D));
+let v21Q=v21Clamp([0,-15,0,40,0]),v21Overlay=false,v21Report=null,v21Track=[];
+function v21FK(q){
+ let f=frame([0,0,0],I),axes=[],origins=[],links=[{name:'torso',p:[0,0,0]}];
+ for(let i=0;i<5;i++){
+  const j=V21_JOINTS[i];f=trans(f,j.xyz);
+  axes.push(norm(mv(f.m,j.axis)));origins.push([...f.o]);
+  f=turn(f,j.axis,q[i]);links.push({name:j.child,p:[...f.o]});
+ }
+ f=trans(f,V21_HAND.xyz);links.push({name:V21_HAND.child,p:[...f.o]});
+ const p=[...f.o],J=Array.from({length:6},()=>new Array(5).fill(0));
+ for(let k=0;k<5;k++){const v=cross(axes[k],minus(p,origins[k]));for(let r=0;r<3;r++){J[r][k]=v[r];J[r+3][k]=axes[k][r]}}
+ return {p,R:[...f.m],J,links,axes,origins,T:[f.m[0],f.m[1],f.m[2],p[0],f.m[3],f.m[4],f.m[5],p[1],f.m[6],f.m[7],f.m[8],p[2],0,0,0,1]};
+}
+function v21Refresh(){
+ const f=v21FK(v21Q);for(let k=0;k<3;k++)document.getElementById(['v21X','v21Y','v21Z'][k]).textContent=f.p[k].toFixed(3);
+ document.getElementById('v21Rank').textContent=auditMatrixRank(f.J,1e-7)+'/5';
+ for(let i=0;i<5;i++){const el=document.getElementById('v21v'+i);if(el)el.textContent=v21Q[i].toFixed(2)+'°';const sl=document.getElementById('v21s'+i);if(sl)sl.value=v21Q[i]}
+ v21Track.push({angles:[...v21Q],xyz:f.p});if(v21Track.length>400)v21Track.shift();
+}
+function v21BuildSliders(){
+ const b=document.getElementById('v21Sliders');b.innerHTML=V21_JOINTS.map((j,i)=>'<tr><td>'+j.n+'</td><td><input id="v21s'+i+'" type="range" min="'+(j.lo/D)+'" max="'+(j.hi/D)+'" step="0.01" style="width:150px;vertical-align:middle"><span id="v21v'+i+'" style="display:inline-block;min-width:58px">—</span></td><td>'+(j.lo/D).toFixed(2)+'</td><td>'+(j.hi/D).toFixed(2)+'</td></tr>').join('');
+ V21_JOINTS.forEach((j,i)=>{document.getElementById('v21s'+i).addEventListener('input',e=>{v21Q[i]=Number(e.target.value);v21Refresh()})});v21Refresh();
+}
+// URDF importé: recalcul à angles identiques sans réutiliser les paramètres V21.
+function v21ImportedReference(q){
+ if(!urdfJoints.length||!urdfLinks?.start)return {status:'absent'};
+ const needed=V21_JOINTS.map(x=>x.n);
+ if(!needed.every(n=>urdfJoints.some(j=>j.name===n)))return {status:'different',reason:'Articulations du bras droit absentes'};
+ const root=urdfLinks.start,frames={[root]:frame([0,0,0],I)},queue=[root];
+ for(let k=0;queue.length&&k<300;k++){
+  const parent=queue.shift();for(const j of urdfLinks.children.get(parent)||[]){
+   if(frames[j.child])continue;let f=trans(frames[parent],j.xyz);f=frame(f.o,matmul(f.m,urdfRpy(j.rpy)));
+   const idx=needed.indexOf(j.name);
+   const angle=idx>=0?q[idx]:0;
+   if(j.type==='revolute'||j.type==='continuous')f=turn(f,j.axis,angle);
+   else if(j.type==='prismatic')f=trans(f,mulv(j.axis,angle));
+   frames[j.child]=f;queue.push(j.child);
+  }
+ }
+ const tip=frames.r_gripper||frames.RHand||frames.r_wrist;
+ const torso=frames.torso;
+ if(!tip||!torso)return {status:'different',reason:'Repères torso / main introuvables'};
+ // Convertir dans torso, même si l'URDF importé a un parent supplémentaire.
+ const p=mv(v20Transpose(torso.m),minus(tip.o,torso.o));
+ return {status:'ok',p,link:frames.r_gripper?'r_gripper':frames.RHand?'RHand':'r_wrist'};
+}
+function v21Validate(){
+ const cases=[v21Q,[0,-15,0,40,0],[30,-30,50,75,-20],[-65,10,-70,5,85],[100,-65,80,80,-70],[-110,5,100,50,70],[20,-45,-30,20,20],[75,-25,40,60,-80],[-45,-10,65,15,10],[0,-60,0,85,0],[115,15,115,88,95],[5,-3,7,9,11]];
+ const rows=[];let pass=0,maxJac=0,maxUrdf=0,compared=0;
+ for(let k=0;k<cases.length;k++){
+  const q=v21Clamp(cases[k]),f=v21FK(q),h=.0001,ref=v21ImportedReference(q);let jerr=0;
+  for(let i=0;i<5;i++){
+   const qp=[...q],qm=[...q];qp[i]+=h;qm[i]-=h;
+   const pp=v21FK(qp).p,pm=v21FK(qm).p;
+   for(let a=0;a<3;a++)jerr=Math.max(jerr,Math.abs((pp[a]-pm[a])/(2*h*D)-f.J[a][i]));
+  }
+  const err=ref.status==='ok'?Math.hypot(...minus(f.p,ref.p)):null;
+  if(err!==null){compared++;maxUrdf=Math.max(maxUrdf,err)}
+  maxJac=Math.max(maxJac,jerr);
+  const within=q.every((v,i)=>v>=V21_JOINTS[i].lo/D-1e-9&&v<=V21_JOINTS[i].hi/D+1e-9);
+  const good=jerr<0.001&&within&&(err===null||err<0.01);if(good)pass++;
+  rows.push({case:k+1,q,xyz:f.p,jacobianErrorMmPerRad:jerr,urdfErrorMm:err,pass:good});
+ }
+ v21Report={version:'2.1',reference:'ros-naoqi nao_robot / NaoH25V50 / nao.urdf',model:'URDF numeric right arm chain embedded (no official mesh)',tests:rows,pass,total:rows.length,maxJacobianErrorMmPerRad:maxJac,urdfComparisons:compared,maxUrdfErrorMm:compared?maxUrdf:null,physicalRobotValidated:false};
+ document.getElementById('v21Rows').innerHTML=rows.map(r=>'<tr><td>'+r.case+'</td><td>'+r.jacobianErrorMmPerRad.toExponential(2)+'</td><td>'+(r.urdfErrorMm===null?'URDF non comparable':r.urdfErrorMm.toFixed(5)+' mm')+'</td><td>'+(r.pass?'Conforme':'Échec')+'</td></tr>').join('');
+ const st=document.getElementById('v21Status');st.className=pass===rows.length?'note good':'note';st.textContent=pass+'/'+rows.length+' essais internes réussis. Erreur Jv max : '+maxJac.toExponential(2)+' mm/rad. '+(compared?'Comparaisons URDF : '+compared+', écart max '+maxUrdf.toFixed(5)+' mm.':'Aucun URDF importé pour comparaison indépendante.')+' Validation physique : non effectuée.';
+ return v21Report;
+}
+function v21Solve3(A,b){return kinSolve3(A,b)}
+function v21IK(goal){
+ const seeds=[v21Q,[0,-15,0,40,0],[80,-30,90,70,0],[-80,-30,-90,60,60],[40,5,60,20,-90],[-40,-65,60,80,90]];
+ let best=null;
+ for(const seed of seeds){
+  let q=v21Clamp(seed),lambda=4;
+  for(let it=0;it<220;it++){
+   const f=v21FK(q),e=minus(goal,f.p),dist=Math.hypot(...e);
+   if(!best||dist<best.err)best={q:[...q],err:dist,iterations:it};
+   if(dist<0.01)break;
+   const J=f.J.slice(0,3),G=Array.from({length:3},(_,i)=>Array.from({length:3},(_,j)=>dot(J[i],J[j])+(i===j?lambda*lambda:0)));
+   const y=v21Solve3(G,e);if(!y)break;
+   const dq=Array.from({length:5},(_,i)=>J.reduce((a,row,r)=>a+row[i]*y[r],0)/D);
+   let accepted=false;
+   for(const scale of [1,.5,.25,.1]){
+    const next=v21Clamp(q.map((v,i)=>v+clamp(dq[i]*scale,-12,12)));
+    if(Math.hypot(...minus(goal,v21FK(next).p))<dist-1e-7){q=next;accepted=true;break}
+   }
+   if(!accepted){lambda*=1.7;if(lambda>1000)break}else lambda=Math.max(1,lambda*.94);
+  }
+ }
+ return best;
+}
+function v21DrawOverlay(){
+ if(!v21Overlay)return;
+ const f=v21FK(v21Q),pts=f.links.slice(1).map(x=>plus(x.p,[0,0,333]));
+ for(let i=0;i<pts.length-1;i++)line3(pts[i],pts[i+1],'#ffce6b',5);
+ for(const p of pts){const [x,y]=camera(p);ctx.beginPath();ctx.arc(x,y,4.5,0,2*Math.PI);ctx.fillStyle='#ffe6a6';ctx.fill()}
+ const last=pts[pts.length-1];if(last){const [x,y]=camera(last);ctx.fillStyle='#ffdf8d';ctx.font='bold 12px system-ui';ctx.fillText('URDF V5.0 main',x+9,y-9)}
+}
+// Insérer la superposition à la fin du rendu canvas (défini ci-dessous par appel direct dans render).
+v21BuildSliders();
+document.getElementById('v21Sync').onclick=()=>{v21Q=v21Clamp(V21_JOINTS.map(j=>actual[j.n]||0));v21Refresh()};
+document.getElementById('v21Zero').onclick=()=>{v21Q=v21Clamp([0,0,0,0,0]);v21Refresh()};
+document.getElementById('v21Overlay').onclick=()=>{v21Overlay=!v21Overlay;document.getElementById('v21Overlay').textContent=v21Overlay?'Masquer la chaîne constructeur':'Afficher chaîne constructeur en 3D'};
+document.getElementById('v21Test').onclick=v21Validate;
+document.getElementById('v21Export').onclick=()=>download('NAO_V2_1_rapport_constructeur.json',new Blob([JSON.stringify(v21Validate(),null,2)],{type:'application/json'}));
+document.getElementById('v21CSV').onclick=()=>csvFile('NAO_V2_1_trajectoire_main.csv',[['Angles_degres','X_mm','Y_mm','Z_mm'],...v21Track.map(r=>[r.angles.join('/'),...r.xyz])]);
+document.getElementById('v21IK').onclick=()=>{
+ const goal=['v21Tx','v21Ty','v21Tz'].map(id=>Number(document.getElementById(id).value));const out=document.getElementById('v21IKStatus');
+ if(goal.some(x=>!Number.isFinite(x))){out.textContent='Cible non valide.';return}
+ const sol=v21IK(goal);if(!sol){out.textContent='Aucune solution numérique.';return}
+ v21Q=sol.q;v21Refresh();out.className=sol.err<1?'note good':'note';out.textContent='Résidu = '+sol.err.toFixed(3)+' mm · '+(sol.err<1?'Position atteinte numériquement.':'Cible non atteinte avec la recherche actuelle (pas nécessairement inaccessible).')+' Angles : '+sol.q.map(x=>x.toFixed(2)+'°').join(' / ');
+};
+
+</script><script id="g7-studio-bridge">
+(function(){let last='';const names=['RShoulderPitch','RShoulderRoll','RElbowYaw','RElbowRoll','RWristYaw'];function send(){try{const s={};for(const n of names)s[n]=Number(target[n]);const serialized=JSON.stringify(s);if(serialized!==last){last=serialized;window.parent.postMessage({source:'g7-studio',kind:'nao',joints:s},window.location.origin)}}catch(e){}}window.addEventListener('load',send);setInterval(send,160);})();
+</script>
+</body></html>
