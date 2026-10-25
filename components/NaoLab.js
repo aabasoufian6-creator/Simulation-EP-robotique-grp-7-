@@ -1,5 +1,6 @@
-import StudioExperience from "./StudioExperience";
 "use client";
+
+import StudioExperience from "./StudioExperience";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
