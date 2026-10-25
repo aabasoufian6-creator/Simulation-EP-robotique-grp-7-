@@ -1,6 +1,5 @@
-import StudioExperience from "./StudioExperience";
 "use client";
-
+import StudioExperience from "./StudioExperience";
 import { useEffect, useMemo, useState, useCallback } from "react";
 import Link from "next/link";
 import JointPanel from "./JointPanel";
